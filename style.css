@@ -516,5 +516,5 @@ section {
 .hero h2, 
 .hero p, 
 .hero .cta-buttons {
-    transform: translateX(40px) !important;
+    transform: translateX(60px) !important;
 }
