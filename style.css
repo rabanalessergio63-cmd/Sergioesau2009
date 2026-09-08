@@ -509,10 +509,7 @@ section {
     nav .container { padding: 10px 15px; }
     .nav-links { gap: 12px; font-size: 0.82rem; }
 }
-/* --- DESPLAZAR PÁRRAFO Y TEXTOS DE SERGIO A LA DERECHA --- */
-.hero h1, 
-.hero h2, 
-.hero-bio,
-.hero .cta-buttons {
-    padding-left: 45px; /* Ajusta este valor si quieres moverlo más o menos a la derecha */
+/* --- DESPLAZAR TODO EL BLOQUE HERO A LA DERECHA --- */
+.hero {
+    padding-left: 55px !important; /* Mueve todo el conjunto hacia la derecha */
 }
