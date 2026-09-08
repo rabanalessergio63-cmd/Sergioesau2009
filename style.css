@@ -527,7 +527,24 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero-title { font-size: 2.5rem; }
+    .nav-layout {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 16px;
+        border-radius: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 16px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .hero-title { font-size: 2.2rem; }
     .footer-content { flex-direction: column; align-items: flex-start; }
 }
