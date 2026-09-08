@@ -15,6 +15,20 @@
     --font-code: 'Fira Code', monospace;
 }
 
+/* --- TEMA CLARO (LIGHT THEME) --- */
+body.light-theme {
+    --bg-color: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-hover: rgba(241, 245, 249, 1);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-highlight: #0284c7;
+    --text-main: #334155;
+    --text-heading: #0f172a;
+    --accent-color: #0284c7;
+    --accent-secondary: #2563eb;
+    --accent-gradient: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -35,6 +49,7 @@ body {
     font-family: var(--font-main);
     line-height: 1.6;
     padding-bottom: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -64,6 +79,11 @@ nav {
     border-bottom: 1px solid var(--border-color);
     z-index: 100;
     padding: 18px 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-theme nav {
+    background-color: rgba(248, 250, 252, 0.85);
 }
 
 nav .container {
@@ -86,6 +106,7 @@ nav .container {
     display: flex;
     gap: 25px;
     list-style: none;
+    align-items: center;
 }
 
 .nav-links a {
@@ -96,6 +117,27 @@ nav .container {
 
 .nav-links a:hover {
     color: var(--text-heading);
+}
+
+/* --- BOTÓN CAMBIO DE TEMA (MODO OSCURO / CLARO) --- */
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-heading);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: scale(1.05);
 }
 
 /* --- SECCIONES GENERALES --- */
@@ -190,9 +232,10 @@ section {
 
 .hero h2 {
     font-size: 1.4rem;
-    color: #cbd5e1;
+    color: var(--text-heading);
     font-weight: 400;
     margin-bottom: 20px;
+    opacity: 0.9;
 }
 
 .hero-bio {
@@ -218,6 +261,11 @@ section {
     font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 8px; /* Espacio para los íconos */
+}
+
+.btn i {
+    font-size: 1.05rem;
 }
 
 .btn-primary {
@@ -258,7 +306,7 @@ section {
     border-radius: 12px;
     padding: 25px;
     backdrop-filter: blur(10px);
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .skill-category:hover {
@@ -312,7 +360,7 @@ section {
 .project-card:hover {
     transform: translateY(-6px);
     border-color: rgba(0, 242, 254, 0.4);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 254, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 242, 254, 0.1);
 }
 
 .project-title {
@@ -389,7 +437,7 @@ section {
 }
 
 .timeline-subtitle {
-    color: #94a3b8;
+    color: var(--text-main);
     font-size: 0.95rem;
     margin-bottom: 12px;
 }
@@ -403,12 +451,39 @@ section {
     padding: 50px 25px;
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-box p {
     max-width: 520px;
     margin: 0 auto 30px auto;
     font-size: 1.05rem;
+}
+
+/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #ffffff !important;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
+    text-shadow: none;
 }
 
 /* --- RESPONSIVO --- */
@@ -420,4 +495,11 @@ section {
     .hero { text-align: center; }
     .hero-bio { margin-left: auto; margin-right: auto; }
     .cta-buttons { justify-content: center; }
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
 }
