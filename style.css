@@ -166,58 +166,63 @@ section {
     font-size: 2.1rem;
     font-weight: 700;
     color: var(--text-heading);
-    margin-bottom: 30px;
-    letter-spacing: -0.5px;
+   /* --- BOTONES DE ACCIÓN (CTA) --- */
+.cta-buttons {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    width: 100%;
 }
 
-.section-title::before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 24px;
+.cta-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 20px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.cta-buttons .btn i {
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.btn-primary {
     background: var(--accent-gradient);
-    border-radius: 4px;
+    color: #ffffff;
+    box-shadow: var(--shadow-purple);
 }
 
-/* --- HERO / SOBRE MÍ --- */
-.hero {
-    padding-top: 40px;
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -5px rgba(168, 85, 247, 0.5);
+    color: #ffffff;
 }
 
-.hero-content {
-    max-width: 750px;
-}
-
-.hero h1 {
-    font-family: var(--font-heading);
-    font-size: 3.3rem;
-    font-weight: 800;
+.btn-secondary {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     color: var(--text-heading);
-    letter-spacing: -1.5px;
-    line-height: 1.1;
-    margin-bottom: 10px;
 }
 
-.gradient-text {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero h2 {
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: var(--text-heading);
-    opacity: 0.9;
-    margin-bottom: 18px;
-}
-
-.hero-bio {
-    font-size: 1.05rem;
-    margin-bottom: 30px;
+.btn-secondary:hover {
+    border-color: var(--border-highlight);
+    color: var(--purple-primary);
+    transform: translateY(-3px);
 }
 
 /* --- BOTONES DE ACCIÓN (CTA) --- */
