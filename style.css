@@ -75,7 +75,7 @@ body {
 }
 
 /* ==========================================================================
-   NAVEGACIÓN (ÁREA ROJA Y VERDE)
+   NAVEGACIÓN Y SELECTOR DE TEMAS
    ========================================================================== */
 nav {
     position: sticky;
@@ -129,7 +129,7 @@ nav {
     color: var(--text-heading);
 }
 
-/* SELECTOR DE TEMAS (ÁREA VERDE Y TERCERA FOTO) */
+/* SELECTOR DE TEMAS */
 .theme-picker-wrapper {
     position: relative;
 }
@@ -229,7 +229,7 @@ nav {
 .blue-preview .d3 { background: #030712; }
 
 /* ==========================================================================
-   SECCIÓN SOBRE MÍ (ÁREA AMARILLA)
+   SECCIÓN SOBRE MÍ
    ========================================================================== */
 .hero-section {
     padding: 40px 0 60px 0;
@@ -269,7 +269,7 @@ nav {
 }
 
 /* ==========================================================================
-   BLOQUES Y GRILLAS
+   BLOQUES, GRILLAS Y SECCIONES
    ========================================================================== */
 .section-block {
     padding: 40px 0;
@@ -308,26 +308,88 @@ nav {
 .skill-card li {
     margin-bottom: 8px;
     font-size: 0.95rem;
-}
-
-.tags {
     display: flex;
+    align-items: center;
     gap: 8px;
-    margin-top: 14px;
 }
 
-.tags span {
-    font-size: 0.75rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--card-border);
+.skill-card li i {
     color: var(--accent);
 }
 
+/* ==========================================================================
+   PROYECTO ÚNICO Y REDIRECCIÓN
+   ========================================================================== */
+.single-project {
+    grid-template-columns: 1fr !important;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.external-icon {
+    color: var(--accent);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.project-card-link:hover .external-icon {
+    transform: translate(3px, -3px);
+}
+
+/* ETIQUETAS CON ÍCONOS */
+.tags {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.tag-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tag-icon:hover {
+    transform: scale(1.18) rotate(6deg);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--card-border);
+}
+
+/* ==========================================================================
+   TIMELINE (EXPERIENCIA & EDUCACIÓN)
+   ========================================================================== */
 .timeline {
     border-left: 2px solid var(--card-border);
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.timeline-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 20px;
 }
 
 .timeline-item .date {
@@ -341,8 +403,38 @@ nav {
     font-size: 1.1rem;
 }
 
+.timeline-school {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
 /* ==========================================================================
-   PIE DE PÁGINA / CONTACTOS (SEGUNDA FOTO)
+   ANIMACIONES INTERACTIVAS AL PASAR EL CURSOR (HOVER)
+   ========================================================================== */
+.interactive-paragraph {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hover-animate {
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s ease, 
+                border-color 0.3s ease;
+}
+
+.hover-animate:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.hover-animate:hover .interactive-paragraph {
+    color: var(--text-heading);
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA / CONTACTOS
    ========================================================================== */
 footer {
     background: var(--footer-bg);
