@@ -183,5 +183,29 @@
 <a href="https://wa.me/50242304991?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
 </a> 
+    <!-- SCRIPT PARA EL MODO OSCURO / CLARO -->
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('i');
+
+    // Cargar preferencia guardada
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    // Evento al hacer clic en el botón
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        
+        if (document.body.classList.contains('light-theme')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'light');
+        } else {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+</script> 
 </body>
 </html>
