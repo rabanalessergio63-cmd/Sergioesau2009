@@ -185,6 +185,7 @@ section {
 /* --- HERO: DISPONIBLE PARA PROYECTOS AL LADO DE LA IMAGEN --- */
 .hero {
     padding-top: 30px;
+    padding-left: 25px;
 }
 
 /* Layout horizontal para la foto y el badge */
