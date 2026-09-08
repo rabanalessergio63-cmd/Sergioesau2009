@@ -35,18 +35,18 @@
     <section class="hero" id="sobre-mi">
         <div class="container" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 40px; margin: 0;">
             
-            <!-- Foto de perfil y badge ordenados a la izquierda -->
-            <div class="hero-header-layout" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                <div class="profile-photo-container">
+            <!-- Foto de perfil y badge verde alineados correctamente -->
+            <div class="hero-header-layout" style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; position: relative;">
+                <div class="profile-photo-container" style="position: relative; z-index: 1;">
                     <img src="foto-perfil.png" alt="Foto de perfil de Sergio Esaú Rabanales" class="profile-photo">
                 </div>  
-                <div class="status-badge">
+                <div class="status-badge" style="display: inline-flex; align-items: center; gap: 8px; position: relative; z-index: 2; margin-left: 0;">
                     <span class="status-dot"></span>
                     Disponible para proyectos y prácticas
                 </div>
             </div> 
 
-            <!-- Bloque de texto alineado a la izquierda -->
+            <!-- Bloque de texto -->
             <div style="width: 100%; max-width: 800px;">
                 <h1 style="margin-bottom: 10px;">Hola, soy <span class="gradient-text">Sergio Esaú Rabanales</span></h1>
                 <h2 style="margin-bottom: 15px;">Desarrollador Web Junior / Bachiller en Computación</h2>
@@ -54,16 +54,19 @@
                     Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.
                 </p>
                 
-                <!-- Botones corregidos con íconos bien integrados -->
+                <!-- Botones con íconos alineados a la izquierda ANTES de cada texto -->
                 <div class="cta-buttons" style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="#contacto" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-envelope"></i> Contáctame
+                    <a href="#contacto" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px;">
+                        <i class="fa-solid fa-envelope" style="position: static; transform: none; font-size: 1rem;"></i>
+                        <span>Contáctame</span>
                     </a>
-                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf" style="display: inline-flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-file-pdf"></i> Descargar CV (PDF)
+                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px;">
+                        <i class="fa-solid fa-file-pdf" style="position: static; transform: none; font-size: 1rem;"></i>
+                        <span>Descargar CV (PDF)</span>
                     </a>
-                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
-                        <i class="fa-brands fa-github"></i> GitHub
+                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px;">
+                        <i class="fa-brands fa-github" style="position: static; transform: none; font-size: 1rem;"></i>
+                        <span>GitHub</span>
                     </a>
                 </div>
             </div>
