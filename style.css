@@ -509,8 +509,12 @@ section {
     nav .container { padding: 10px 15px; }
     .nav-links { gap: 12px; font-size: 0.82rem; }
 }
-/* --- DESPLAZAR CONTENIDO HERO A LA DERECHA --- */
-.hero .container {
-    margin-left: 80px !important;
-    margin-right: auto !important;
+/* --- MOVER TODO EL TEXTO E IMAGEN A LA DERECHA --- */
+.hero *, 
+.hero-header-layout,
+.hero h1, 
+.hero h2, 
+.hero p, 
+.hero .cta-buttons {
+    transform: translateX(40px) !important;
 }
