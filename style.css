@@ -1,466 +1,410 @@
-/* --- FUENTES MODERNAS Y ELEGANTES --- */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
 
-/* --- VARIABLES DE COLOR (PALETA PURPLE DARK & GRADIENTES) --- */
-:root {
-    --bg-color: #0b0712;
-    --card-bg: rgba(23, 15, 38, 0.7);
-    --card-hover: rgba(35, 23, 58, 0.85);
-    --card-border: rgba(147, 51, 234, 0.15);
-    --border-highlight: #a855f7;
-    
-    --text-main: #94a3b8;
+/* ==========================================================================
+   VARIABLES DE TEMA (CLARO, OSCURO MORADO, AZUL PRO)
+   ========================================================================== */
+
+/* 1. TEMA OSCURO MORADO (Por defecto) */
+body.theme-purple {
+    --bg-main: #0b0712;
+    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.18) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(217, 70, 239, 0.12) 0%, transparent 40%);
+    --card-bg: rgba(23, 15, 38, 0.75);
+    --card-border: rgba(147, 51, 234, 0.25);
     --text-heading: #f8fafc;
-    
-    --purple-primary: #8b5cf6;
-    --purple-secondary: #d946ef;
-    --purple-dark: #4c1d95;
-    
+    --text-body: #94a3b8;
+    --accent: #a855f7;
     --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(217, 70, 239, 0.08) 0%, transparent 40%);
-    
-    --accent-green: #10b981;
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
-    
-    --radius-lg: 20px;
-    --radius-md: 12px;
-    --shadow-purple: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
+    --nav-bg: rgba(18, 10, 31, 0.85);
+    --footer-bg: #06040a;
 }
 
-/* --- TEMA CLARO (PURPLE LIGHT ELEGANTE) --- */
-body.light-theme {
-    --bg-color: #f8f5ff;
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --card-hover: #ffffff;
-    --card-border: rgba(139, 92, 246, 0.2);
-    --border-highlight: #7c3aed;
-    
-    --text-main: #475569;
+/* 2. TEMA CLARO */
+body.theme-light {
+    --bg-main: #f8fafc;
+    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 40%);
+    --card-bg: #ffffff;
+    --card-border: rgba(226, 232, 240, 0.8);
     --text-heading: #0f172a;
-    
-    --purple-primary: #7c3aed;
-    --accent-gradient: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
-    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(219, 39, 119, 0.05) 0%, transparent 40%);
-    --shadow-purple: 0 10px 25px -5px rgba(124, 58, 237, 0.15);
+    --text-body: #475569;
+    --accent: #2563eb;
+    --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --footer-bg: #f1f5f9;
 }
 
+/* 3. TEMA AZUL PRO */
+body.theme-blue {
+    --bg-main: #030712;
+    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+    --card-bg: rgba(15, 23, 42, 0.75);
+    --card-border: rgba(56, 189, 248, 0.2);
+    --text-heading: #f0f9ff;
+    --text-body: #94a3b8;
+    --accent: #38bdf8;
+    --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+    --nav-bg: rgba(15, 23, 42, 0.85);
+    --footer-bg: #020617;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-main);
     background-image: var(--bg-gradient);
     background-attachment: fixed;
-    color: var(--text-main);
-    font-family: var(--font-body);
-    line-height: 1.7;
-    padding-bottom: 60px;
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-a {
-    color: var(--purple-primary);
-    text-decoration: none;
-    transition: all 0.3s ease;
+    color: var(--text-body);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 .container {
-    max-width: 950px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 24px;
 }
 
-/* --- NAVEGACIÓN --- */
+/* ==========================================================================
+   NAVEGACIÓN (ÁREA ROJA Y VERDE)
+   ========================================================================== */
 nav {
     position: sticky;
     top: 20px;
-    z-index: 100;
-    margin-bottom: 30px;
+    z-index: 1000;
+    margin-bottom: 40px;
 }
 
-nav .container {
+.nav-layout {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    justify-content: space-between;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--card-border);
     border-radius: 50px;
     padding: 10px 24px;
-    box-shadow: var(--shadow-purple);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-    font-family: var(--font-heading);
+    font-family: 'Outfit', sans-serif;
     font-weight: 800;
     font-size: 1.2rem;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     list-style: none;
-    align-items: center;
-    margin-left: auto;
 }
 
 .nav-links a {
-    color: var(--text-main);
-    font-weight: 600;
+    color: var(--text-body);
+    text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a .num {
+    color: var(--accent);
+    font-size: 0.8rem;
+    margin-right: 2px;
 }
 
 .nav-links a:hover {
     color: var(--text-heading);
 }
 
-/* --- BOTÓN TEMA --- */
-.theme-btn {
-    background: var(--card-hover);
+/* SELECTOR DE TEMAS (ÁREA VERDE Y TERCERA FOTO) */
+.theme-picker-wrapper {
+    position: relative;
+}
+
+.theme-toggle-btn {
+    background: var(--card-bg);
     border: 1px solid var(--card-border);
     color: var(--text-heading);
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    margin-left: 10px;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.theme-btn:hover {
-    border-color: var(--border-highlight);
-    transform: rotate(180deg) scale(1.1);
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-}
-
-/* --- TÍTULOS DE SECCIÓN --- */
-section {
-    padding: 55px 0;
-}
-
-.section-title {
-    font-family: var(--font-heading);
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--text-heading);
-    margin-bottom: 30px;
-    letter-spacing: -0.5px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-.section-title::before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 24px;
-    background: var(--accent-gradient);
-    border-radius: 4px;
+.theme-toggle-btn:hover {
+    transform: scale(1.08);
 }
 
-/* --- HERO / SOBRE MÍ --- */
-.hero {
-    padding-top: 30px;
+.theme-dropdown {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    padding: 16px;
+    width: 260px;
+    display: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: 1001;
 }
 
-.hero-content {
-    max-width: 800px;
+.theme-dropdown.show {
+    display: block;
 }
 
-.hero h1 {
-    font-family: var(--font-heading);
-    font-size: 3.2rem;
+.theme-title {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-body);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.theme-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.theme-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--card-border);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text-heading);
+    transition: all 0.2s ease;
+}
+
+.theme-card:hover, .theme-card.active {
+    border-color: var(--accent);
+    background: rgba(255,255,255,0.08);
+}
+
+.dots {
+    display: flex;
+    gap: 4px;
+}
+
+.dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.light-preview .d1 { background: #2563eb; }
+.light-preview .d2 { background: #7c3aed; }
+.light-preview .d3 { background: #f1f5f9; }
+
+.purple-preview .d1 { background: #a855f7; }
+.purple-preview .d2 { background: #ec4899; }
+.purple-preview .d3 { background: #0b0712; }
+
+.blue-preview .d1 { background: #38bdf8; }
+.blue-preview .d2 { background: #3b82f6; }
+.blue-preview .d3 { background: #030712; }
+
+/* ==========================================================================
+   SECCIÓN SOBRE MÍ (ÁREA AMARILLA)
+   ========================================================================== */
+.hero-section {
+    padding: 40px 0 60px 0;
+}
+
+.subtitle-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
     font-weight: 800;
     color: var(--text-heading);
-    letter-spacing: -1.5px;
     line-height: 1.1;
     margin-bottom: 12px;
 }
 
-.gradient-text {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero h2 {
+.hero-subtitle {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--text-heading);
     opacity: 0.9;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
-.hero-bio {
+.hero-description {
     font-size: 1.05rem;
-    margin-bottom: 25px;
-    color: var(--text-main);
+    max-width: 750px;
+    color: var(--text-body);
 }
 
-/* --- BOTONES DE ACCIÓN (CTA RECONSTRUIDOS) --- */
-.cta-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-    width: 100%;
+/* ==========================================================================
+   BLOQUES Y GRILLAS
+   ========================================================================== */
+.section-block {
+    padding: 40px 0;
 }
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    height: 46px;
-    padding: 0 22px;
-    border-radius: var(--radius-md);
-    font-size: 0.92rem;
-    font-weight: 600;
-    white-space: nowrap;
-    box-sizing: border-box;
-    text-decoration: none;
-    line-height: 1;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-heading);
+    margin-bottom: 24px;
 }
 
-.btn i {
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.btn-primary {
-    background: var(--accent-gradient);
-    color: #ffffff !important;
-    box-shadow: var(--shadow-purple);
-    border: none;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px -3px rgba(168, 85, 247, 0.5);
-}
-
-.btn-secondary {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-heading) !important;
-    backdrop-filter: blur(8px);
-}
-
-.btn-secondary:hover {
-    border-color: var(--border-highlight);
-    color: var(--purple-primary) !important;
-    transform: translateY(-3px);
-    background: var(--card-hover);
-}
-
-/* --- HABILIDADES EN TARJETAS --- */
-.skills-grid {
+.skills-grid, .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
-.skill-category {
+.skill-card, .project-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-    padding: 25px;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(8px);
 }
 
-.skill-category:hover {
-    border-color: var(--border-highlight);
-    transform: translateY(-4px);
-}
-
-.skill-category h3 {
-    font-family: var(--font-heading);
+.skill-card h3, .project-card h3 {
     color: var(--text-heading);
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
-.skill-list {
+.skill-card ul {
     list-style: none;
 }
 
-.skill-list li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.skill-card li {
+    margin-bottom: 8px;
     font-size: 0.95rem;
 }
 
-.skill-list li::before {
-    content: "✦";
-    color: var(--purple-primary);
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
 }
 
-/* --- PROYECTOS --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 25px;
+.tags span {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border);
+    color: var(--accent);
 }
 
-.project-card {
+.timeline {
+    border-left: 2px solid var(--card-border);
+    padding-left: 20px;
+}
+
+.timeline-item .date {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.timeline-item h3 {
+    color: var(--text-heading);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA / CONTACTOS (SEGUNDA FOTO)
+   ========================================================================== */
+footer {
+    background: var(--footer-bg);
+    border-top: 1px solid var(--card-border);
+    padding: 30px 0;
+    margin-top: 60px;
+    transition: background 0.4s ease;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    color: var(--text-body);
+}
+
+.footer-contacts {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-heading {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-heading);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--border-highlight);
-    box-shadow: var(--shadow-purple);
+.contact-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
-.project-title {
-    font-family: var(--font-heading);
-    color: var(--text-heading);
-    font-size: 1.35rem;
-    margin-bottom: 10px;
-}
+.contact-link.whatsapp i { color: #25D366; }
+.contact-link.github i { color: var(--text-heading); }
+.contact-link.email i { color: var(--accent); }
 
-.project-desc {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-
-.project-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.tag {
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.25);
-    color: var(--purple-primary);
-    font-weight: 600;
-    font-size: 0.78rem;
-    padding: 4px 12px;
-    border-radius: 20px;
-}
-
-/* --- EXPERIENCIA Y EDUCACIÓN (TIMELINE) --- */
-.timeline {
-    border-left: 2px solid var(--card-border);
-    padding-left: 25px;
-    margin-left: 10px;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 35px;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -32px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--purple-primary);
-    box-shadow: 0 0 10px var(--purple-primary);
-}
-
-.timeline-date {
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--purple-primary);
-    margin-bottom: 4px;
-}
-
-.timeline-title {
-    font-family: var(--font-heading);
-    color: var(--text-heading);
-    font-size: 1.25rem;
-}
-
-.timeline-subtitle {
-    color: var(--text-main);
-    font-size: 0.95rem;
-}
-
-/* --- CONTACTO --- */
-.contact-box {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-    padding: 50px 25px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-purple);
-}
-
-.contact-box p {
-    max-width: 500px;
-    margin: 0 auto 30px auto;
-}
-
-/* --- BOTÓN FLOTANTE WHATSAPP --- */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: #ffffff !important;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1) rotate(8deg);
-}
-
-/* --- RESPONSIVO --- */
-@media (max-width: 650px) {
-    .hero h1 { font-size: 2.3rem; }
-    nav .container { padding: 10px 15px; }
-    .nav-links { gap: 12px; font-size: 0.82rem; }
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-title { font-size: 2.5rem; }
+    .footer-content { flex-direction: column; align-items: flex-start; }
 }
