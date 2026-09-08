@@ -31,11 +31,12 @@
 </ul>
         </div>
     </nav>
-<!-- SECCIÓN HERO / SOBRE MÍ -->
+<!-- SECCIÓN HERO / SOBRE MÍ CON LAYOUT A LA IZQUIERDA -->
     <section class="hero" id="sobre-mi">
-        <div class="container">
+        <div class="container" style="padding-left: 30px; margin-left: 0;">
+            
             <!-- Layout para foto de perfil y badge -->
-            <div class="hero-header-layout">
+            <div class="hero-header-layout" style="margin-left: 0;">
                 <div class="profile-photo-container">
                     <img src="foto-perfil.png" alt="Foto de perfil de Sergio Esaú Rabanales" class="profile-photo">
                 </div>  
@@ -45,21 +46,28 @@
                 </div>
             </div> 
 
-            <!-- Bloque de texto con margen -->
-            <div style="padding-left: 35px;">
+            <!-- Bloque de texto -->
+            <div class="hero-bio-container" style="margin-left: 0;">
                 <h1>Hola, soy <span class="gradient-text">Sergio Esaú Rabanales</span></h1>
                 <h2>Desarrollador Web Junior / Bachiller en Computación</h2>
                 <p class="hero-bio">
                     Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.
                 </p>
-                <div class="cta-buttons">
-                    <a href="#contacto" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Contáctame</a>
-                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf"><i class="fa-solid fa-file-pdf"></i> Descargar CV (PDF)</a>
-                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <div class="cta-buttons" style="margin-left: 0; justify-content: flex-start;">
+                    <a href="#contacto" class="btn btn-primary">
+                        <i class="fa-solid fa-envelope"></i> Contáctame
+                    </a>
+                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf">
+                        <i class="fa-solid fa-file-pdf"></i> Descargar CV (PDF)
+                    </a>
+                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
                 </div>
             </div>
-    </section>
 
+        </div>
+    </section>
         <!-- HABILIDADES TÉCNICAS -->
         <section id="habilidades">
             <h2 class="section-title">Habilidades Técnicas</h2>
