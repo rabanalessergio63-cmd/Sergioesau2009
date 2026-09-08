@@ -325,7 +325,7 @@ nav {
 }
 
 .project-card-link {
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
     display: block;
 }
@@ -341,10 +341,6 @@ nav {
     color: var(--accent);
     font-size: 1.1rem;
     transition: transform 0.3s ease;
-}
-
-.project-card-link:hover .external-icon {
-    transform: translate(3px, -3px);
 }
 
 /* ETIQUETAS CON ÍCONOS */
@@ -410,27 +406,51 @@ nav {
 }
 
 /* ==========================================================================
-   ANIMACIONES INTERACTIVAS AL PASAR EL CURSOR (HOVER)
+   ANIMACIONES INTERACTIVAS Y RESALTADO DINÁMICO AL PASAR EL CURSOR (HOVER)
    ========================================================================== */
 .interactive-paragraph {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.skill-card, 
+.project-card, 
+.timeline-item, 
 .hover-animate {
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
                 box-shadow 0.3s ease, 
-                border-color 0.3s ease;
+                border-color 0.3s ease,
+                background 0.3s ease;
 }
 
+/* Resaltado con el color del tema activo */
+.skill-card:hover, 
+.project-card:hover, 
+.timeline-item:hover,
 .hover-animate:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 0 15px -3px var(--accent);
 }
 
-.hover-animate:hover .interactive-paragraph {
+.skill-card:hover h3, 
+.project-card:hover h3, 
+.timeline-item:hover h3,
+.hover-animate:hover h3 {
+    color: var(--accent);
+    transition: color 0.3s ease;
+}
+
+.hover-animate:hover .interactive-paragraph,
+.skill-card:hover p,
+.project-card:hover p,
+.timeline-item:hover p {
     color: var(--text-heading);
-    transform: translateX(4px);
+}
+
+.project-card-link:hover .external-icon {
+    transform: translate(4px, -4px);
+    color: var(--accent);
 }
 
 /* ==========================================================================
