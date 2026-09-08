@@ -11,7 +11,7 @@
     <!-- Vinculo con el archivo CSS separado -->
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome para Íconos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -19,57 +19,54 @@
     <nav>
         <div class="container">  
             <ul class="nav-links">
-    <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#habilidades">Habilidades</a></li>
-    <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#experiencia">Experiencia</a></li>
-    <li>
-        <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
-            <i class="fa-solid fa-moon"></i>
-        </button>
-    </li>
-</ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
         </div>
     </nav>
-<!-- SECCIÓN HERO / SOBRE MÍ -->
+
+    <!-- SECCIÓN HERO / SOBRE MÍ -->
     <section class="hero" id="sobre-mi">
-        <div class="container" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 40px; margin: 0;">
+        <div class="container">
             
+            <!-- Foto y Badge alineados -->
             <div class="hero-header-layout">
-    <div class="profile-photo-container">
-        <img src="foto-perfil.png" alt="Foto de perfil de Sergio Esaú Rabanales" class="profile-photo">
-    </div>
-    <div class="status-badge">
-        <span class="status-dot"></span>
-        Disponible para proyectos y prácticas
-    </div>
-</div>
-                <div class="status-badge" style="display: inline-flex; align-items: center; gap: 8px; position: relative; z-index: 2; margin-left: 0;">
+                <div class="profile-photo-container">
+                    <img src="foto-perfil.png" alt="Foto de perfil de Sergio Esaú Rabanales" class="profile-photo">
+                </div>
+                <div class="status-badge">
                     <span class="status-dot"></span>
                     Disponible para proyectos y prácticas
                 </div>
-            </div> 
+            </div>
 
             <!-- Bloque de texto -->
-            <div style="width: 100%; max-width: 800px;">
-                <h1 style="margin-bottom: 10px;">Hola, soy <span class="gradient-text">Sergio Esaú Rabanales</span></h1>
-                <h2 style="margin-bottom: 15px;">Desarrollador Web Junior / Bachiller en Computación</h2>
-                <p class="hero-bio" style="margin-bottom: 25px;">
+            <div class="hero-content">
+                <h1>Hola, soy <span class="gradient-text">Sergio Esaú Rabanales</span></h1>
+                <h2>Desarrollador Web Junior / Bachiller en Computación</h2>
+                <p class="hero-bio">
                     Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.
                 </p>
                 
-                <!-- Botones con íconos alineados a la izquierda ANTES de cada texto -->
-                <div class="cta-buttons" style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="#contacto" class="btn btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px;">
-                        <i class="fa-solid fa-envelope" style="position: static; transform: none; font-size: 1rem;"></i>
+                <!-- Botones de Acción -->
+                <div class="cta-buttons">
+                    <a href="#contacto" class="btn btn-primary">
+                        <i class="fa-solid fa-envelope"></i>
                         <span>Contáctame</span>
                     </a>
-                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px;">
-                        <i class="fa-solid fa-file-pdf" style="position: static; transform: none; font-size: 1rem;"></i>
+                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
                         <span>Descargar CV (PDF)</span>
                     </a>
-                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px;">
-                        <i class="fa-brands fa-github" style="position: static; transform: none; font-size: 1rem;"></i>
+                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank">
+                        <i class="fa-brands fa-github"></i>
                         <span>GitHub</span>
                     </a>
                 </div>
@@ -77,154 +74,155 @@
 
         </div>
     </section>
-        <!-- HABILIDADES TÉCNICAS -->
-        <section id="habilidades">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul class="skill-list">
-                        <li>HTML5 / CSS3</li>
-                        <li>JavaScript</li>
-                        <li>Excel</li>
-                        <li>Diseño Web Responsivo</li>
-                    </ul>
-                </div>
 
-                <div class="skill-category">
-                    <h3>Backend & Lógica</h3>
-                    <ul class="skill-list">
-                        <li>Node.js / Express</li>
-                        <li>Python</li>
-                        <li>Lógica de Programación</li>
-                        <li>REST APIs</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Herramientas & Oficina</h3>
-                    <ul class="skill-list">
-                        <li>Git / GitHub</li>
-                        <li>VS Code</li>
-                        <li>Microsoft Excel / Word</li>
-                        <li>Análisis de Datos / Reportes</li>
-                    </ul>
-                </div>
-
+    <!-- HABILIDADES TÉCNICAS -->
+    <section id="habilidades">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul class="skill-list">
+                    <li>HTML5 / CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Excel</li>
+                    <li>Diseño Web Responsivo</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- PROYECTOS -->
-        <section id="proyectos">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <div class="projects-grid">
+            <div class="skill-category">
+                <h3>Backend & Lógica</h3>
+                <ul class="skill-list">
+                    <li>Node.js / Express</li>
+                    <li>Python</li>
+                    <li>Lógica de Programación</li>
+                    <li>REST APIs</li>
+                </ul>
+            </div>
 
-                <!-- Proyecto 1 -->
-                <div class="project-card">
-                    <div>
-                        <h3 class="project-title">Sistema de marcaciones de registros de horario</h3>
-                        <p class="project-desc">
-                            Sirve para registrar el horario de entrada y salida, y un administrador pueda ver los registros de los usuarios que han marcado.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">FIREBASE</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://andre303q.github.io/rgpracticas/index.html" target="_blank" rel="noopener noreferrer">Demo en Vivo</a>
-                        </div>
-                    </div>
+            <div class="skill-category">
+                <h3>Herramientas & Oficina</h3>
+                <ul class="skill-list">
+                    <li>Git / GitHub</li>
+                    <li>VS Code</li>
+                    <li>Microsoft Excel / Word</li>
+                    <li>Análisis de Datos / Reportes</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="projects-grid">
+
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <div>
+                    <h3 class="project-title">Sistema de marcaciones de registros de horario</h3>
+                    <p class="project-desc">
+                        Sirve para registrar el horario de entrada y salida, y un administrador pueda ver los registros de los usuarios que han marcado.
+                    </p>
                 </div>
-
-                <!-- Proyecto 2 -->
-                <div class="project-card">
-                    <div>
-                        <h3 class="project-title">Página web sobre comida típica de Guatemala</h3>
-                        <p class="project-desc">
-                            Interfaz web para ver la comida típica en Guatemala y poder ver su descripción y su preparación.
-                        </p>
+                <div>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">FIREBASE</span>
                     </div>
-                    <div>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Fetch API</span>
-                            <span class="tag">CSS Grid</span>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://andre303q.github.io/rgpracticas/index.html" target="_blank" rel="noopener noreferrer">Demo en Vivo</a>
                     </div>
                 </div>
-
             </div>
-        </section>
 
-        <!-- EDUCACIÓN Y EXPERIENCIA -->
-        <section id="experiencia">
-            <h2 class="section-title">Educación</h2>
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2026 - Presente</div>
-                    <h3 class="timeline-title">Práctica Supervisada & Proyectos Web</h3>
-                    <div class="timeline-subtitle">Liceo Mixto Pinulteco</div>
-                    <p>Desarrollo y aplicación de conocimientos en computación, lógica de sistemas, mantenimiento técnico y elaboración de proyectos de software.</p>
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <div>
+                    <h3 class="project-title">Página web sobre comida típica de Guatemala</h3>
+                    <p class="project-desc">
+                        Interfaz web para ver la comida típica en Guatemala y poder ver su descripción y su preparación.
+                    </p>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 - 2026</div>
-                    <h3 class="timeline-title">Bachillerato en Ciencias y Letras con Orientación en Computación</h3>
-                    <div class="timeline-subtitle">Escuela Urbana Mixta de Música Joaquín Orellana - Colegio San Juan Pablo II - Colegio Mixto Tercer Milenio - Colegio Bautista Shalom - Liceo Mixto Pinulteco</div>
-                    <p>Formación académica enfocada en lógica de programación, bases de datos, herramientas ofimáticas, arquitectura de computadoras y soporte técnico.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CONTACTO -->
-        <section id="contacto">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-box">
-                <h3 style="color: var(--text-heading); margin-bottom: 12px; font-size: 1.5rem;">¿Tienes una oportunidad o proyecto en mente?</h3>
-                <p>Actualmente estoy en búsqueda de oportunidades para iniciar mi carrera como desarrollador web junior o realizar prácticas profesionales.</p>
-                
-                <a href="mailto:rabanalessergio63@gmail.com" class="btn btn-primary" style="margin-bottom: 25px;">Enviar Correo Electrónico</a>
-                
-                <div style="margin-top: 10px; font-size: 0.95rem;">
-                    <span>GitHub: <a href="https://github.com/rabanalessergio63-cmd" target="_blank">rabanalessergio63-cmd</a></span>
+                <div>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Fetch API</span>
+                        <span class="tag">CSS Grid</span>
+                    </div>
                 </div>
             </div>
-        </section>
 
-    </div>
-<!-- BOTÓN FLOTANTE DE WHATSAPP -->
-<a href="https://wa.me/50242304991?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-</a> 
+        </div>
+    </section>
+
+    <!-- EDUCACIÓN Y EXPERIENCIA -->
+    <section id="experiencia">
+        <h2 class="section-title">Educación</h2>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026 - Presente</div>
+                <h3 class="timeline-title">Práctica Supervisada & Proyectos Web</h3>
+                <div class="timeline-subtitle">Liceo Mixto Pinulteco</div>
+                <p>Desarrollo y aplicación de conocimientos en computación, lógica de sistemas, mantenimiento técnico y elaboración de proyectos de software.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - 2026</div>
+                <h3 class="timeline-title">Bachillerato en Ciencias y Letras con Orientación en Computación</h3>
+                <div class="timeline-subtitle">Escuela Urbana Mixta de Música Joaquín Orellana - Colegio San Juan Pablo II - Colegio Mixto Tercer Milenio - Colegio Bautista Shalom - Liceo Mixto Pinulteco</div>
+                <p>Formación académica enfocada en lógica de programación, bases de datos, herramientas ofimáticas, arquitectura de computadoras y soporte técnico.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-box">
+            <h3 style="color: var(--text-heading); margin-bottom: 12px; font-size: 1.5rem;">¿Tienes una oportunidad o proyecto en mente?</h3>
+            <p>Actualmente estoy en búsqueda de oportunidades para iniciar mi carrera como desarrollador web junior o realizar prácticas profesionales.</p>
+            
+            <a href="mailto:rabanalessergio63@gmail.com" class="btn btn-primary" style="margin-bottom: 25px;">Enviar Correo Electrónico</a>
+            
+            <div style="margin-top: 10px; font-size: 0.95rem;">
+                <span>GitHub: <a href="https://github.com/rabanalessergio63-cmd" target="_blank">rabanalessergio63-cmd</a></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/50242304991?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a> 
+
     <!-- SCRIPT PARA EL MODO OSCURO / CLARO -->
-<script>
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
 
-    // Cargar preferencia guardada
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-theme');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-    }
-
-    // Evento al hacer clic en el botón
-    themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-theme');
-        
-        if (document.body.classList.contains('light-theme')) {
+        // Cargar preferencia guardada
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-theme');
             themeIcon.classList.replace('fa-moon', 'fa-sun');
-            localStorage.setItem('theme', 'light');
-        } else {
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
-            localStorage.setItem('theme', 'dark');
         }
-    });
-</script> 
+
+        // Evento al hacer clic en el botón
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script> 
 </body>
 </html>
