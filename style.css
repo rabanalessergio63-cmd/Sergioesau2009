@@ -514,6 +514,17 @@ footer {
 .contact-link.github i { color: var(--text-heading); }
 .contact-link.email i { color: var(--accent); }
 
+/* ESTILOS LINKEDIN Y DESCARGA CV */
+.contact-link.linkedin i {
+    color: #0a66c2;
+}
+
+.cv-link i {
+    font-size: 0.75rem;
+    margin-left: 3px;
+    color: var(--accent);
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
     .nav-links { display: none; }
