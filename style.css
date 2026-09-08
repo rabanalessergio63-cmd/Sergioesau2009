@@ -511,6 +511,6 @@ section {
 }
 /* --- DESPLAZAR CONTENIDO HERO A LA DERECHA --- */
 .hero .container {
-    margin-left: 60px !important;
+    margin-left: 80px !important;
     margin-right: auto !important;
 }
