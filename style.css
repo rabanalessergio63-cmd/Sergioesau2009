@@ -509,7 +509,8 @@ section {
     nav .container { padding: 10px 15px; }
     .nav-links { gap: 12px; font-size: 0.82rem; }
 }
-/* --- DESPLAZAR TODO EL BLOQUE HERO A LA DERECHA --- */
-.hero {
-    padding-left: 80px !important; /* Mueve todo el conjunto hacia la derecha */
+/* --- DESPLAZAR CONTENIDO HERO A LA DERECHA --- */
+.hero .container {
+    margin-left: 60px !important;
+    margin-right: auto !important;
 }
