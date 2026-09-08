@@ -31,12 +31,12 @@
 </ul>
         </div>
     </nav>
-<!-- SECCIÓN HERO / SOBRE MÍ CON LAYOUT A LA IZQUIERDA -->
+<!-- SECCIÓN HERO / SOBRE MÍ -->
     <section class="hero" id="sobre-mi">
-        <div class="container" style="padding-left: 30px; margin-left: 0;">
+        <div class="container" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-left: 40px; margin: 0;">
             
-            <!-- Layout para foto de perfil y badge -->
-            <div class="hero-header-layout" style="margin-left: 0;">
+            <!-- Foto de perfil y badge ordenados a la izquierda -->
+            <div class="hero-header-layout" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
                 <div class="profile-photo-container">
                     <img src="foto-perfil.png" alt="Foto de perfil de Sergio Esaú Rabanales" class="profile-photo">
                 </div>  
@@ -46,21 +46,23 @@
                 </div>
             </div> 
 
-            <!-- Bloque de texto -->
-            <div class="hero-bio-container" style="margin-left: 0;">
-                <h1>Hola, soy <span class="gradient-text">Sergio Esaú Rabanales</span></h1>
-                <h2>Desarrollador Web Junior / Bachiller en Computación</h2>
-                <p class="hero-bio">
+            <!-- Bloque de texto alineado a la izquierda -->
+            <div style="width: 100%; max-width: 800px;">
+                <h1 style="margin-bottom: 10px;">Hola, soy <span class="gradient-text">Sergio Esaú Rabanales</span></h1>
+                <h2 style="margin-bottom: 15px;">Desarrollador Web Junior / Bachiller en Computación</h2>
+                <p class="hero-bio" style="margin-bottom: 25px;">
                     Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.
                 </p>
-                <div class="cta-buttons" style="margin-left: 0; justify-content: flex-start;">
-                    <a href="#contacto" class="btn btn-primary">
+                
+                <!-- Botones corregidos con íconos bien integrados -->
+                <div class="cta-buttons" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="#contacto" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
                         <i class="fa-solid fa-envelope"></i> Contáctame
                     </a>
-                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf">
+                    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf" style="display: inline-flex; align-items: center; gap: 8px;">
                         <i class="fa-solid fa-file-pdf"></i> Descargar CV (PDF)
                     </a>
-                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank">
+                    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
                         <i class="fa-brands fa-github"></i> GitHub
                     </a>
                 </div>
