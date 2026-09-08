@@ -15,15 +15,17 @@
         <div class="container nav-layout">
             <div class="logo">SR</div>
             
-            <!-- ÁREA ROJA: Menú de navegación -->
+            <!-- MENÚ DE NAVEGACIÓN -->
             <ul class="nav-links">
                 <li><a href="#sobre-mi"><span class="num">01</span> Sobre mí</a></li>
                 <li><a href="#habilidades"><span class="num">02</span> Habilidades</a></li>
                 <li><a href="#proyectos"><span class="num">03</span> Proyectos</a></li>
                 <li><a href="#experiencia"><span class="num">04</span> Experiencia</a></li>
+                <!-- APARTADO CV PARA DESCARGAR EL PDF -->
+                <li><a href="CV_Sergio_Rabanales.pdf" download="CV_Sergio_Rabanales.pdf" class="cv-link"><span class="num">05</span> CV <i class="fa-solid fa-download"></i></a></li>
             </ul>
 
-            <!-- ÁREA VERDE: Selector de Temas -->
+            <!-- SELECTOR DE TEMAS -->
             <div class="theme-picker-wrapper">
                 <button class="theme-toggle-btn" id="themeBtn" aria-label="Cambiar tema">
                     <i class="fa-solid fa-palette"></i>
@@ -50,7 +52,7 @@
     </nav>
 
     <main class="container">
-        <!-- ÁREA AMARILLA: SECCIÓN SOBRE MÍ -->
+        <!-- SECCIÓN SOBRE MÍ -->
         <section id="sobre-mi" class="hero-section">
             <span class="subtitle-tag animate-fade-in">HOLA, MI NOMBRE ES</span>
             <h1 class="hero-title animate-fade-in">Sergio Esaú Rabanales</h1>
@@ -91,11 +93,10 @@
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS (SOLO 1 PROYECTO TIPO BOTÓN CON ÍCONOS) -->
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="section-block">
             <h2 class="section-title">Proyectos</h2>
             <div class="projects-grid single-project">
-                <!-- REEMPLAZA EL HREF POR LA URL REAL DE TU PÁGINA WEB DE REGISTROS -->
                 <a href="https://andre303q.github.io/rgpracticas/" target="_blank" class="project-card-link animate-fade-in">
                     <div class="project-card hover-animate">
                         <div class="project-header">
@@ -105,7 +106,6 @@
                         <p class="interactive-paragraph">
                             Plataforma web desarrollada para la gestión, control y marcaje de asistencia de estudiantes practicantes.
                         </p>
-                        <!-- ETIQUETAS CON ÍCONOS -->
                         <div class="tags">
                             <span class="tag-icon" title="HTML5"><i class="fa-brands fa-html5"></i></span>
                             <span class="tag-icon" title="CSS3"><i class="fa-brands fa-css3-alt"></i></span>
@@ -116,7 +116,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN EXPERIENCIA Y EDUCACIÓN COMPLETA -->
+        <!-- SECCIÓN EXPERIENCIA Y EDUCACIÓN -->
         <section id="experiencia" class="section-block">
             <h2 class="section-title">Experiencia & Educación</h2>
             <div class="timeline">
@@ -153,6 +153,12 @@
                 <!-- WHATSAPP -->
                 <a href="https://wa.me/50242304991" target="_blank" class="contact-link whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+
+                <!-- LINKEDIN (NUEVO) -->
+                <!-- REEMPLAZA EL HREF CON TU ENLACE REAL DE LINKEDIN SI ES DIFERENTE -->
+               <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-link linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
 
                 <!-- GITHUB -->
@@ -194,7 +200,6 @@
             localStorage.setItem('preferred-theme', themeName);
         }
 
-        // Cargar tema guardado si existe
         const savedTheme = localStorage.getItem('preferred-theme');
         if (savedTheme) {
             setTheme(savedTheme);
