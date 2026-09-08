@@ -1055,3 +1055,81 @@ section {
 .hero .cta-buttons {
     transform: translateX(60px) !important;
 }
+/* --- FIX FINAL: FOTO, BADGE Y BOTONES --- */
+
+/* 1. Header de Foto y Badge alineados horizontalmente */
+.hero-header-layout {
+    display: flex !important;
+    align-items: center !important;
+    gap: 18px !important;
+    margin-bottom: 25px !important;
+    position: relative !important;
+}
+
+.profile-photo-container {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.profile-photo {
+    width: 130px !important;
+    height: 130px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.status-badge {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    white-space: nowrap !important;
+    background: rgba(16, 185, 129, 0.1) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    color: var(--accent-green) !important;
+    padding: 8px 18px !important;
+    border-radius: 30px !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+}
+
+/* 2. Botones inferiores alineados y del mismo tamaño */
+.cta-buttons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    flex-wrap: wrap !important;
+    margin-top: 25px !important;
+}
+
+.cta-buttons .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: var(--radius-md) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+}
+
+.cta-buttons .btn i {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    font-size: 1.1rem !important;
+    line-height: 1 !important;
+}
