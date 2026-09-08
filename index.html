@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Vinculo con el archivo CSS separado -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Íconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -17,11 +19,16 @@
     <nav>
         <div class="container">  
             <ul class="nav-links">
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-            </ul>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li>
+        <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </li>
+</ul>
         </div>
     </nav>
 
@@ -45,10 +52,10 @@
                 Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.
             </p>
             <div class="cta-buttons">
-                <a href="#contacto" class="btn btn-primary">Contáctame</a>
-                <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank">Descargar CV (PDF)</a>   
-                <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank">GitHub</a>
-            </div>
+    <a href="#contacto" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Contáctame</a>
+    <a href="cv-sergio-rabanales.pdf" class="btn btn-secondary" target="_blank" download="CV_Sergio_Rabanales.pdf"><i class="fa-solid fa-file-pdf"></i> Descargar CV (PDF)</a>
+    <a href="https://github.com/rabanalessergio63-cmd" class="btn btn-secondary" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+</div>
         </section>
 
         <!-- HABILIDADES TÉCNICAS -->
@@ -172,6 +179,9 @@
         </section>
 
     </div>
-
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/50242304991?text=Hola%20Sergio,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a> 
 </body>
 </html>
