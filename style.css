@@ -77,6 +77,7 @@ body.theme-purple::before {
         transform: rotate(1deg);
     }
 }
+
 /* 2. TEMA CLARO - SÓLIDO SIN ANIMACIÓN */
 body.theme-light {
     --bg-main: #f8fafc;
@@ -195,9 +196,9 @@ nav {
 
 .logo-img {
     width: 24px;        
-    height: 24px;          
-    border-radius: 50%;   
-    object-fit: cover;    
+    height: 24px;         
+    border-radius: 50%;    
+    object-fit: cover;     
     flex-shrink: 0;        
     border: 1px solid var(--card-border);
 }
@@ -722,6 +723,7 @@ footer {
         align-items: flex-start; 
     }
 }
+
 /* ==========================================================================
    CURSOR PERSONALIZADO DINÁMICO (Dependiente del Tema)
    ========================================================================== */
