@@ -122,6 +122,11 @@
             <p class="hero-description interactive-paragraph animate-fade-in" data-i18n="heroDesc">
                 Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes. 
             </p>
+
+             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB (EN EL ESPACIO SEÑALADO) -->
+             <div class="github-contrib-container">
+                 <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones">
+             </div>
         </section>
 
         <!-- SECCIÓN HABILIDADES -->
@@ -173,7 +178,7 @@
                             <span class="tag-icon" title="CSS3"><i class="fa-brands fa-css3-alt"></i></span>
                             <span class="tag-icon" title="JavaScript"><i class="fa-brands fa-js"></i></span>
                         </div>
-                    </div>
+                      </div>
                 </a>
             </div>
         </section>
@@ -243,6 +248,18 @@
             </button>
             <div class="pdf-container">
                 <iframe src="cv-sergio-rabanales.pdf" title="CV Sergio Rabanales"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL / VISOR EXPANDIDO DE CONTRIBUCIONES DE GITHUB -->
+    <div class="contrib-modal-overlay" id="contribModal">
+        <div class="contrib-modal-content">
+            <button class="contrib-close-btn" id="closeContribModal" aria-label="Cerrar visor">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="contrib-expanded-container">
+                <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions Expanded">
             </div>
         </div>
     </div>
@@ -345,6 +362,43 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeCvViewer();
+            }
+        });
+
+        // CONTROLADOR DEL MODAL DE CONTRIBUCIONES DE GITHUB
+        const openContribBtn = document.getElementById('openContribModal');
+        const contribModal = document.getElementById('contribModal');
+        const closeContribBtn = document.getElementById('closeContribModal');
+
+        if (openContribBtn && contribModal) {
+            openContribBtn.addEventListener('click', () => {
+                contribModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        function closeContribViewer() {
+            if (contribModal) {
+                contribModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        if (closeContribBtn) {
+            closeContribBtn.addEventListener('click', closeContribViewer);
+        }
+
+        if (contribModal) {
+            contribModal.addEventListener('click', (e) => {
+                if (e.target === contribModal) {
+                    closeContribViewer();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeContribViewer();
             }
         });
     </script>
