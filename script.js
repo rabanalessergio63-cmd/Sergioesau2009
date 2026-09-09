@@ -1,25 +1,3 @@
-// --- CURSOR PERSONALIZADO DINÁMICO ---
-const cursor = document.getElementById('cursor');
-if (cursor) {
-    window.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-    });
-}
-
-// --- MENÚ DESPLEGABLE DE CONTACTO (BARRA SUPERIOR) ---
-const navContactBtn = document.getElementById('navContactBtn');
-const navContactMenu = document.getElementById('navContactMenu');
-
-if (navContactBtn && navContactMenu) {
-    navContactBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navContactMenu.classList.toggle('show');
-        if (langDropdown) langDropdown.classList.remove('show');
-    });
-}
-
-// --- TRADUCCIONES Y SISTEMA DE IDIOMAS ---
 const translations = {
     es: {
         nav1: "Sobre mí",
@@ -102,18 +80,13 @@ const langBtn = document.getElementById('langBtn');
 const langDropdown = document.getElementById('langDropdown');
 const langCards = document.querySelectorAll('.lang-card');
 
-if (langBtn && langDropdown) {
-    langBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        langDropdown.classList.toggle('show');
-        if (navContactMenu) navContactMenu.classList.remove('show');
-    });
-}
+langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.classList.toggle('show');
+});
 
-// Cerrar menús al hacer clic fuera
 document.addEventListener('click', () => {
-    if (langDropdown) langDropdown.classList.remove('show');
-    if (navContactMenu) navContactMenu.classList.remove('show');
+    langDropdown.classList.remove('show');
 });
 
 langCards.forEach(card => {
@@ -130,6 +103,6 @@ langCards.forEach(card => {
             }
         });
 
-        if (langDropdown) langDropdown.classList.remove('show');
+        langDropdown.classList.remove('show');
     });
 });
