@@ -97,12 +97,27 @@ nav {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
     font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.logo span {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--card-border);
 }
 
 .nav-links {
@@ -541,6 +556,11 @@ footer {
 
     .logo {
         font-size: 1rem;
+    }
+
+    .logo-img {
+        width: 28px;
+        height: 28px;
     }
 
     .nav-links {
