@@ -722,3 +722,19 @@ footer {
         align-items: flex-start; 
     }
 }
+/* ==========================================================================
+   CURSOR PERSONALIZADO DINÁMICO (Dependiente del Tema)
+   ========================================================================== */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent); /* Toma el color de acento del tema activo */
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    z-index: 9999;
+    box-shadow: 0 0 12px var(--accent-glow); /* Toma el brillo correspondiente al tema */
+}
