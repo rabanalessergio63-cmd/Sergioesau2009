@@ -740,6 +740,7 @@ footer {
     z-index: 9999;
     box-shadow: 0 0 12px var(--accent-glow); /* Toma el brillo correspondiente al tema */
 }
+
 /* ==========================================================================
    MENÚ DESPLEGABLE DE CONTACTO (NAVEGACIÓN)
    ========================================================================== */
@@ -830,3 +831,90 @@ footer {
 .contact-card.linkedin i { color: #0a66c2; }
 .contact-card.github i { color: var(--text-heading); }
 .contact-card.email i { color: var(--accent); }
+
+/* ==========================================================================
+   VISOR / MODAL FLOTANTE DE CV (ADAPTATIVO AL TEMA)
+   ========================================================================== */
+.cv-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 7, 18, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    padding: 20px;
+}
+
+.cv-modal-overlay.active {
+    display: flex;
+}
+
+.cv-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 85vh;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: zoomInModal 0.3s ease forwards;
+}
+
+@keyframes zoomInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.pdf-container {
+    width: 100%;
+    height: 100%;
+    background: #525659;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.cv-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    z-index: 100000;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cv-close-btn:hover {
+    background: #ef4444;
+    transform: scale(1.1);
+}
