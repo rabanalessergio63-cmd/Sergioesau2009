@@ -34,7 +34,7 @@
             <!-- SELECTOR DE CONTACTOS, IDIOMAS Y TEMAS -->
             <div style="display: flex; align-items: center; gap: 8px;">
                 
-                <!-- SELECTOR DESPLEGABLE DE CONTACTOS (NUEVO) -->
+                <!-- SELECTOR DESPLEGABLE DE CONTACTOS (A LA PAR DE IDIOMA) -->
                 <div class="contact-picker-wrapper">
                     <button class="contact-toggle-btn" id="contactToggleBtn" aria-label="Contactos">
                         <i class="fa-solid fa-address-book"></i>
@@ -239,29 +239,46 @@
     <script>
         const themeBtn = document.getElementById('themeBtn');
         const themeDropdown = document.getElementById('themeDropdown');
-
-        themeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            themeDropdown.classList.toggle('show');
-        });
-
-        // Script para el nuevo desplegable de contactos
         const contactToggleBtn = document.getElementById('contactToggleBtn');
         const contactDropdown = document.getElementById('contactDropdown');
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
 
+        // Toggle Tema
+        if (themeBtn && themeDropdown) {
+            themeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (contactDropdown) contactDropdown.classList.remove('show');
+                if (langDropdown) langDropdown.classList.remove('show');
+                themeDropdown.classList.toggle('show');
+            });
+        }
+
+        // Toggle Contactos
         if (contactToggleBtn && contactDropdown) {
             contactToggleBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 if (themeDropdown) themeDropdown.classList.remove('show');
-                const langDropdown = document.getElementById('langDropdown');
                 if (langDropdown) langDropdown.classList.remove('show');
                 contactDropdown.classList.toggle('show');
             });
         }
 
+        // Toggle Idioma
+        if (langBtn && langDropdown) {
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (themeDropdown) themeDropdown.classList.remove('show');
+                if (contactDropdown) contactDropdown.classList.remove('show');
+                langDropdown.classList.toggle('show');
+            });
+        }
+
+        // Cerrar menús al hacer clic fuera
         document.addEventListener('click', () => {
-            themeDropdown.classList.remove('show');
+            if (themeDropdown) themeDropdown.classList.remove('show');
             if (contactDropdown) contactDropdown.classList.remove('show');
+            if (langDropdown) langDropdown.classList.remove('show');
         });
 
         function setTheme(themeName) {
