@@ -106,3 +106,13 @@ langCards.forEach(card => {
         langDropdown.classList.remove('show');
     });
 });
+/* ==========================================================================
+   MOVIMIENTO DEL CURSOR PERSONALIZADO
+   ========================================================================== */
+const cursor = document.getElementById('customCursor');
+
+document.addEventListener('mousemove', (e) => {
+    // Actualiza la posición X e Y del cursor según las coordenadas del mouse
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
