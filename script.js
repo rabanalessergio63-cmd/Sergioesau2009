@@ -80,13 +80,25 @@ const langBtn = document.getElementById('langBtn');
 const langDropdown = document.getElementById('langDropdown');
 const langCards = document.querySelectorAll('.lang-card');
 
-langBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    langDropdown.classList.toggle('show');
-});
+// Manejo del selector de idiomas
+if (langBtn && langDropdown) {
+    langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Cierra los otros menús si están abiertos
+        const contactDropdown = document.getElementById('contactDropdown');
+        const themeDropdown = document.getElementById('themeDropdown');
+        if (contactDropdown) contactDropdown.classList.remove('show');
+        if (themeDropdown) themeDropdown.classList.remove('show');
+        
+        langDropdown.classList.toggle('show');
+    });
+}
 
+// Cierre global al hacer clic fuera
 document.addEventListener('click', () => {
-    langDropdown.classList.remove('show');
+    if (langDropdown) langDropdown.classList.remove('show');
+    const contactDropdown = document.getElementById('contactDropdown');
+    if (contactDropdown) contactDropdown.classList.remove('show');
 });
 
 langCards.forEach(card => {
@@ -103,16 +115,19 @@ langCards.forEach(card => {
             }
         });
 
-        langDropdown.classList.remove('show');
+        if (langDropdown) langDropdown.classList.remove('show');
     });
 });
+
 /* ==========================================================================
-   MOVIMIENTO DEL CURSOR PERSONALIZADO
+    MOVIMIENTO DEL CURSOR PERSONALIZADO
    ========================================================================== */
 const cursor = document.getElementById('customCursor');
 
-document.addEventListener('mousemove', (e) => {
-    // Actualiza la posición X e Y del cursor según las coordenadas del mouse
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+if (cursor) {
+    document.addEventListener('mousemove', (e) => {
+        // Actualiza la posición X e Y del cursor según las coordenadas del mouse
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+}
