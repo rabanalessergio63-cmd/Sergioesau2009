@@ -113,10 +113,11 @@ nav {
 }
 
 .logo-img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 24px;        
+    height: 24px;         
+    border-radius: 50%;   
+    object-fit: cover;    
+    flex-shrink: 0;       
     border: 1px solid var(--card-border);
 }
 
