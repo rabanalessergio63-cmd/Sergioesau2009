@@ -76,50 +76,9 @@ const translations = {
     }
 };
 
-const langBtn = document.getElementById('langBtn');
-const langDropdown = document.getElementById('langDropdown');
-const langCards = document.querySelectorAll('.lang-card');
-const contactToggleBtn = document.getElementById('contactToggleBtn');
-const contactDropdown = document.getElementById('contactDropdown');
-const themeBtn = document.getElementById('themeBtn');
-const themeDropdown = document.getElementById('themeDropdown');
+const cardsLang = document.querySelectorAll('.lang-card');
 
-// 1. CONTROL DE DESPLEGABLES (IDIOMA, CONTACTO, TEMAS)
-if (langBtn && langDropdown) {
-    langBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (contactDropdown) contactDropdown.classList.remove('show');
-        if (themeDropdown) themeDropdown.classList.remove('show');
-        langDropdown.classList.toggle('show');
-    });
-}
-
-if (contactToggleBtn && contactDropdown) {
-    contactToggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (langDropdown) langDropdown.classList.remove('show');
-        if (themeDropdown) themeDropdown.classList.remove('show');
-        contactDropdown.classList.toggle('show');
-    });
-}
-
-if (themeBtn && themeDropdown) {
-    themeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (langDropdown) langDropdown.classList.remove('show');
-        if (contactDropdown) contactDropdown.classList.remove('show');
-        themeDropdown.classList.toggle('show');
-    });
-}
-
-// Cerrar menús al hacer clic fuera
-document.addEventListener('click', () => {
-    if (langDropdown) langDropdown.classList.remove('show');
-    if (contactDropdown) contactDropdown.classList.remove('show');
-    if (themeDropdown) themeDropdown.classList.remove('show');
-});
-
-// 2. FUNCIÓN DE CAMBIO DE IDIOMA
+// Función global de traducción
 function setLanguage(selectedLang) {
     if (!translations[selectedLang]) return;
 
@@ -130,7 +89,7 @@ function setLanguage(selectedLang) {
         }
     });
 
-    langCards.forEach(c => {
+    cardsLang.forEach(c => {
         if (c.getAttribute('data-lang') === selectedLang) {
             c.classList.add('active');
         } else {
@@ -141,26 +100,26 @@ function setLanguage(selectedLang) {
     localStorage.setItem('preferred-lang', selectedLang);
 }
 
-langCards.forEach(card => {
+// Evento de clic en las tarjetas de idioma
+cardsLang.forEach(card => {
     card.addEventListener('click', () => {
         const selectedLang = card.getAttribute('data-lang');
         setLanguage(selectedLang);
-        if (langDropdown) langDropdown.classList.remove('show');
+        const dropdownMenu = document.getElementById('langDropdown');
+        if (dropdownMenu) dropdownMenu.classList.remove('show');
     });
 });
 
-// Cargar idioma preferido al iniciar
-const savedLang = localStorage.getItem('preferred-lang') || 'es';
-setLanguage(savedLang);
+// Cargar idioma guardado al iniciar
+const currentLang = localStorage.getItem('preferred-lang') || 'es';
+setLanguage(currentLang);
 
-/* ==========================================================================
-   3. MOVIMIENTO DEL CURSOR PERSONALIZADO
-   ========================================================================== */
-const cursor = document.getElementById('customCursor');
+// Movimiento fluido del cursor personalizado
+const customCursor = document.getElementById('customCursor');
 
-if (cursor) {
+if (customCursor) {
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
     });
 }
