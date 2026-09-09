@@ -79,8 +79,47 @@ const translations = {
 const langBtn = document.getElementById('langBtn');
 const langDropdown = document.getElementById('langDropdown');
 const langCards = document.querySelectorAll('.lang-card');
+const contactToggleBtn = document.getElementById('contactToggleBtn');
+const contactDropdown = document.getElementById('contactDropdown');
+const themeBtn = document.getElementById('themeBtn');
+const themeDropdown = document.getElementById('themeDropdown');
 
-// Función para aplicar el idioma seleccionado
+// 1. CONTROL DE DESPLEGABLES (IDIOMA, CONTACTO, TEMAS)
+if (langBtn && langDropdown) {
+    langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (contactDropdown) contactDropdown.classList.remove('show');
+        if (themeDropdown) themeDropdown.classList.remove('show');
+        langDropdown.classList.toggle('show');
+    });
+}
+
+if (contactToggleBtn && contactDropdown) {
+    contactToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (langDropdown) langDropdown.classList.remove('show');
+        if (themeDropdown) themeDropdown.classList.remove('show');
+        contactDropdown.classList.toggle('show');
+    });
+}
+
+if (themeBtn && themeDropdown) {
+    themeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (langDropdown) langDropdown.classList.remove('show');
+        if (contactDropdown) contactDropdown.classList.remove('show');
+        themeDropdown.classList.toggle('show');
+    });
+}
+
+// Cerrar menús al hacer clic fuera
+document.addEventListener('click', () => {
+    if (langDropdown) langDropdown.classList.remove('show');
+    if (contactDropdown) contactDropdown.classList.remove('show');
+    if (themeDropdown) themeDropdown.classList.remove('show');
+});
+
+// 2. FUNCIÓN DE CAMBIO DE IDIOMA
 function setLanguage(selectedLang) {
     if (!translations[selectedLang]) return;
 
@@ -102,27 +141,6 @@ function setLanguage(selectedLang) {
     localStorage.setItem('preferred-lang', selectedLang);
 }
 
-// Manejo del selector de idiomas
-if (langBtn && langDropdown) {
-    langBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        // Cierra los otros menús si están abiertos
-        const contactDropdown = document.getElementById('contactDropdown');
-        const themeDropdown = document.getElementById('themeDropdown');
-        if (contactDropdown) contactDropdown.classList.remove('show');
-        if (themeDropdown) themeDropdown.classList.remove('show');
-        
-        langDropdown.classList.toggle('show');
-    });
-}
-
-// Cierre global al hacer clic fuera
-document.addEventListener('click', () => {
-    if (langDropdown) langDropdown.classList.remove('show');
-    const contactDropdown = document.getElementById('contactDropdown');
-    if (contactDropdown) contactDropdown.classList.remove('show');
-});
-
 langCards.forEach(card => {
     card.addEventListener('click', () => {
         const selectedLang = card.getAttribute('data-lang');
@@ -131,18 +149,17 @@ langCards.forEach(card => {
     });
 });
 
-// Cargar idioma guardado al iniciar la página (por defecto español si no hay nada guardado)
+// Cargar idioma preferido al iniciar
 const savedLang = localStorage.getItem('preferred-lang') || 'es';
 setLanguage(savedLang);
 
 /* ==========================================================================
-   MOVIMIENTO DEL CURSOR PERSONALIZADO
+   3. MOVIMIENTO DEL CURSOR PERSONALIZADO
    ========================================================================== */
 const cursor = document.getElementById('customCursor');
 
 if (cursor) {
     document.addEventListener('mousemove', (e) => {
-        // Actualiza la posición X e Y del cursor según las coordenadas del mouse
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
     });
