@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Esaú Rabanales | Portafolio</title>
-   <link rel="icon" type="image/png" href="foto-perfil.png">
+    <link rel="icon" type="image/png" href="foto-perfil.png">
     <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body class="theme-purple">  
+
+    <!-- Cursor Personalizado Dinámico -->
+    <div class="custom-cursor" id="cursor"></div>
 
     <!-- NAVEGACIÓN Y SELECTOR DE TEMAS -->
     <nav>
@@ -29,8 +32,22 @@
                 <li><a href="cv-sergio-rabanales.pdf" download="cv-sergio-rabanales.pdf" class="cv-link"><span class="num">05</span> <span data-i18n="nav5">CV</span> <i class="fa-solid fa-download"></i></a></li>
             </ul>
 
-            <!-- SELECTOR DE IDIOMAS Y TEMAS -->
+            <!-- SELECTOR DE IDIOMAS, TEMAS Y MENÚ CONTACTO -->
             <div style="display: flex; align-items: center; gap: 8px;">
+                
+                <!-- MENÚ DESPLEGABLE DE CONTACTO EN BARRA SUPERIOR -->
+                <div class="dropdown" id="navContactDropdown">
+                    <button class="nav-contact-toggle" id="navContactBtn" aria-label="Contacto">
+                        Contacto <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i>
+                    </button>
+                    <div class="dropdown-menu" id="navContactMenu">
+                        <a href="https://wa.me/50242304991" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/rabanalessergio63-cmd" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="mailto:rabanalessergio63@gmail.com"><i class="fa-regular fa-envelope"></i> Correo</a>
+                    </div>
+                </div>
+
                 <!-- SELECTOR DE IDIOMAS -->
                 <div class="lang-picker-wrapper">
                     <button class="lang-toggle-btn" id="langBtn" aria-label="Cambiar idioma">
@@ -204,18 +221,36 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE MANEJO DE TEMAS Y VÍNCULO DE SCRIPT.JS -->
+    <!-- SCRIPT DE MANEJO DE TEMAS, MENÚ DE CONTACTO, CURSOR Y VÍNCULO DE SCRIPT.JS -->
     <script>
+        // Cursor Personalizado Dinámico
+        const cursor = document.getElementById('cursor');
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // Menú desplegable de contacto en la barra superior
+        const navContactBtn = document.getElementById('navContactBtn');
+        const navContactMenu = document.getElementById('navContactMenu');
+
+        navContactBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navContactMenu.classList.toggle('show');
+        });
+
         const themeBtn = document.getElementById('themeBtn');
         const themeDropdown = document.getElementById('themeDropdown');
 
         themeBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             themeDropdown.classList.toggle('show');
+            navContactMenu.classList.remove('show');
         });
 
         document.addEventListener('click', () => {
             themeDropdown.classList.remove('show');
+            navContactMenu.classList.remove('show');
         });
 
         function setTheme(themeName) {
