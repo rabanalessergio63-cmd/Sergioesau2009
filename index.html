@@ -27,8 +27,8 @@
                 <li><a href="#habilidades"><span class="num">02</span> <span data-i18n="nav2">Habilidades</span></a></li>
                 <li><a href="#proyectos"><span class="num">03</span> <span data-i18n="nav3">Proyectos</span></a></li>
                 <li><a href="#experiencia"><span class="num">04</span> <span data-i18n="nav4">Experiencia</span></a></li>
-                <!-- APARTADO CV PARA DESCARGAR EL PDF -->
-                <li><a href="cv-sergio-rabanales.pdf" download="cv-sergio-rabanales.pdf" class="cv-link"><span class="num">05</span> <span data-i18n="nav5">CV</span> <i class="fa-solid fa-download"></i></a></li>
+                <!-- APARTADO CV PARA VISUALIZAR EL PDF -->
+                <li><a href="#" id="openCvModal" class="cv-link"><span class="num">05</span> <span data-i18n="nav5">CV</span> <i class="fa-solid fa-eye"></i></a></li>
             </ul>
 
             <!-- SELECTOR DE CONTACTOS, IDIOMAS Y TEMAS -->
@@ -200,7 +200,7 @@
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
     <!-- PIE DE PÁGINA Y CONTACTOS -->
     <footer>
@@ -234,6 +234,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- MODAL / VISOR DE PDF FLOTANTE PARA EL CV -->
+    <div class="cv-modal-overlay" id="cvModal">
+        <div class="cv-modal-content">
+            <button class="cv-close-btn" id="closeCvModal" aria-label="Cerrar visor">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="pdf-container">
+                <iframe src="cv-sergio-rabanales.pdf" title="CV Sergio Rabanales"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- SCRIPT DE MANEJO DE TEMAS, CONTACTOS Y VÍNCULO DE SCRIPT.JS -->
     <script>
@@ -297,6 +309,44 @@
         if (savedTheme) {
             setTheme(savedTheme);
         }
+
+        // CONTROLADOR DEL VISOR DE CV (MODAL)
+        const openCvBtn = document.getElementById('openCvModal');
+        const cvModal = document.getElementById('cvModal');
+        const closeCvBtn = document.getElementById('closeCvModal');
+
+        if (openCvBtn && cvModal) {
+            openCvBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                cvModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        function closeCvViewer() {
+            if (cvModal) {
+                cvModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        if (closeCvBtn) {
+            closeCvBtn.addEventListener('click', closeCvViewer);
+        }
+
+        if (cvModal) {
+            cvModal.addEventListener('click', (e) => {
+                if (e.target === cvModal) {
+                    closeCvViewer();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCvViewer();
+            }
+        });
     </script>
     <script src="script.js"></script>
 </body>
