@@ -4,14 +4,21 @@
    VARIABLES DE TEMA (CLARO, OSCURO MORADO, AZUL PRO)
    ========================================================================== */
 
-/* 1. TEMA OSCURO MORADO (Por defecto) - PAISAJE ANIMADO */
+/* 1. TEMA OSCURO MORADO (PAISAJE NOCTURNO ANIMADO CON MONTAÑAS Y ESTRELLAS) */
 body.theme-purple {
-    --bg-main: #0f0a1c;
+    --bg-main: #0a0518;
     --bg-gradient: 
-        radial-gradient(circle at 50% 30%, rgba(168, 85, 247, 0.15), transparent 70%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231d1135' fill-opacity='0.6' d='M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,218.7C672,235,768,213,864,186.7C960,160,1056,128,1152,122.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        /* Resplandor superior */
+        radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.25), transparent 60%),
+        /* Estrellas brillantes */
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, rgba(236, 72, 153, 0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0)),
+        /* Paisaje de Montañas Vectoriales en SVG */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231d1135' fill-opacity='0.5' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,218.7C960,235,1056,213,1152,186.7C1248,160,1344,144,1392,136L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23120926' fill-opacity='0.9' d='M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,224C840,224,960,192,1080,181.3C1200,171,1320,181,1380,186.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     --card-bg: rgba(23, 15, 38, 0.75);
-    --card-border: rgba(147, 51, 234, 0.25);
+    --card-border: rgba(147, 51, 234, 0.3);
     --text-heading: #f8fafc;
     --text-body: #94a3b8;
     --accent: #a855f7;
@@ -20,18 +27,18 @@ body.theme-purple {
     --nav-bg: rgba(18, 10, 31, 0.85);
     --footer-bg: #06040a;
 
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-    animation: pulsePurpleLandscape 10s ease-in-out infinite alternate;
+    background-repeat: no-repeat, repeat, repeat, repeat, repeat, no-repeat;
+    background-position: center top, 0 0, 0 0, 0 0, 0 0, center bottom;
+    background-size: 100% 100%, 200px 200px, 300px 300px, 400px 400px, 250px 250px, cover;
+    animation: pulsePurpleLandscape 12s ease-in-out infinite alternate;
 }
 
 @keyframes pulsePurpleLandscape {
     0% {
-        background-position: center bottom, 0% 0%;
+        background-position: center top, 0 0, 0 0, 0 0, 0 0, center bottom;
     }
     100% {
-        background-position: center bottom, 100% 50%;
+        background-position: center top, 50px -50px, -30px 40px, 60px -20px, -40px -60px, center bottom;
     }
 }
 
@@ -52,10 +59,14 @@ body.theme-light {
     animation: none;
 }
 
-/* 3. TEMA AZUL PRO - NIEBLA DINÁMICA EN MOVIMIENTO */
+/* 3. TEMA AZUL PRO (NIEBLA ATMOSFÉRICA DINÁMICA CON PAISAJE SUBYACENTE) */
 body.theme-blue {
     --bg-main: #030712;
-    --bg-gradient: linear-gradient(-45deg, #0b132b, #1c2541, #1e3a8a, #0f172a);
+    --bg-gradient: 
+        /* Capa de niebla dinámica */
+        linear-gradient(-45deg, rgba(11, 19, 43, 0.85), rgba(28, 37, 65, 0.8), rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)),
+        /* Silueta de montaña vectorial en tonos azules */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231e293b' fill-opacity='0.4' d='M0,192L48,197.3C96,203,192,213,288,208C384,203,480,181,576,181.3C672,181,768,203,864,208C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     --card-bg: rgba(15, 23, 42, 0.75);
     --card-border: rgba(56, 189, 248, 0.2);
     --text-heading: #f0f9ff;
@@ -66,19 +77,21 @@ body.theme-blue {
     --nav-bg: rgba(15, 23, 42, 0.85);
     --footer-bg: #020617;
 
-    background-size: 400% 400%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center bottom;
+    background-size: 400% 400%, cover;
     animation: blueFogAnimation 14s ease infinite;
 }
 
 @keyframes blueFogAnimation {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 50%, center bottom;
     }
     50% {
-        background-position: 100% 50%;
+        background-position: 100% 50%, center bottom;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 50%, center bottom;
     }
 }
 
@@ -108,7 +121,7 @@ body {
 }
 
 /* ==========================================================================
-   NAVEGACIÓN Y SELECTOR DE TEMAS
+   NAVEGACIÓN Y SELECTOR DE TEMAS E IDIOMAS
    ========================================================================== */
 nav {
     position: sticky;
@@ -178,12 +191,19 @@ nav {
     color: var(--text-heading);
 }
 
-/* SELECTOR DE TEMAS */
-.theme-picker-wrapper {
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-picker-wrapper,
+.lang-picker-wrapper {
     position: relative;
 }
 
-.theme-toggle-btn {
+.theme-toggle-btn,
+.lang-toggle-btn {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     color: var(--text-heading);
@@ -194,14 +214,18 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.theme-toggle-btn:hover {
+.theme-toggle-btn:hover,
+.lang-toggle-btn:hover {
     transform: scale(1.08);
+    border-color: var(--accent);
 }
 
-.theme-dropdown {
+.theme-dropdown,
+.lang-dropdown {
     position: absolute;
     right: 0;
     top: 50px;
@@ -210,17 +234,21 @@ nav {
     backdrop-filter: blur(16px);
     border-radius: 16px;
     padding: 16px;
-    width: 260px;
     display: none;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     z-index: 1001;
 }
 
-.theme-dropdown.show {
+.theme-dropdown { width: 260px; }
+.lang-dropdown { width: 200px; }
+
+.theme-dropdown.show,
+.lang-dropdown.show {
     display: block;
 }
 
-.theme-title {
+.theme-title,
+.lang-title {
     display: block;
     font-size: 0.75rem;
     font-weight: 700;
@@ -228,30 +256,41 @@ nav {
     color: var(--text-body);
     margin-bottom: 12px;
     text-align: center;
+    text-transform: uppercase;
 }
 
-.theme-options {
+.theme-options,
+.lang-options {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.theme-card {
+.theme-card,
+.lang-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--card-border);
     padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
     color: var(--text-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
     transition: all 0.2s ease;
+    width: 100%;
 }
 
-.theme-card:hover, .theme-card.active {
+.lang-card {
+    padding: 8px 12px;
+}
+
+.theme-card:hover, .theme-card.active,
+.lang-card:hover, .lang-card.active {
     border-color: var(--accent);
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .dots {
@@ -461,7 +500,6 @@ nav {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Transición suave para todos los componentes principales */
 nav,
 .hero-section,
 .section-title,
@@ -478,7 +516,6 @@ footer {
     will-change: transform, opacity, filter;
 }
 
-/* 1. Cuando se pasa el mouse sobre CUALQUIER sección, difumina y atenúa el sitio completo */
 body:has(.section-block:hover) nav,
 body:has(.section-block:hover) .hero-section,
 body:has(.section-block:hover) footer,
@@ -490,14 +527,12 @@ body:has(.section-block:hover) footer,
     transform: scale(0.98);
 }
 
-/* 2. Mantiene el TÍTULO de la sección activa nítido y visible */
 .section-block:hover .section-title {
     opacity: 1 !important;
     filter: blur(0) grayscale(0%) !important;
     transform: scale(1) !important;
 }
 
-/* 3. Mantiene únicamente la TARJETA ACTIVA sobre la que está el cursor enfocada, grande y brillante */
 .skills-grid .skill-card:hover,
 .projects-grid .project-card:hover,
 .timeline .timeline-item:hover {
@@ -588,11 +623,7 @@ footer {
 .contact-link.whatsapp i { color: #25D366; }
 .contact-link.github i { color: var(--text-heading); }
 .contact-link.email i { color: var(--accent); }
-
-/* ESTILOS LINKEDIN Y DESCARGA CV */
-.contact-link.linkedin i {
-    color: #0a66c2;
-}
+.contact-link.linkedin i { color: #0a66c2; }
 
 .cv-link i {
     font-size: 0.75rem;
@@ -600,7 +631,9 @@ footer {
     color: var(--accent);
 }
 
-/* RESPONSIVO */
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
 @media (max-width: 768px) {
     nav {
         top: 10px;
@@ -609,9 +642,9 @@ footer {
 
     .nav-layout {
         flex-direction: column;
-        gap: 6px;
-        padding: 8px 12px;
-        border-radius: 16px;
+        gap: 12px;
+        padding: 12px 16px;
+        border-radius: 24px;
     }
 
     .logo {
@@ -627,105 +660,30 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 6px 10px;
+        gap: 6px 12px;
     }
 
     .nav-links a {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     .nav-links a .num {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
-    .theme-toggle-btn {
-        width: 32px;
-        height: 32px;
+    .theme-toggle-btn,
+    .lang-toggle-btn {
+        width: 36px;
+        height: 36px;
         font-size: 0.85rem;
     }
 
-    .hero-title { font-size: 2.2rem; }
-    .footer-content { flex-direction: column; align-items: flex-start; }
-}
+    .hero-title { 
+        font-size: 2.2rem; 
+    }
 
-/* ==========================================================================
-   SELECTOR DE IDIOMAS
-   ========================================================================== */
-.lang-picker-wrapper {
-    position: relative;
-    margin-right: 8px; /* Espaciado con el botón de temas */
-}
-
-.lang-toggle-btn {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-heading);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-
-.lang-toggle-btn:hover {
-    transform: scale(1.08);
-}
-
-.lang-dropdown {
-    position: absolute;
-    right: 0;
-    top: 50px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    backdrop-filter: blur(16px);
-    border-radius: 16px;
-    padding: 16px;
-    width: 200px;
-    display: none;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    z-index: 1001;
-}
-
-.lang-dropdown.show {
-    display: block;
-}
-
-.lang-title {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--text-body);
-    margin-bottom: 12px;
-    text-align: center;
-}
-
-.lang-options {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.lang-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--card-border);
-    padding: 8px 12px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: var(--text-heading);
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    width: 100%;
-}
-
-.lang-card:hover, .lang-card.active {
-    border-color: var(--accent);
-    background: rgba(255,255,255,0.08);
+    .footer-content { 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
 }
