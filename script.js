@@ -123,3 +123,41 @@ if (customCursor) {
         customCursor.style.top = e.clientY + 'px';
     });
 }
+/* ==========================================================================
+   CONTROLADOR DEL MODAL DE CONTRIBUCIONES DE GITHUB
+   ========================================================================== */
+const openContribBtn = document.getElementById('openContribModal');
+const contribModal = document.getElementById('contribModal');
+const closeContribBtn = document.getElementById('closeContribModal');
+
+if (openContribBtn && contribModal) {
+    openContribBtn.addEventListener('click', () => {
+        contribModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+function closeContribViewer() {
+    if (contribModal) {
+        contribModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+if (closeContribBtn) {
+    closeContribBtn.addEventListener('click', closeContribViewer);
+}
+
+if (contribModal) {
+    contribModal.addEventListener('click', (e) => {
+        if (e.target === contribModal) {
+            closeContribViewer();
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeContribViewer();
+    }
+});
