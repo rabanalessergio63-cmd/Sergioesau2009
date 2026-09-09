@@ -195,10 +195,10 @@ nav {
 
 .logo-img {
     width: 24px;        
-    height: 24px;          
+    height: 24px;         
     border-radius: 50%;   
     object-fit: cover;    
-    flex-shrink: 0;        
+    flex-shrink: 0;       
     border: 1px solid var(--card-border);
 }
 
@@ -233,12 +233,14 @@ nav {
 }
 
 .theme-picker-wrapper,
-.lang-picker-wrapper {
+.lang-picker-wrapper,
+.nav-contact-wrapper {
     position: relative;
 }
 
 .theme-toggle-btn,
-.lang-toggle-btn {
+.lang-toggle-btn,
+.nav-contact-btn {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     color: var(--text-heading);
@@ -254,13 +256,15 @@ nav {
 }
 
 .theme-toggle-btn:hover,
-.lang-toggle-btn:hover {
+.lang-toggle-btn:hover,
+.nav-contact-btn:hover {
     transform: scale(1.08);
     border-color: var(--accent);
 }
 
 .theme-dropdown,
-.lang-dropdown {
+.lang-dropdown,
+.nav-contact-dropdown {
     position: absolute;
     right: 0;
     top: 50px;
@@ -276,14 +280,17 @@ nav {
 
 .theme-dropdown { width: 260px; }
 .lang-dropdown { width: 200px; }
+.nav-contact-dropdown { width: 220px; }
 
 .theme-dropdown.show,
-.lang-dropdown.show {
+.lang-dropdown.show,
+.nav-contact-dropdown.show {
     display: block;
 }
 
 .theme-title,
-.lang-title {
+.lang-title,
+.nav-contact-title {
     display: block;
     font-size: 0.75rem;
     font-weight: 700;
@@ -295,14 +302,16 @@ nav {
 }
 
 .theme-options,
-.lang-options {
+.lang-options,
+.nav-contact-options {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
 .theme-card,
-.lang-card {
+.lang-card,
+.nav-contact-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -316,6 +325,7 @@ nav {
     font-weight: 600;
     transition: all 0.2s ease;
     width: 100%;
+    text-decoration: none;
 }
 
 .lang-card {
@@ -323,9 +333,15 @@ nav {
 }
 
 .theme-card:hover, .theme-card.active,
-.lang-card:hover, .lang-card.active {
+.lang-card:hover, .lang-card.active,
+.nav-contact-card:hover {
     border-color: var(--accent);
     background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-contact-card i {
+    font-size: 1.1rem;
+    color: var(--accent);
 }
 
 .dots {
@@ -350,6 +366,22 @@ nav {
 .blue-preview .d1 { background: #38bdf8; }
 .blue-preview .d2 { background: #3b82f6; }
 .blue-preview .d3 { background: #030712; }
+
+/* ==========================================================================
+   CURSOR PERSONALIZADO DINÁMICO
+   ========================================================================== */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    z-index: 9999;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
 
 /* ==========================================================================
    SECCIÓN SOBRE MÍ
@@ -707,7 +739,8 @@ footer {
     }
 
     .theme-toggle-btn,
-    .lang-toggle-btn {
+    .lang-toggle-btn,
+    .nav-contact-btn {
         width: 36px;
         height: 36px;
         font-size: 0.85rem;
