@@ -6,7 +6,7 @@
     <title>Sergio Esaú Rabanales | Portafolio</title>
     <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body class="theme-purple">
 
@@ -20,34 +20,61 @@
             
             <!-- MENÚ DE NAVEGACIÓN -->
             <ul class="nav-links">
-                <li><a href="#sobre-mi"><span class="num">01</span> Sobre mí</a></li>
-                <li><a href="#habilidades"><span class="num">02</span> Habilidades</a></li>
-                <li><a href="#proyectos"><span class="num">03</span> Proyectos</a></li>
-                <li><a href="#experiencia"><span class="num">04</span> Experiencia</a></li>
+                <li><a href="#sobre-mi"><span class="num">01</span> <span data-i18n="nav1">Sobre mí</span></a></li>
+                <li><a href="#habilidades"><span class="num">02</span> <span data-i18n="nav2">Habilidades</span></a></li>
+                <li><a href="#proyectos"><span class="num">03</span> <span data-i18n="nav3">Proyectos</span></a></li>
+                <li><a href="#experiencia"><span class="num">04</span> <span data-i18n="nav4">Experiencia</span></a></li>
                 <!-- APARTADO CV PARA DESCARGAR EL PDF -->
-                <li><a href="cv-sergio-rabanales.pdf" download="cv-sergio-rabanales.pdf" class="cv-link"><span class="num">05</span> CV <i class="fa-solid fa-download"></i></a></li>
+                <li><a href="cv-sergio-rabanales.pdf" download="cv-sergio-rabanales.pdf" class="cv-link"><span class="num">05</span> <span data-i18n="nav5">CV</span> <i class="fa-solid fa-download"></i></a></li>
             </ul>
 
-            <!-- SELECTOR DE TEMAS -->
-            <div class="theme-picker-wrapper">
-                <button class="theme-toggle-btn" id="themeBtn" aria-label="Cambiar tema">
-                    <i class="fa-solid fa-palette"></i>
-                </button>
-                <div class="theme-dropdown" id="themeDropdown">
-                    <span class="theme-title">SELECCIONAR TEMA</span>
-                    <div class="theme-options">
-                        <button onclick="setTheme('light')" class="theme-card light-preview">
-                            <span class="theme-label">Claro</span>
-                            <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-                        </button>
-                        <button onclick="setTheme('purple')" class="theme-card purple-preview active">
-                            <span class="theme-label">Oscuro Morado</span>
-                            <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-                        </button>
-                        <button onclick="setTheme('blue')" class="theme-card blue-preview">
-                            <span class="theme-label">Azul Pro</span>
-                            <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-                        </button>
+            <!-- SELECTOR DE IDIOMAS Y TEMAS -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <!-- SELECTOR DE IDIOMAS -->
+                <div class="lang-picker-wrapper">
+                    <button class="lang-toggle-btn" id="langBtn" aria-label="Cambiar idioma">
+                        <i class="fa-solid fa-globe"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <span class="lang-title">IDIOMA / LANGUAGE</span>
+                        <div class="lang-options">
+                            <button class="lang-card active" data-lang="es">
+                                <span>Español</span>
+                                <span class="flag">🇪🇸</span>
+                            </button>
+                            <button class="lang-card" data-lang="en">
+                                <span>English</span>
+                                <span class="flag">🇺🇸</span>
+                            </button>
+                            <button class="lang-card" data-lang="fr">
+                                <span>Français</span>
+                                <span class="flag">🇫🇷</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SELECTOR DE TEMAS -->
+                <div class="theme-picker-wrapper">
+                    <button class="theme-toggle-btn" id="themeBtn" aria-label="Cambiar tema">
+                        <i class="fa-solid fa-palette"></i>
+                    </button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <span class="theme-title">SELECCIONAR TEMA</span>
+                        <div class="theme-options">
+                            <button onclick="setTheme('light')" class="theme-card light-preview">
+                                <span class="theme-label">Claro</span>
+                                <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+                            </button>
+                            <button onclick="setTheme('purple')" class="theme-card purple-preview active">
+                                <span class="theme-label">Oscuro Morado</span>
+                                <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+                            </button>
+                            <button onclick="setTheme('blue')" class="theme-card blue-preview">
+                                <span class="theme-label">Azul Pro</span>
+                                <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,24 +84,24 @@
     <main class="container">
         <!-- SECCIÓN SOBRE MÍ -->
         <section id="sobre-mi" class="hero-section">
-            <span class="subtitle-tag animate-fade-in">HOLA, MI NOMBRE ES</span>
+            <span class="subtitle-tag animate-fade-in" data-i18n="heroGreeting">HOLA, MI NOMBRE ES</span>
             <h1 class="hero-title animate-fade-in">Sergio Esaú Rabanales</h1>
-            <h2 class="hero-subtitle animate-fade-in">Desarrollador Web Junior / Bachiller en Computación</h2>
-            <p class="hero-description interactive-paragraph animate-fade-in">
+            <h2 class="hero-subtitle animate-fade-in" data-i18n="heroSubtitle">Desarrollador Web Junior / Bachiller en Computación</h2>
+            <p class="hero-description interactive-paragraph animate-fade-in" data-i18n="heroDesc">
                 Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.
             </p>
         </section>
 
         <!-- SECCIÓN HABILIDADES -->
         <section id="habilidades" class="section-block">
-            <h2 class="section-title">Habilidades Técnicas</h2>
+            <h2 class="section-title" data-i18n="skillsTitle">Habilidades Técnicas</h2>
             <div class="skills-grid">
                 <div class="skill-card hover-animate animate-fade-in">
                     <h3>Frontend</h3>
                     <ul>
                         <li class="interactive-paragraph"><i class="fa-brands fa-html5"></i> HTML5 / <i class="fa-brands fa-css3-alt"></i> CSS3</li>
                         <li class="interactive-paragraph"><i class="fa-brands fa-js"></i> JavaScript</li>
-                        <li class="interactive-paragraph"><i class="fa-solid fa-mobile-screen"></i> Diseño Web Responsivo</li>
+                        <li class="interactive-paragraph"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="skillResponsive">Diseño Web Responsivo</span></li>
                     </ul>
                 </div>
                 <div class="skill-card hover-animate animate-fade-in">
@@ -82,11 +109,11 @@
                     <ul>
                         <li class="interactive-paragraph"><i class="fa-brands fa-node-js"></i> Node.js / Express</li>
                         <li class="interactive-paragraph"><i class="fa-brands fa-python"></i> Python</li>
-                        <li class="interactive-paragraph"><i class="fa-solid fa-code"></i> Lógica de Programación</li>
+                        <li class="interactive-paragraph"><i class="fa-solid fa-code"></i> <span data-i18n="skillLogic">Lógica de Programación</span></li>
                     </ul>
                 </div>
                 <div class="skill-card hover-animate animate-fade-in">
-                    <h3>Herramientas & Oficina</h3>
+                    <h3><span data-i18n="skillToolsTitle">Herramientas & Oficina</span></h3>
                     <ul>
                         <li class="interactive-paragraph"><i class="fa-brands fa-git-alt"></i> Git / <i class="fa-brands fa-github"></i> GitHub</li>
                         <li class="interactive-paragraph"><i class="fa-solid fa-code-merge"></i> VS Code</li>
@@ -98,15 +125,15 @@
 
         <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="section-block">
-            <h2 class="section-title">Proyectos</h2>
+            <h2 class="section-title" data-i18n="projectsTitle">Proyectos</h2>
             <div class="projects-grid single-project">
                 <a href="https://andre303q.github.io/rgpracticas/" target="_blank" class="project-card-link animate-fade-in">
                     <div class="project-card hover-animate">
                         <div class="project-header">
-                            <h3>Sistema de Registro y Marcaje de Practicantes</h3>
+                            <h3 data-i18n="proj1Title">Sistema de Registro y Marcaje de Practicantes</h3>
                             <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                         </div>
-                        <p class="interactive-paragraph">
+                        <p class="interactive-paragraph" data-i18n="proj1Desc">
                             Plataforma web desarrollada para la gestión, control y marcaje de asistencia de estudiantes practicantes.
                         </p>
                         <div class="tags">
@@ -121,21 +148,21 @@
 
         <!-- SECCIÓN EXPERIENCIA Y EDUCACIÓN -->
         <section id="experiencia" class="section-block">
-            <h2 class="section-title">Experiencia & Educación</h2>
+            <h2 class="section-title" data-i18n="expTitle">Experiencia & Educación</h2>
             <div class="timeline">
                 <div class="timeline-item hover-animate animate-fade-in">
                     <span class="date">2026</span>
-                    <h3>Bachillerato en Ciencias y Letras con Orientación en Computación</h3>
+                    <h3 data-i18n="exp1Title">Bachillerato en Ciencias y Letras con Orientación en Computación</h3>
                     <p class="timeline-school"> Colegio mixto bautista shalom - Liceo Mixto Pinulteco</p>
-                    <p class="interactive-paragraph">
+                    <p class="interactive-paragraph" data-i18n="exp1Desc">
                         Formación académica enfocado en desarrollo de sistemas, estructura de datos, soporte informático y programación web.
                     </p>
                 </div>
                 <div class="timeline-item hover-animate animate-fade-in">
                     <span class="date">2026</span>
-                    <h3>Práctica Supervisada</h3>
+                    <h3 data-i18n="exp2Title">Práctica Supervisada</h3>
                     <p class="timeline-school">Liceo Mixto Pinulteco</p>
-                    <p class="interactive-paragraph">
+                    <p class="interactive-paragraph" data-i18n="exp2Desc">
                         Desarrollo e implementación del sistema web para registro y marcaje de control de asistencias para practicantes.
                     </p>
                 </div>
@@ -151,16 +178,15 @@
             </div>
             
             <div class="footer-col footer-contacts">
-                <span class="footer-heading">Contacto Directo:</span>
+                <span class="footer-heading" data-i18n="contactTitle">Contacto Directo:</span>
                 
                 <!-- WHATSAPP -->
                 <a href="https://wa.me/50242304991" target="_blank" class="contact-link whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp
                 </a>
 
-                <!-- LINKEDIN (NUEVO) -->
-                <!-- REEMPLAZA EL HREF CON TU ENLACE REAL DE LINKEDIN SI ES DIFERENTE -->
-               <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-link linkedin">
+                <!-- LINKEDIN -->
+                <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-link linkedin">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
 
@@ -171,13 +197,13 @@
 
                 <!-- CORREO ELECTRÓNICO -->
                 <a href="mailto:rabanalessergio63@gmail.com" class="contact-link email">
-                    <i class="fa-regular fa-envelope"></i> Correo
+                    <i class="fa-regular fa-envelope"></i> <span data-i18n="emailText">Correo</span>
                 </a>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPT DE MANEJO DE TEMAS -->
+    <!-- SCRIPT DE MANEJO DE TEMAS Y VÍNCULO DE SCRIPT.JS -->
     <script>
         const themeBtn = document.getElementById('themeBtn');
         const themeDropdown = document.getElementById('themeDropdown');
@@ -208,5 +234,6 @@
             setTheme(savedTheme);
         }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
