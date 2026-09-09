@@ -5,22 +5,10 @@
    ========================================================================== */
 
 /* ==========================================================================
-   VARIABLES DE TEMA (CLARO, OSCURO MORADO, AZUL PRO)
+   1. TEMA OSCURO MORADO (ÁRBOLES ORGÁNICOS REALES)
    ========================================================================== */
-
-/* 1. TEMA OSCURO MORADO (PAISAJE NOCTURNO CON MONTAÑAS, ÁRBOLES GRANDES ANIMADOS Y ESTRELLAS) */
 body.theme-purple {
     --bg-main: #0a0518;
-    --bg-gradient: 
-        /* Resplandor superior */
-        radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.25), transparent 60%),
-        /* Estrellas brillantes */
-        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40px 70px, rgba(236, 72, 153, 0.8), rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 160px 120px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0)),
-        /* Paisaje de Montañas Vectoriales en SVG */
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231d1135' fill-opacity='0.5' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,218.7C960,235,1056,213,1152,186.7C1248,160,1344,144,1392,136L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23120926' fill-opacity='0.9' d='M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,224C840,224,960,192,1080,181.3C1200,171,1320,181,1380,186.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     --card-bg: rgba(23, 15, 38, 0.75);
     --card-border: rgba(147, 51, 234, 0.3);
     --text-heading: #f8fafc;
@@ -33,54 +21,47 @@ body.theme-purple {
 
     position: relative;
     overflow-x: hidden;
-    background-repeat: no-repeat, repeat, repeat, repeat, repeat, no-repeat;
-    background-position: center top, 0 0, 0 0, 0 0, 0 0, center bottom;
-    background-size: 100% 100%, 200px 200px, 300px 300px, 400px 400px, 250px 250px, cover;
-    animation: starsAnimation 12s ease-in-out infinite alternate;
+    background-color: var(--bg-main);
+    background-image: 
+        /* Resplandor superior */
+        radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.25), transparent 60%),
+        /* Estrellas */
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, rgba(236, 72, 153, 0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0));
+    background-repeat: no-repeat, repeat, repeat, repeat, repeat;
+    background-position: center top, 0 0, 0 0, 0 0, 0 0;
+    background-size: 100% 100%, 200px 200px, 300px 300px, 400px 400px, 250px 250px;
 }
 
-/* Capa independiente para Árboles Grandes y Frondosos tipo Ilustración */
+/* Árboles en los laterales con silueta realista */
 body.theme-purple::before {
     content: "";
     position: fixed;
     bottom: 0;
-    left: -5%;
-    width: 110%;
-    height: 55vh; /* Altura que abarca gran parte de la pantalla */
+    left: 0;
+    width: 100%;
+    height: 70vh;
     z-index: -1;
     pointer-events: none;
-    
-    /* Árboles vectoriales orgánicos detallados */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cg fill='%231b0e33' fill-opacity='0.88'%3E%3C!-- Árbol Frondoso Izquierda --%3E%3Cpath d='M150 600 C150 500 130 420 120 380 C110 370 70 340 50 310 C30 280 40 240 70 230 C90 220 120 240 130 260 C140 230 130 180 160 160 C190 140 230 170 230 200 C250 170 290 180 300 210 C320 240 290 280 260 290 C280 320 270 360 240 380 C220 395 180 420 170 600 Z'/%3E%3C!-- Árbol Gigante Derecha --%3E%3Cpath d='M1250 600 C1250 480 1230 380 1210 320 C1180 300 1130 260 1120 210 C1110 160 1160 120 1210 130 C1250 140 1270 180 1280 210 C1310 170 1370 160 1400 200 C1430 240 1410 290 1370 320 C1390 360 1380 410 1330 440 C1300 460 1270 500 1270 600 Z'/%3E%3C!-- Follaje de base --%3E%3Cpath d='M0 600 L0 530 C120 510 220 550 380 520 C520 500 680 550 820 525 C980 500 1120 540 1280 515 C1360 505 1410 525 1440 535 L1440 600 Z'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat-x;
+
+    /* Árboles con tronco y copa realista dibujados en SVG ajustado */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700' preserveAspectRatio='xMidYMax slice'%3E%3Cg fill='%23180b2d'%3E%3C!-- Árbol Izquierdo --%3E%3Cpath d='M120,700 L125,500 C125,500 80,450 70,420 C60,390 90,380 110,400 L128,470 L135,430 C135,430 170,390 180,370 C190,350 210,370 195,390 L138,485 L145,700 Z'/%3E%3Ccircle cx='70' cy='390' r='45'/%3E%3Ccircle cx='110' cy='360' r='55'/%3E%3Ccircle cx='170' cy='340' r='50'/%3E%3Ccircle cx='200' cy='370' r='40'/%3E%3Ccircle cx='130' cy='320' r='60'/%3E%3C!-- Árbol Derecho --%3E%3Cpath d='M870,700 L865,480 C865,480 910,430 920,400 C930,370 900,360 880,380 L862,450 L855,410 C855,410 820,370 810,350 C800,330 780,350 795,370 L852,465 L845,700 Z'/%3E%3Ccircle cx='930' cy='370' r='45'/%3E%3Ccircle cx='890' cy='340' r='55'/%3E%3Ccircle cx='830' cy='320' r='50'/%3E%3Ccircle cx='800' cy='350' r='40'/%3E%3Ccircle cx='860' cy='300' r='60'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
     background-position: bottom center;
-    background-size: cover;
-    
-    /* Animación de balanceo natural */
+    background-size: 100% 100%;
+
     transform-origin: bottom center;
-    animation: swayBigTrees 7s ease-in-out infinite alternate;
+    animation: swayTrees 6s ease-in-out infinite alternate;
 }
 
-/* Animación de titileo/movimiento suave de fondo */
-@keyframes starsAnimation {
+@keyframes swayTrees {
     0% {
-        background-position: center top, 0 0, 0 0, 0 0, 0 0, center bottom;
+        transform: rotate(-1deg);
     }
     100% {
-        background-position: center top, 30px -30px, -20px 20px, 40px -10px, -25px -40px, center bottom;
-    }
-}
-
-/* Animación de inclinación de árboles con el viento */
-@keyframes swayBigTrees {
-    0% {
-        transform: rotate(-1.5deg) scaleX(1);
-    }
-    50% {
-        transform: rotate(0.8deg) scaleX(1.01);
-    }
-    100% {
-        transform: rotate(1.8deg) scaleX(0.99);
+        transform: rotate(1deg);
     }
 }
 /* 2. TEMA CLARO - SÓLIDO SIN ANIMACIÓN */
