@@ -1,6 +1,6 @@
 const translations = {
     es: {
-        nav1: "Sobre mí",
+        nav1: "Sobre mí", 
         nav2: "Habilidades",
         nav3: "Proyectos",
         nav4: "Experiencia",
