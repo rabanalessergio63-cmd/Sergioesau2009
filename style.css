@@ -117,10 +117,10 @@ nav {
 
 .logo-img {
     width: 24px;        
-    height: 24px;         
+    height: 24px;          
     border-radius: 50%;   
     object-fit: cover;    
-    flex-shrink: 0;       
+    flex-shrink: 0;        
     border: 1px solid var(--card-border);
 }
 
@@ -425,16 +425,20 @@ nav {
 }
 
 /* ==========================================================================
-   EFECTO FOCO / ENFOQUE Y ATENUACIÓN DE TARJETAS AL PASAR EL CURSOR (HOVER)
+   EFECTO FOCO / ENFOQUE Y ATENUACIÓN GENERAL (HOVER GLOBAL)
    ========================================================================== */
 .interactive-paragraph {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Transiciones base suaves para todas las tarjetas */
+/* Transición suave para todos los componentes principales */
+nav,
+.hero-section,
+.section-title,
 .skill-card, 
 .project-card, 
-.timeline-item {
+.timeline-item,
+footer {
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 opacity 0.4s ease,
                 filter 0.4s ease,
@@ -444,26 +448,36 @@ nav {
     will-change: transform, opacity, filter;
 }
 
-/* 1. Cuando se pasa el mouse sobre la sección, atenúa y oscurece el resto de tarjetas */
+/* 1. Cuando se pasa el mouse sobre CUALQUIER sección, difumina y atenúa el sitio completo */
+body:has(.section-block:hover) nav,
+body:has(.section-block:hover) .hero-section,
+body:has(.section-block:hover) footer,
 .skills-grid:hover .skill-card,
 .projects-grid:hover .project-card,
 .timeline:hover .timeline-item {
-    opacity: 0.35;
-    filter: blur(1px) grayscale(25%);
-    transform: scale(0.97);
+    opacity: 0.25;
+    filter: blur(2px) grayscale(40%);
+    transform: scale(0.98);
 }
 
-/* 2. La tarjeta activa bajo el mouse se enfoca, resalta y crece */
+/* 2. Mantiene el TÍTULO de la sección activa nítido y visible */
+.section-block:hover .section-title {
+    opacity: 1 !important;
+    filter: blur(0) grayscale(0%) !important;
+    transform: scale(1) !important;
+}
+
+/* 3. Mantiene únicamente la TARJETA ACTIVA sobre la que está el cursor enfocada, grande y brillante */
 .skills-grid .skill-card:hover,
 .projects-grid .project-card:hover,
 .timeline .timeline-item:hover {
     opacity: 1 !important;
     filter: blur(0) grayscale(0%) !important;
     transform: scale(1.04) translateY(-6px) !important;
-    z-index: 10;
+    z-index: 100;
     border-color: var(--accent) !important;
-    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4),
-                0 0 25px var(--accent-glow) !important;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5),
+                0 0 30px var(--accent-glow) !important;
 }
 
 .skill-card:hover h3, 
