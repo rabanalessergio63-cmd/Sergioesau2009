@@ -80,6 +80,28 @@ const langBtn = document.getElementById('langBtn');
 const langDropdown = document.getElementById('langDropdown');
 const langCards = document.querySelectorAll('.lang-card');
 
+// Función para aplicar el idioma seleccionado
+function setLanguage(selectedLang) {
+    if (!translations[selectedLang]) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[selectedLang][key]) {
+            element.textContent = translations[selectedLang][key];
+        }
+    });
+
+    langCards.forEach(c => {
+        if (c.getAttribute('data-lang') === selectedLang) {
+            c.classList.add('active');
+        } else {
+            c.classList.remove('active');
+        }
+    });
+
+    localStorage.setItem('preferred-lang', selectedLang);
+}
+
 // Manejo del selector de idiomas
 if (langBtn && langDropdown) {
     langBtn.addEventListener('click', (e) => {
@@ -104,23 +126,17 @@ document.addEventListener('click', () => {
 langCards.forEach(card => {
     card.addEventListener('click', () => {
         const selectedLang = card.getAttribute('data-lang');
-        
-        langCards.forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            if (translations[selectedLang] && translations[selectedLang][key]) {
-                element.textContent = translations[selectedLang][key];
-            }
-        });
-
+        setLanguage(selectedLang);
         if (langDropdown) langDropdown.classList.remove('show');
     });
 });
 
+// Cargar idioma guardado al iniciar la página (por defecto español si no hay nada guardado)
+const savedLang = localStorage.getItem('preferred-lang') || 'es';
+setLanguage(savedLang);
+
 /* ==========================================================================
-    MOVIMIENTO DEL CURSOR PERSONALIZADO
+   MOVIMIENTO DEL CURSOR PERSONALIZADO
    ========================================================================== */
 const cursor = document.getElementById('customCursor');
 
