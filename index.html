@@ -8,8 +8,8 @@
     <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=5">
-    </head>
-    <body class="theme-purple">
+</head>
+<body class="theme-purple">
     <div class="custom-cursor" id="customCursor"></div>
     <div class="container"> 
 
@@ -31,8 +31,37 @@
                 <li><a href="cv-sergio-rabanales.pdf" download="cv-sergio-rabanales.pdf" class="cv-link"><span class="num">05</span> <span data-i18n="nav5">CV</span> <i class="fa-solid fa-download"></i></a></li>
             </ul>
 
-            <!-- SELECTOR DE IDIOMAS Y TEMAS -->
+            <!-- SELECTOR DE CONTACTOS, IDIOMAS Y TEMAS -->
             <div style="display: flex; align-items: center; gap: 8px;">
+                
+                <!-- SELECTOR DESPLEGABLE DE CONTACTOS (NUEVO) -->
+                <div class="contact-picker-wrapper">
+                    <button class="contact-toggle-btn" id="contactToggleBtn" aria-label="Contactos">
+                        <i class="fa-solid fa-address-book"></i>
+                    </button>
+                    <div class="contact-dropdown" id="contactDropdown">
+                        <span class="contact-title" data-i18n="contactTitle">Contacto Directo:</span>
+                        <div class="contact-options">
+                            <a href="https://wa.me/50242304991" target="_blank" class="contact-card whatsapp">
+                                <span><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-card linkedin">
+                                <span><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a href="https://github.com/rabanalessergio63-cmd" target="_blank" class="contact-card github">
+                                <span><i class="fa-brands fa-github"></i> GitHub</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a href="mailto:rabanalessergio63@gmail.com" class="contact-card email">
+                                <span><i class="fa-regular fa-envelope"></i> <span data-i18n="emailText">Correo</span></span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- SELECTOR DE IDIOMAS -->
                 <div class="lang-picker-wrapper">
                     <button class="lang-toggle-btn" id="langBtn" aria-label="Cambiar idioma">
@@ -206,7 +235,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE MANEJO DE TEMAS Y VÍNCULO DE SCRIPT.JS -->
+    <!-- SCRIPT DE MANEJO DE TEMAS, CONTACTOS Y VÍNCULO DE SCRIPT.JS -->
     <script>
         const themeBtn = document.getElementById('themeBtn');
         const themeDropdown = document.getElementById('themeDropdown');
@@ -216,8 +245,23 @@
             themeDropdown.classList.toggle('show');
         });
 
+        // Script para el nuevo desplegable de contactos
+        const contactToggleBtn = document.getElementById('contactToggleBtn');
+        const contactDropdown = document.getElementById('contactDropdown');
+
+        if (contactToggleBtn && contactDropdown) {
+            contactToggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (themeDropdown) themeDropdown.classList.remove('show');
+                const langDropdown = document.getElementById('langDropdown');
+                if (langDropdown) langDropdown.classList.remove('show');
+                contactDropdown.classList.toggle('show');
+            });
+        }
+
         document.addEventListener('click', () => {
             themeDropdown.classList.remove('show');
+            if (contactDropdown) contactDropdown.classList.remove('show');
         });
 
         function setTheme(themeName) {
