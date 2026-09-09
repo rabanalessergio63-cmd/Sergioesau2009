@@ -14,6 +14,7 @@ body.theme-purple {
     --text-heading: #f8fafc;
     --text-body: #94a3b8;
     --accent: #a855f7;
+    --accent-glow: rgba(168, 85, 247, 0.4);
     --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
     --nav-bg: rgba(18, 10, 31, 0.85);
     --footer-bg: #06040a;
@@ -29,6 +30,7 @@ body.theme-light {
     --text-heading: #0f172a;
     --text-body: #475569;
     --accent: #2563eb;
+    --accent-glow: rgba(37, 99, 235, 0.35);
     --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     --nav-bg: rgba(255, 255, 255, 0.9);
     --footer-bg: #f1f5f9;
@@ -44,6 +46,7 @@ body.theme-blue {
     --text-heading: #f0f9ff;
     --text-body: #94a3b8;
     --accent: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.4);
     --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
     --nav-bg: rgba(15, 23, 42, 0.85);
     --footer-bg: #020617;
@@ -422,39 +425,51 @@ nav {
 }
 
 /* ==========================================================================
-   ANIMACIONES INTERACTIVAS Y RESALTADO DINÁMICO AL PASAR EL CURSOR (HOVER)
+   EFECTO FOCO / ENFOQUE Y ATENUACIÓN DE TARJETAS AL PASAR EL CURSOR (HOVER)
    ========================================================================== */
 .interactive-paragraph {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Transiciones base suaves para todas las tarjetas */
 .skill-card, 
 .project-card, 
-.timeline-item, 
-.hover-animate {
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-                box-shadow 0.3s ease, 
-                border-color 0.3s ease,
-                background 0.3s ease;
+.timeline-item {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                opacity 0.4s ease,
+                filter 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease,
+                background 0.4s ease;
+    will-change: transform, opacity, filter;
 }
 
-/* Resaltado con el color del tema activo */
-.skill-card:hover, 
-.project-card:hover, 
-.timeline-item:hover,
-.hover-animate:hover {
-    transform: translateY(-5px);
+/* 1. Cuando se pasa el mouse sobre la sección, atenúa y oscurece el resto de tarjetas */
+.skills-grid:hover .skill-card,
+.projects-grid:hover .project-card,
+.timeline:hover .timeline-item {
+    opacity: 0.35;
+    filter: blur(1px) grayscale(25%);
+    transform: scale(0.97);
+}
+
+/* 2. La tarjeta activa bajo el mouse se enfoca, resalta y crece */
+.skills-grid .skill-card:hover,
+.projects-grid .project-card:hover,
+.timeline .timeline-item:hover {
+    opacity: 1 !important;
+    filter: blur(0) grayscale(0%) !important;
+    transform: scale(1.04) translateY(-6px) !important;
+    z-index: 10;
     border-color: var(--accent) !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 
-                0 0 15px -3px var(--accent);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4),
+                0 0 25px var(--accent-glow) !important;
 }
 
 .skill-card:hover h3, 
 .project-card:hover h3, 
-.timeline-item:hover h3,
-.hover-animate:hover h3 {
+.timeline-item:hover h3 {
     color: var(--accent);
-    transition: color 0.3s ease;
 }
 
 .hover-animate:hover .interactive-paragraph,
@@ -588,6 +603,7 @@ footer {
     .hero-title { font-size: 2.2rem; }
     .footer-content { flex-direction: column; align-items: flex-start; }
 }
+
 /* ==========================================================================
    SELECTOR DE IDIOMAS
    ========================================================================== */
