@@ -3,9 +3,8 @@
 /* ==========================================================================
    VARIABLES DE TEMA (CLARO, OSCURO MORADO, AZUL PRO)
    ========================================================================== */
-
 /* ==========================================================================
-   1. TEMA OSCURO MORADO (ÁRBOLES ORGÁNICOS REALES)
+   1. TEMA OSCURO MORADO (CON EFECTO DE NIEVE/ESTRELLAS EN MOVIMIENTO Y ÁRBOLES)
    ========================================================================== */
 body.theme-purple {
     --bg-main: #0a0518;
@@ -22,20 +21,24 @@ body.theme-purple {
     position: relative;
     overflow-x: hidden;
     background-color: var(--bg-main);
+    
+    /* Capa de resplandor morado + 4 capas de nieve de diferentes tamaños */
     background-image: 
-        /* Resplandor superior */
         radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.25), transparent 60%),
-        /* Estrellas */
         radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40px 70px, rgba(236, 72, 153, 0.8), rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 160px 120px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0));
+        radial-gradient(3px 3px at 50px 80px, rgba(236, 72, 153, 0.8), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 100px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 150px 120px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0));
+    
     background-repeat: no-repeat, repeat, repeat, repeat, repeat;
     background-position: center top, 0 0, 0 0, 0 0, 0 0;
-    background-size: 100% 100%, 200px 200px, 300px 300px, 400px 400px, 250px 250px;
+    background-size: 100% 100%, 250px 250px, 350px 350px, 200px 200px, 300px 300px;
+
+    /* Animación continua de caída de nieve */
+    animation: moveSnow 15s linear infinite;
 }
 
-/* Árboles en los laterales con silueta realista */
+/* Silueta de árboles en los laterales */
 body.theme-purple::before {
     content: "";
     position: fixed;
@@ -46,7 +49,6 @@ body.theme-purple::before {
     z-index: -1;
     pointer-events: none;
 
-    /* Árboles con tronco y copa realista dibujados en SVG ajustado */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700' preserveAspectRatio='xMidYMax slice'%3E%3Cg fill='%23180b2d'%3E%3C!-- Árbol Izquierdo --%3E%3Cpath d='M120,700 L125,500 C125,500 80,450 70,420 C60,390 90,380 110,400 L128,470 L135,430 C135,430 170,390 180,370 C190,350 210,370 195,390 L138,485 L145,700 Z'/%3E%3Ccircle cx='70' cy='390' r='45'/%3E%3Ccircle cx='110' cy='360' r='55'/%3E%3Ccircle cx='170' cy='340' r='50'/%3E%3Ccircle cx='200' cy='370' r='40'/%3E%3Ccircle cx='130' cy='320' r='60'/%3E%3C!-- Árbol Derecho --%3E%3Cpath d='M870,700 L865,480 C865,480 910,430 920,400 C930,370 900,360 880,380 L862,450 L855,410 C855,410 820,370 810,350 C800,330 780,350 795,370 L852,465 L845,700 Z'/%3E%3Ccircle cx='930' cy='370' r='45'/%3E%3Ccircle cx='890' cy='340' r='55'/%3E%3Ccircle cx='830' cy='320' r='50'/%3E%3Ccircle cx='800' cy='350' r='40'/%3E%3Ccircle cx='860' cy='300' r='60'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -56,6 +58,17 @@ body.theme-purple::before {
     animation: swayTrees 6s ease-in-out infinite alternate;
 }
 
+/* Animación de movimiento continuo para la nieve */
+@keyframes moveSnow {
+    0% {
+        background-position: center top, 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: center top, 250px 500px, -350px 700px, 200px 400px, -300px 600px;
+    }
+}
+
+/* Animación de balanceo leve para los árboles */
 @keyframes swayTrees {
     0% {
         transform: rotate(-1deg);
