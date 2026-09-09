@@ -4,11 +4,12 @@
    VARIABLES DE TEMA (CLARO, OSCURO MORADO, AZUL PRO)
    ========================================================================== */
 
-/* 1. TEMA OSCURO MORADO (Por defecto) */
+/* 1. TEMA OSCURO MORADO (Por defecto) - PAISAJE ANIMADO */
 body.theme-purple {
-    --bg-main: #0b0712;
-    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.18) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(217, 70, 239, 0.12) 0%, transparent 40%);
+    --bg-main: #0f0a1c;
+    --bg-gradient: 
+        radial-gradient(circle at 50% 30%, rgba(168, 85, 247, 0.15), transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231d1135' fill-opacity='0.6' d='M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,218.7C672,235,768,213,864,186.7C960,160,1056,128,1152,122.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     --card-bg: rgba(23, 15, 38, 0.75);
     --card-border: rgba(147, 51, 234, 0.25);
     --text-heading: #f8fafc;
@@ -18,13 +19,26 @@ body.theme-purple {
     --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
     --nav-bg: rgba(18, 10, 31, 0.85);
     --footer-bg: #06040a;
+
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    animation: pulsePurpleLandscape 10s ease-in-out infinite alternate;
 }
 
-/* 2. TEMA CLARO */
+@keyframes pulsePurpleLandscape {
+    0% {
+        background-position: center bottom, 0% 0%;
+    }
+    100% {
+        background-position: center bottom, 100% 50%;
+    }
+}
+
+/* 2. TEMA CLARO - SÓLIDO SIN ANIMACIÓN */
 body.theme-light {
     --bg-main: #f8fafc;
-    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 40%);
+    --bg-gradient: none;
     --card-bg: #ffffff;
     --card-border: rgba(226, 232, 240, 0.8);
     --text-heading: #0f172a;
@@ -34,13 +48,14 @@ body.theme-light {
     --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     --nav-bg: rgba(255, 255, 255, 0.9);
     --footer-bg: #f1f5f9;
+
+    animation: none;
 }
 
-/* 3. TEMA AZUL PRO */
+/* 3. TEMA AZUL PRO - NIEBLA DINÁMICA EN MOVIMIENTO */
 body.theme-blue {
     --bg-main: #030712;
-    --bg-gradient: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+    --bg-gradient: linear-gradient(-45deg, #0b132b, #1c2541, #1e3a8a, #0f172a);
     --card-bg: rgba(15, 23, 42, 0.75);
     --card-border: rgba(56, 189, 248, 0.2);
     --text-heading: #f0f9ff;
@@ -50,6 +65,21 @@ body.theme-blue {
     --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
     --nav-bg: rgba(15, 23, 42, 0.85);
     --footer-bg: #020617;
+
+    background-size: 400% 400%;
+    animation: blueFogAnimation 14s ease infinite;
+}
+
+@keyframes blueFogAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* ==========================================================================
