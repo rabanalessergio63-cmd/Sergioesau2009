@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
             nav4: "Experiencia",
             nav5: "CV",
             heroGreeting: "HOLA, MI NOMBRE ES",
+            heroTitleMain: "Sergio Esaú Rabanales",
             heroSubtitle: "Desarrollador Web Junior / Bachiller en Computación",
             heroDesc: "Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.",
             skillsTitle: "Habilidades Técnicas",
+            skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Lógica",
             skillResponsive: "Diseño Web Responsivo",
             skillLogic: "Lógica de Programación",
@@ -25,7 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
             exp2Title: "Práctica Supervisada",
             exp2Desc: "Desarrollo e implementación del sistema web para registro y marcaje de control de asistencias para practicantes.",
             contactTitle: "Contacto Directo:",
-            emailText: "Correo"
+            emailText: "Correo",
+            langTitle: "IDIOMA / LANGUAGE",
+            themeTitle: "SELECCIONAR TEMA",
+            themeLight: "Claro",
+            themePurple: "Oscuro Morado",
+            themeBlue: "Azul Pro"
         },
         en: {
             nav1: "About me",
@@ -34,9 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
             nav4: "Experience",
             nav5: "CV",
             heroGreeting: "HELLO, MY NAME IS",
+            heroTitleMain: "Sergio Esaú Rabanales",
             heroSubtitle: "Junior Web Developer / High School Diploma in Computer Science",
             heroDesc: "Passionate about technology, programming logic, and software development. Focused on building clean, functional, and optimized web applications, with a strong willingness to learn new technologies and collaborate on challenging projects.",
             skillsTitle: "Technical Skills",
+            skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logic",
             skillResponsive: "Responsive Web Design",
             skillLogic: "Programming Logic",
@@ -50,7 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
             exp2Title: "Supervised Internship",
             exp2Desc: "Development and deployment of a web application for student intern attendance tracking.",
             contactTitle: "Direct Contact:",
-            emailText: "Email"
+            emailText: "Email",
+            langTitle: "LANGUAGE / IDIOMA",
+            themeTitle: "SELECT THEME",
+            themeLight: "Light",
+            themePurple: "Dark Purple",
+            themeBlue: "Pro Blue"
         },
         fr: {
             nav1: "À propos",
@@ -59,9 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
             nav4: "Expérience",
             nav5: "CV",
             heroGreeting: "BONJOUR, JE M'APPELLE",
+            heroTitleMain: "Sergio Esaú Rabanales",
             heroSubtitle: "Développeur Web Junior / Diplômé en Informatique",
             heroDesc: "Passionné par la technologie, la logique de programmation et le développement logiciel. Je me concentre sur la création d'applications web propres, fonctionnelles et optimisées, avec une forte volonté d'apprendre de nouvelles technologies et de collaborer sur des projets stimulants.",
             skillsTitle: "Compétences Techniques",
+            skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logique",
             skillResponsive: "Conception Web Responsive",
             skillLogic: "Logique de Programmation",
@@ -71,11 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
             proj1Desc: "Plateforme web développée pour la gestion et le suivi de la présence des étudiants stagiaires.",
             expTitle: "Expérience & Éducation",
             exp1Title: "Baccalauréat en Sciences et Lettres avec Orientation en Informatique",
-            exp1Desc: "Formation académique axée sur le développement de systèmes, les structures de données, el support informatique et la programmation web.",
+            exp1Desc: "Formation académique axée sur le développement de systèmes, les structures de données, le support informatique et la programmation web.",
             exp2Title: "Stage Supervisé",
             exp2Desc: "Développement et mise en œuvre d'une application web de suivi des présences pour les stagiaires.",
             contactTitle: "Contact Direct:",
-            emailText: "E-mail"
+            emailText: "E-mail",
+            langTitle: "LANGUE / LANGUAGE",
+            themeTitle: "CHOISIR LE THÈME",
+            themeLight: "Clair",
+            themePurple: "Violet Sombre",
+            themeBlue: "Bleu Pro"
         }
     };
 
@@ -104,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('preferred-lang', selectedLang);
     }
 
-    // --- 3. EVENTOS DE CLIC EN LAS TARJETAS ---
+    // --- 3. EVENTOS DE CLIC EN LAS TARJETAS DE IDIOMA ---
     cardsLang.forEach(card => {
         card.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -117,5 +138,153 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 4. CARGAR IDIOMA GUARDADO AL INICIAR ---
     const currentLang = localStorage.getItem('preferred-lang') || 'es';
     setLanguage(currentLang);
+
+    // --- 5. GESTIÓN DE TEMAS Y ANIMACIÓN DE CASCADA (AZUL) ---
+    const themeBtn = document.getElementById('themeBtn');
+    const themeDropdown = document.getElementById('themeDropdown');
+    const contactToggleBtn = document.getElementById('contactToggleBtn');
+    const contactDropdown = document.getElementById('contactDropdown');
+    const langBtn = document.getElementById('langBtn');
+
+    if (themeBtn && themeDropdown) {
+        themeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (contactDropdown) contactDropdown.classList.remove('show');
+            if (langDropdown) langDropdown.classList.remove('show');
+            themeDropdown.classList.toggle('show');
+        });
+    }
+
+    if (contactToggleBtn && contactDropdown) {
+        contactToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (themeDropdown) themeDropdown.classList.remove('show');
+            if (langDropdown) langDropdown.classList.remove('show');
+            contactDropdown.classList.toggle('show');
+        });
+    }
+
+    if (langBtn && langDropdown) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (themeDropdown) themeDropdown.classList.remove('show');
+            if (contactDropdown) contactDropdown.classList.remove('show');
+            langDropdown.classList.toggle('show');
+        });
+    }
+
+    document.addEventListener('click', () => {
+        if (themeDropdown) themeDropdown.classList.remove('show');
+        if (contactDropdown) contactDropdown.classList.remove('show');
+        if (langDropdown) langDropdown.classList.remove('show');
+    });
+
+    window.setTheme = function(themeName) {
+        document.body.className = '';
+        document.body.classList.add('theme-' + themeName);
+        
+        document.querySelectorAll('.theme-card').forEach(card => {
+            card.classList.remove('active');
+        });
+        const activePreview = document.querySelector('.' + themeName + '-preview');
+        if (activePreview) activePreview.classList.add('active');
+        
+        localStorage.setItem('preferred-theme', themeName);
+
+        // Forzar el reinicio de la animación de cascada si se selecciona el tema azul
+        if (themeName === 'blue') {
+            const elements = document.querySelectorAll('.section-block, .skill-card, .project-card, .timeline-item');
+            elements.forEach(el => {
+                el.style.animation = 'none';
+                void el.offsetWidth; // Reflow forzado del DOM
+                el.style.animation = '';
+            });
+        }
+    };
+
+    const savedTheme = localStorage.getItem('preferred-theme');
+    if (savedTheme) {
+        window.setTheme(savedTheme);
+    }
+
+    // --- 6. CONTROLADORES DE MODALES Y CURSOR ---
+    const openCvBtn = document.getElementById('openCvModal');
+    const cvModal = document.getElementById('cvModal');
+    const closeCvBtn = document.getElementById('closeCvModal');
+
+    if (openCvBtn && cvModal) {
+        openCvBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            cvModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    function closeCvViewer() {
+        if (cvModal) {
+            cvModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    if (closeCvBtn) closeCvBtn.addEventListener('click', closeCvViewer);
+    if (cvModal) {
+        cvModal.addEventListener('click', (e) => {
+            if (e.target === cvModal) closeCvViewer();
+        });
+    }
+
+    const openContribBtn = document.getElementById('openContribModal');
+    const contribModal = document.getElementById('contribModal');
+    const closeContribBtn = document.getElementById('closeContribModal');
+
+    if (openContribBtn && contribModal) {
+        openContribBtn.addEventListener('click', () => {
+            contribModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    function closeContribViewer() {
+        if (contribModal) {
+            contribModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    if (closeContribBtn) closeContribBtn.addEventListener('click', closeContribViewer);
+    if (contribModal) {
+        contribModal.addEventListener('click', (e) => {
+            if (e.target === contribModal) closeContribViewer();
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeCvViewer();
+            closeContribViewer();
+        }
+    });
+
+    const customCursor = document.getElementById('customCursor');
+    const cursorFollower = document.getElementById('cursorFollower');
+
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        if (customCursor) customCursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        if (cursorFollower) cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    });
+
+    document.querySelectorAll('a, button, .theme-card, .lang-card, .contact-card').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            if (customCursor) customCursor.classList.add('cursor-hover');
+            if (cursorFollower) cursorFollower.classList.add('cursor-hover');
+        });
+        item.addEventListener('mouseleave', () => {
+            if (customCursor) customCursor.classList.remove('cursor-hover');
+            if (cursorFollower) cursorFollower.classList.remove('cursor-hover');
+        });
+    });
 
 });
