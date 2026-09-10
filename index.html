@@ -403,6 +403,47 @@
                 closeContribViewer();
             }
         });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeContribViewer();
+            }
+        });
+
+        // --- AQUÍ PEGAS EL CÓDIGO DEL CURSOR Y DEL IDIOMA ---
+        const customCursor = document.getElementById('customCursor');
+        const cursorFollower = document.getElementById('cursorFollower');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            if (customCursor) customCursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            if (cursorFollower) cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        });
+
+        document.querySelectorAll('a, button, .theme-card, .lang-card, .contact-card').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (customCursor) customCursor.classList.add('cursor-hover');
+                if (cursorFollower) cursorFollower.classList.add('cursor-hover');
+            });
+            item.addEventListener('mouseleave', () => {
+                if (customCursor) customCursor.classList.remove('cursor-hover');
+                if (cursorFollower) cursorFollower.classList.remove('cursor-hover');
+            });
+        });
+
+        const langCards = document.querySelectorAll('.lang-card');
+        langCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const selectedLang = card.getAttribute('data-lang');
+                langCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                if (langDropdown) langDropdown.classList.remove('show');
+                localStorage.setItem('preferred-lang', selectedLang);
+            });
+        });
+    </script>
+    <script src="script.js"></script>
     </script>
     <script src="script.js"></script>
 </body>
