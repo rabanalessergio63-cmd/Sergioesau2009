@@ -1040,3 +1040,26 @@ body.theme-light {
     --accent: #4f46e5;
     --accent-glow: rgba(79, 70, 229, 0.3);
 }
+/* --- EFECTO DE CASCADA PARA TEMA AZUL --- */
+@keyframes cascadaFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Comienzan más arriba */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Caen a su posición original */
+    }
+}
+
+/* Aplica la animación a los elementos principales cuando esté activo el tema azul */
+.tema-azul .card, 
+.tema-azul h2, 
+.tema-azul p {
+    animation: cascadaFade 0.8s ease-out forwards;
+}
+
+/* Retraso escalonado para que caigan uno por uno */
+.tema-azul .card:nth-child(1) { animation-delay: 0.1s; }
+.tema-azul .card:nth-child(2) { animation-delay: 0.3s; }
+.tema-azul .card:nth-child(3) { animation-delay: 0.5s; }
