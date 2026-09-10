@@ -1176,3 +1176,35 @@ body.theme-blue main > section:nth-child(4) { animation-delay: 0.4s; }
         position: relative;
     }
 }
+/* --- POSICIONAMIENTO Y TAMAÑO DE MENÚS EN MÓVILES (ZONA ROJA) --- */
+@media (max-width: 768px) {
+    /* Aseguramos que los contenedores de los botones manejen la posición relativa */
+    .contact-picker-wrapper,
+    .lang-picker-wrapper,
+    .theme-picker-wrapper {
+        position: relative !important;
+    }
+
+    /* Hacemos que los desplegables aparezcan exactamente abajo en el espacio indicado */
+    .contact-dropdown,
+    .lang-dropdown,
+    .theme-dropdown {
+        position: absolute !important;
+        top: calc(100% + 12px) !important; /* Justo debajo de la tarjeta principal */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 85vw !important;
+        max-width: 280px !important; /* Más pequeño y compacto */
+        padding: 12px !important;
+        box-sizing: border-box !important;
+        z-index: 1000 !important;
+    }
+
+    /* Reducimos el tamaño interno de las tarjetas/opciones de los menús */
+    .contact-dropdown a,
+    .lang-card,
+    .theme-card {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+    }
+}
