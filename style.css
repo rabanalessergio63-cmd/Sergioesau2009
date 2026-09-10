@@ -1052,14 +1052,17 @@ body.theme-light {
     }
 }
 
-/* Aplica la animación a los elementos principales cuando esté activo el tema azul */
-.tema-azul .card, 
-.tema-azul h2, 
-.tema-azul p {
-    animation: cascadaFade 0.8s ease-out forwards;
+/* Aplica la animación a los bloques y tarjetas principales cuando esté activo el tema azul */
+body.theme-blue .section-block,
+body.theme-blue .skill-card,
+body.theme-blue .project-card,
+body.theme-blue .timeline-item {
+    animation: cascadaFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
 }
 
-/* Retraso escalonado para que caigan uno por uno */
-.tema-azul .card:nth-child(1) { animation-delay: 0.1s; }
-.tema-azul .card:nth-child(2) { animation-delay: 0.3s; }
-.tema-azul .card:nth-child(3) { animation-delay: 0.5s; }
+/* Retraso escalonado para que caigan uno por uno en orden de aparición */
+body.theme-blue main > section:nth-child(1) { animation-delay: 0.1s; }
+body.theme-blue main > section:nth-child(2) { animation-delay: 0.2s; }
+body.theme-blue main > section:nth-child(3) { animation-delay: 0.3s; }
+body.theme-blue main > section:nth-child(4) { animation-delay: 0.4s; }
