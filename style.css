@@ -1066,3 +1066,48 @@ body.theme-blue main > section:nth-child(1) { animation-delay: 0.1s; }
 body.theme-blue main > section:nth-child(2) { animation-delay: 0.2s; }
 body.theme-blue main > section:nth-child(3) { animation-delay: 0.3s; }
 body.theme-blue main > section:nth-child(4) { animation-delay: 0.4s; }
+/* --- CORRECCIONES RESPONSIVAS (MÓVILES Y IPHONE SE) --- */
+
+/* 1. Alineación de los menús desplegables en móviles */
+@media (max-width: 768px) {
+    .contact-picker-wrapper,
+    .lang-picker-wrapper,
+    .theme-picker-wrapper {
+        position: relative;
+    }
+
+    .contact-dropdown,
+    .lang-dropdown,
+    .theme-dropdown {
+        position: fixed !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 90vw !important;
+        max-width: 320px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* 2. Corrección del visor del CV para iPhone SE y pantallas pequeñas */
+.cv-modal-content {
+    width: 95% !important;
+    height: 85vh !important;
+    max-width: 800px !important;
+    max-height: 90vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.pdf-container {
+    width: 100% !important;
+    height: 100% !important;
+    flex-grow: 1 !important;
+}
+
+.pdf-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
