@@ -79,7 +79,6 @@ const translations = {
 const cardsLang = document.querySelectorAll('.lang-card');
 const langDropdown = document.getElementById('langDropdown');
 
-// Función global de traducción
 function setLanguage(selectedLang) {
     if (!translations[selectedLang]) return;
 
@@ -97,6 +96,9 @@ function setLanguage(selectedLang) {
             c.classList.remove('active');
         }
     });
+
+    localStorage.setItem('preferred-lang', selectedLang);
+}
 
     localStorage.setItem('preferred-lang', selectedLang);
 }
