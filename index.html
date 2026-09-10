@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body class="theme-purple">
-    <!-- CURSOR PERSONALIZADO (Añadido follower por compatibilidad con script.js) -->
+    <!-- CURSOR PERSONALIZADO -->
     <div class="custom-cursor" id="customCursor"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <!-- SELECTOR DE IDIOMAS (Clases estandarizadas para script.js) -->
+                <!-- SELECTOR DE IDIOMAS -->
                 <div class="lang-picker-wrapper">
                     <button class="lang-toggle-btn" id="langBtn" aria-label="Cambiar idioma">
                         <i class="fa-solid fa-globe"></i>
@@ -126,11 +126,12 @@
                 Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes. 
             </p>
 
-            <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB ARRIBA -->
+            <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
             <div class="github-contrib-container">
                 <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones">
             </div>
         </section> 
+        
         <!-- SECCIÓN HABILIDADES -->
         <section id="habilidades" class="section-block">
             <h2 class="section-title" data-i18n="skillsTitle">Habilidades Técnicas</h2>
@@ -220,22 +221,15 @@
             <div class="footer-col footer-contacts">
                 <span class="footer-heading" data-i18n="contactTitle">Contacto Directo:</span>
                 
-                <!-- WHATSAPP -->
                 <a href="https://wa.me/50242304991" target="_blank" class="contact-link whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp
                 </a>
-
-                <!-- LINKEDIN -->
                 <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-link linkedin">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
-
-                <!-- GITHUB -->
                 <a href="https://github.com/rabanalessergio63-cmd" target="_blank" class="contact-link github">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
-
-                <!-- CORREO ELECTRÓNICO -->
                 <a href="mailto:rabanalessergio63@gmail.com" class="contact-link email">
                     <i class="fa-regular fa-envelope"></i> <span data-i18n="emailText">Correo</span>
                 </a>
@@ -243,7 +237,7 @@
         </div>
     </footer>
 
-    <!-- MODAL / VISOR DE PDF FLOTANTE PARA EL CV -->
+    <!-- MODALES -->
     <div class="cv-modal-overlay" id="cvModal">
         <div class="cv-modal-content">
             <button class="cv-close-btn" id="closeCvModal" aria-label="Cerrar visor">
@@ -255,7 +249,6 @@
         </div>
     </div>
 
-    <!-- MODAL / VISOR EXPANDIDO DE CONTRIBUCIONES DE GITHUB -->
     <div class="contrib-modal-overlay" id="contribModal">
         <div class="contrib-modal-content">
             <button class="contrib-close-btn" id="closeContribModal" aria-label="Cerrar visor">
@@ -267,179 +260,9 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE MANEJO DE TEMAS, CONTACTOS Y VÍNCULO DE SCRIPT.JS -->
-    <script>
-        const themeBtn = document.getElementById('themeBtn');
-        const themeDropdown = document.getElementById('themeDropdown');
-        const contactToggleBtn = document.getElementById('contactToggleBtn');
-        const contactDropdown = document.getElementById('contactDropdown');
-        const langBtn = document.getElementById('langBtn');
-        const langDropdown = document.getElementById('langDropdown');
+    </div> <!-- Cierre del div container principal -->
 
-        // Toggle Tema
-        if (themeBtn && themeDropdown) {
-            themeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (contactDropdown) contactDropdown.classList.remove('show');
-                if (langDropdown) langDropdown.classList.remove('show');
-                themeDropdown.classList.toggle('show');
-            });
-        }
-
-        // Toggle Contactos
-        if (contactToggleBtn && contactDropdown) {
-            contactToggleBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (themeDropdown) themeDropdown.classList.remove('show');
-                if (langDropdown) langDropdown.classList.remove('show');
-                contactDropdown.classList.toggle('show');
-            });
-        }
-
-        // Toggle Idioma
-        if (langBtn && langDropdown) {
-            langBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (themeDropdown) themeDropdown.classList.remove('show');
-                if (contactDropdown) contactDropdown.classList.remove('show');
-                langDropdown.classList.toggle('show');
-            });
-        }
-
-        // Cerrar menús al hacer clic fuera
-        document.addEventListener('click', () => {
-            if (themeDropdown) themeDropdown.classList.remove('show');
-            if (contactDropdown) contactDropdown.classList.remove('show');
-            if (langDropdown) langDropdown.classList.remove('show');
-        });
-
-        function setTheme(themeName) {
-            document.body.className = '';
-            document.body.classList.add('theme-' + themeName);
-            
-            document.querySelectorAll('.theme-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            document.querySelector('.' + themeName + '-preview').classList.add('active');
-            
-            localStorage.setItem('preferred-theme', themeName);
-        }
-
-        const savedTheme = localStorage.getItem('preferred-theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        }
-
-        // CONTROLADOR DEL VISOR DE CV (MODAL)
-        const openCvBtn = document.getElementById('openCvModal');
-        const cvModal = document.getElementById('cvModal');
-        const closeCvBtn = document.getElementById('closeCvModal');
-
-        if (openCvBtn && cvModal) {
-            openCvBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                cvModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        function closeCvViewer() {
-            if (cvModal) {
-                cvModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        if (closeCvBtn) {
-            closeCvBtn.addEventListener('click', closeCvViewer);
-        }
-
-        if (cvModal) {
-            cvModal.addEventListener('click', (e) => {
-                if (e.target === cvModal) {
-                    closeCvViewer();
-                }
-            });
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeCvViewer();
-            }
-        });
-
-        // CONTROLADOR DEL MODAL DE CONTRIBUCIONES DE GITHUB
-        const openContribBtn = document.getElementById('openContribModal');
-        const contribModal = document.getElementById('contribModal');
-        const closeContribBtn = document.getElementById('closeContribModal');
-
-        if (openContribBtn && contribModal) {
-            openContribBtn.addEventListener('click', () => {
-                contribModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        function closeContribViewer() {
-            if (contribModal) {
-                contribModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        if (closeContribBtn) {
-            closeContribBtn.addEventListener('click', closeContribViewer);
-        }
-
-        if (contribModal) {
-            contribModal.addEventListener('click', (e) => {
-                if (e.target === contribModal) {
-                    closeContribViewer();
-                }
-            });
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeContribViewer();
-            }
-        });
-
-        // CURSOR PERSONALIZADO
-        const customCursor = document.getElementById('customCursor');
-        const cursorFollower = document.getElementById('cursorFollower');
-
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            if (customCursor) customCursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-            if (cursorFollower) cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-        });
-
-        document.querySelectorAll('a, button, .theme-card, .lang-card, .contact-card').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                if (customCursor) customCursor.classList.add('cursor-hover');
-                if (cursorFollower) cursorFollower.classList.add('cursor-hover');
-            });
-            item.addEventListener('mouseleave', () => {
-                if (customCursor) customCursor.classList.remove('cursor-hover');
-                if (cursorFollower) cursorFollower.classList.remove('cursor-hover');
-            });
-        });
-
-        const langCards = document.querySelectorAll('.lang-card');
-        langCards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const selectedLang = card.getAttribute('data-lang');
-                langCards.forEach(c => c.classList.remove('active'));
-                card.classList.add('active');
-                if (langDropdown) langDropdown.classList.remove('show');
-                localStorage.setItem('preferred-lang', selectedLang);
-            });
-        });
-    </script>
+    <!-- ÚNICO ARCHIVO JS EXTERNO -->
     <script src="script.js"></script>
-</div>
 </body>
 </html>
