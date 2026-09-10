@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
             themeTitle: "SELECCIONAR TEMA",
             themeLight: "Claro",
             themePurple: "Oscuro Morado",
-            themeBlue: "Azul Pro"
+            themeBlue: "Azul Pro",
+            openPdfBtn: "Abrir"
         },
         en: {
             nav1: "About me",
@@ -64,7 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             themeTitle: "SELECT THEME",
             themeLight: "Light",
             themePurple: "Dark Purple",
-            themeBlue: "Pro Blue"
+            themeBlue: "Pro Blue",
+            openPdfBtn: "Open"
         },
         fr: {
             nav1: "À propos",
@@ -96,7 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
             themeTitle: "CHOISIR LE THÈME",
             themeLight: "Clair",
             themePurple: "Violet Sombre",
-            themeBlue: "Bleu Pro"
+            themeBlue: "Bleu Pro",
+            openPdfBtn: "Ouvrir"
         }
     };
 
