@@ -237,14 +237,25 @@
         </div>
     </footer>
 
-    <!-- MODALES -->
+  <!-- MODAL CV -->
     <div class="cv-modal-overlay" id="cvModal">
         <div class="cv-modal-content">
             <button class="cv-close-btn" id="closeCvModal" aria-label="Cerrar visor">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="pdf-container">
+            
+            <!-- Vista para Escritorio (Iframe normal) -->
+            <div class="pdf-container desktop-pdf">
                 <iframe src="cv-sergio-rabanales.pdf" title="CV Sergio Rabanales"></iframe>
+            </div>
+
+            <!-- Vista para Celulares (Diseño limpio idéntico a tu referencia) -->
+            <div class="mobile-pdf-fallback">
+                <div class="pdf-icon-box">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <span class="pdf-file-name">cv-sergio-rabanales.pdf</span>
+                <a href="cv-sergio-rabanales.pdf" target="_blank" class="pdf-open-btn" data-i18n="openPdfBtn">Abrir</a>
             </div>
         </div>
     </div>
