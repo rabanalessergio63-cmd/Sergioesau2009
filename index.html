@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body class="theme-purple">
+    <!-- CURSOR PERSONALIZADO (Añadido follower por compatibilidad con script.js) -->
     <div class="custom-cursor" id="customCursor"></div>
-    <div class="container"> 
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <div class="container">    
 
     <!-- NAVEGACIÓN Y SELECTOR DE TEMAS -->
     <nav>
@@ -34,7 +37,7 @@
             <!-- SELECTOR DE CONTACTOS, IDIOMAS Y TEMAS -->
             <div style="display: flex; align-items: center; gap: 8px;">
                 
-                <!-- SELECTOR DESPLEGABLE DE CONTACTOS (A LA PAR DE IDIOMA) -->
+                <!-- SELECTOR DESPLEGABLE DE CONTACTOS -->
                 <div class="contact-picker-wrapper">
                     <button class="contact-toggle-btn" id="contactToggleBtn" aria-label="Contactos">
                         <i class="fa-solid fa-address-book"></i>
@@ -62,13 +65,13 @@
                     </div>
                 </div>
 
-                <!-- SELECTOR DE IDIOMAS -->
+                <!-- SELECTOR DE IDIOMAS (Clases estandarizadas para script.js) -->
                 <div class="lang-picker-wrapper">
                     <button class="lang-toggle-btn" id="langBtn" aria-label="Cambiar idioma">
                         <i class="fa-solid fa-globe"></i>
                     </button>
                     <div class="lang-dropdown" id="langDropdown">
-                        <span class="lang-title">IDIOMA / LANGUAGE</span>
+                        <span class="lang-title" data-i18n="langTitle">IDIOMA / LANGUAGE</span>
                         <div class="lang-options">
                             <button class="lang-card active" data-lang="es">
                                 <span>Español</span>
@@ -92,18 +95,18 @@
                         <i class="fa-solid fa-palette"></i>
                     </button>
                     <div class="theme-dropdown" id="themeDropdown">
-                        <span class="theme-title">SELECCIONAR TEMA</span>
+                        <span class="theme-title" data-i18n="themeTitle">SELECCIONAR TEMA</span>
                         <div class="theme-options">
                             <button onclick="setTheme('light')" class="theme-card light-preview">
-                                <span class="theme-label">Claro</span>
+                                <span class="theme-label" data-i18n="themeLight">Claro</span>
                                 <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
                             </button>
                             <button onclick="setTheme('purple')" class="theme-card purple-preview active">
-                                <span class="theme-label">Oscuro Morado</span>
+                                <span class="theme-label" data-i18n="themePurple">Oscuro Morado</span>
                                 <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
                             </button>
                             <button onclick="setTheme('blue')" class="theme-card blue-preview">
-                                <span class="theme-label">Azul Pro</span>
+                                <span class="theme-label" data-i18n="themeBlue">Azul Pro</span>
                                 <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
                             </button>
                         </div>
@@ -117,7 +120,7 @@
       <!-- SECCIÓN SOBRE MÍ -->
         <section id="sobre-mi" class="hero-section">
             <span class="subtitle-tag animate-fade-in" data-i18n="heroGreeting">HOLA, MI NOMBRE ES</span>
-            <h1 class="hero-title animate-fade-in">Sergio Esaú Rabanales</h1>
+            <h1 class="hero-title animate-fade-in" data-i18n="heroTitleMain">Sergio Esaú Rabanales</h1>
             <h2 class="hero-subtitle animate-fade-in" data-i18n="heroSubtitle">Desarrollador Web Junior / Bachiller en Computación</h2>
             <p class="hero-description interactive-paragraph animate-fade-in" data-i18n="heroDesc">
                 Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes. 
@@ -133,7 +136,7 @@
             <h2 class="section-title" data-i18n="skillsTitle">Habilidades Técnicas</h2>
             <div class="skills-grid">
                 <div class="skill-card hover-animate animate-fade-in">
-                    <h3>Frontend</h3>
+                    <h3 data-i18n="skillFrontendTitle">Frontend</h3>
                     <ul>
                         <li class="interactive-paragraph"><i class="fa-brands fa-html5"></i> HTML5 / <i class="fa-brands fa-css3-alt"></i> CSS3</li>
                         <li class="interactive-paragraph"><i class="fa-brands fa-js"></i> JavaScript</li>
@@ -141,7 +144,7 @@
                     </ul>
                 </div>
                 <div class="skill-card hover-animate animate-fade-in">
-                  <h3><span data-i18n="skillBackendTitle">Backend & Lógica</span></h3> 
+                    <h3><span data-i18n="skillBackendTitle">Backend & Lógica</span></h3> 
                     <ul>
                         <li class="interactive-paragraph"><i class="fa-brands fa-node-js"></i> Node.js / Express</li>
                         <li class="interactive-paragraph"><i class="fa-brands fa-python"></i> Python</li>
@@ -181,14 +184,15 @@
                 </a>
             </div>
         </section>
-<!-- SECCIÓN EXPERIENCIA Y EDUCACIÓN -->
+
+        <!-- SECCIÓN EXPERIENCIA Y EDUCACIÓN -->
         <section id="experiencia" class="section-block">
             <h2 class="section-title" data-i18n="expTitle">Experiencia & Educación</h2>
             <div class="timeline">
                 <div class="timeline-item hover-animate animate-fade-in">
-                    <span class="date">2026</span>
+                    <span class="date"> 2025-2026</span>
                     <h3 data-i18n="exp1Title">Bachillerato en Ciencias y Letras con Orientación en Computación</h3>
-                    <p class="timeline-school"> Colegio mixto bautista shalom - Liceo Mixto Pinulteco</p>
+                    <p class="timeline-school">Liceo Mixto Pinulteco</p>
                     <p class="interactive-paragraph" data-i18n="exp1Desc">
                         Formación académica enfocado en desarrollo de sistemas, estructura de datos, soporte informático y programación web.
                     </p>
