@@ -1,3 +1,4 @@
+// --- 1. DICCIONARIO DE IDIOMAS ---
 const translations = {
     es: {
         nav1: "Sobre mí", 
@@ -79,9 +80,11 @@ const translations = {
 const cardsLang = document.querySelectorAll('.lang-card');
 const langDropdown = document.getElementById('langDropdown');
 
+// --- 2. FUNCIÓN DE CAMBIO DE IDIOMA ---
 function setLanguage(selectedLang) {
     if (!translations[selectedLang]) return;
 
+    // Actualiza todos los elementos que tengan data-i18n
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[selectedLang][key]) {
@@ -89,6 +92,7 @@ function setLanguage(selectedLang) {
         }
     });
 
+    // Cambia la clase visual activa en las tarjetas de idioma
     cardsLang.forEach(c => {
         if (c.getAttribute('data-lang') === selectedLang) {
             c.classList.add('active');
@@ -97,13 +101,11 @@ function setLanguage(selectedLang) {
         }
     });
 
+    // Guarda la preferencia en el navegador
     localStorage.setItem('preferred-lang', selectedLang);
 }
 
-    localStorage.setItem('preferred-lang', selectedLang);
-}
-
-// Evento de clic en las tarjetas de idioma
+// --- 3. EVENTOS DE CLIC EN LAS TARJETAS ---
 cardsLang.forEach(card => {
     card.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -113,71 +115,6 @@ cardsLang.forEach(card => {
     });
 });
 
-// Cargar idioma guardado al iniciar
+// --- 4. CARGAR IDIOMA GUARDADO AL INICIAR ---
 const currentLang = localStorage.getItem('preferred-lang') || 'es';
 setLanguage(currentLang);
-
-// Movimiento fluido del cursor personalizado y efectos de hover
-const customCursor = document.getElementById('customCursor');
-const cursorFollower = document.getElementById('cursorFollower');
-
-document.addEventListener('mousemove', (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    if (customCursor) {
-        customCursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    }
-    if (cursorFollower) {
-        cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    }
-});
-
-document.querySelectorAll('a, button, .theme-card, .lang-card, .contact-card').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        if (customCursor) customCursor.classList.add('cursor-hover');
-        if (cursorFollower) cursorFollower.classList.add('cursor-hover');
-    });
-    item.addEventListener('mouseleave', () => {
-        if (customCursor) customCursor.classList.remove('cursor-hover');
-        if (cursorFollower) cursorFollower.classList.remove('cursor-hover');
-    });
-});
-
-/* ==========================================================================
-   CONTROLADOR DEL MODAL DE CONTRIBUCIONES DE GITHUB
-   ========================================================================== */
-const openContribBtn = document.getElementById('openContribModal');
-const contribModal = document.getElementById('contribModal');
-const closeContribBtn = document.getElementById('closeContribModal');
-
-if (openContribBtn && contribModal) {
-    openContribBtn.addEventListener('click', () => {
-        contribModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-}
-
-function closeContribViewer() {
-    if (contribModal) {
-        contribModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-}
-
-if (closeContribBtn) {
-    closeContribBtn.addEventListener('click', closeContribViewer);
-}
-
-if (contribModal) {
-    contribModal.addEventListener('click', (e) => {
-        if (e.target === contribModal) {
-            closeContribViewer();
-        }
-    });
-}
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeContribViewer();
-    }
-});
