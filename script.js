@@ -77,6 +77,7 @@ const translations = {
 };
 
 const cardsLang = document.querySelectorAll('.lang-card');
+const langDropdown = document.getElementById('langDropdown');
 
 // Función global de traducción
 function setLanguage(selectedLang) {
@@ -102,11 +103,11 @@ function setLanguage(selectedLang) {
 
 // Evento de clic en las tarjetas de idioma
 cardsLang.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+        e.stopPropagation();
         const selectedLang = card.getAttribute('data-lang');
         setLanguage(selectedLang);
-        const dropdownMenu = document.getElementById('langDropdown');
-        if (dropdownMenu) dropdownMenu.classList.remove('show');
+        if (langDropdown) langDropdown.classList.remove('show');
     });
 });
 
@@ -114,15 +115,32 @@ cardsLang.forEach(card => {
 const currentLang = localStorage.getItem('preferred-lang') || 'es';
 setLanguage(currentLang);
 
-// Movimiento fluido del cursor personalizado
+// Movimiento fluido del cursor personalizado y efectos de hover
 const customCursor = document.getElementById('customCursor');
+const cursorFollower = document.getElementById('cursorFollower');
 
-if (customCursor) {
-    document.addEventListener('mousemove', (e) => {
-        customCursor.style.left = e.clientX + 'px';
-        customCursor.style.top = e.clientY + 'px';
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    if (customCursor) {
+        customCursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    }
+    if (cursorFollower) {
+        cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    }
+});
+
+document.querySelectorAll('a, button, .theme-card, .lang-card, .contact-card').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        if (customCursor) customCursor.classList.add('cursor-hover');
+        if (cursorFollower) cursorFollower.classList.add('cursor-hover');
     });
-}
+    item.addEventListener('mouseleave', () => {
+        if (customCursor) customCursor.classList.remove('cursor-hover');
+        if (cursorFollower) cursorFollower.classList.remove('cursor-hover');
+    });
+});
+
 /* ==========================================================================
    CONTROLADOR DEL MODAL DE CONTRIBUCIONES DE GITHUB
    ========================================================================== */
