@@ -1111,3 +1111,68 @@ body.theme-blue main > section:nth-child(4) { animation-delay: 0.4s; }
     height: 100% !important;
     border: none !important;
 }
+/* --- CONTROL DE VISOR DE CV RESPONSIVO --- */
+.mobile-pdf-fallback {
+    display: none; /* Oculto por defecto en PC */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.desktop-pdf {
+    display: block; /* Visible por defecto en PC */
+    width: 100%;
+    height: 100%;
+}
+
+.pdf-icon-box {
+    font-size: 48px;
+    color: var(--accent-color, #a855f7);
+    margin-bottom: 12px;
+}
+
+.pdf-file-name {
+    font-size: 16px;
+    color: var(--text-color, #fff);
+    margin-bottom: 24px;
+    font-family: monospace;
+    opacity: 0.9;
+}
+
+.pdf-open-btn {
+    display: inline-block;
+    background-color: var(--btn-bg, #93c5fd);
+    color: #1e1b4b;
+    padding: 12px 48px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.pdf-open-btn:hover {
+    opacity: 0.9;
+}
+
+/* En pantallas táctiles / celulares aplicamos el diseño limpio */
+@media (max-width: 768px) {
+    .desktop-pdf {
+        display: none !important;
+    }
+    .mobile-pdf-fallback {
+        display: flex !important;
+    }
+    
+    .cv-modal-content {
+        width: 85% !important;
+        max-width: 340px !important;
+        height: 380px !important;
+        background-color: var(--card-bg, #1a1625);
+        border-radius: 20px;
+        position: relative;
+    }
+}
