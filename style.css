@@ -1019,3 +1019,24 @@ footer {
     background: #ef4444;
     transform: scale(1.1);
 }
+/* =========================================================
+   VARIABLES DE COLOR PARA LOS TEMAS DEL CURSOR Y LA PÁGINA
+   ========================================================= */
+
+/* Tema Morado (Por defecto) */
+body.theme-purple {
+    --accent: #a855f7;
+    --accent-glow: rgba(168, 85, 247, 0.4);
+}
+
+/* Tema Azul Pro */
+body.theme-blue {
+    --accent: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.4);
+}
+
+/* Tema Claro */
+body.theme-light {
+    --accent: #4f46e5;
+    --accent-glow: rgba(79, 70, 229, 0.3);
+}
