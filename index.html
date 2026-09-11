@@ -118,25 +118,30 @@
     <main class="container">
       <!-- SECCIÓN SOBRE MÍ -->
         <section id="sobre-mi" class="hero-section reveal">
-            <span class="subtitle-tag animate-fade-in" data-i18n="heroGreeting">HOLA, MI NOMBRE ES</span>
-            <h1 class="hero-title animate-fade-in" data-i18n="heroTitleMain">Sergio Esaú Rabanales</h1>
-            <h2 class="hero-subtitle animate-fade-in" data-i18n="heroSubtitle">Desarrollador Web Junior / Bachiller en Computación</h2>
-            <p class="hero-description interactive-paragraph animate-fade-in" data-i18n="heroDesc">
-                Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes. 
-            </p>
-
-            <!-- AVATAR 3D INTERACTIVO -->
-            <div class="hero-avatar-container animate-fade-in reveal">
-                <!-- Contenedor o elemento canvas para el renderizado 3D (ej. Three.js o Spline) -->
-                <div class="interactive-avatar-3d" id="avatar3dContainer" title="Avatar 3D interactivo">
-                    <!-- Puedes integrar aquí tu canvas o visor 3D -->
-                    <div class="interactive-avatar" id="openInfoModal">SR</div>
+            <div class="hero-content-wrapper" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+                
+                <!-- Columna de Texto -->
+                <div class="hero-text-content" style="flex: 1; min-width: 280px;">
+                    <span class="subtitle-tag animate-fade-in" data-i18n="heroGreeting">HOLA, MI NOMBRE ES</span>
+                    <h1 class="hero-title animate-fade-in" data-i18n="heroTitleMain">Sergio Esaú Rabanales Marroquín</h1>
+                    <h2 class="hero-subtitle animate-fade-in" data-i18n="heroSubtitle">Desarrollador Web Junior / Bachiller en Computación</h2>
+                    <p class="hero-description interactive-paragraph animate-fade-in" data-i18n="heroDesc">
+                        Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes. 
+                    </p>
                 </div>
-                <span class="avatar-hint" data-i18n="avatarHint">Interactúa con el avatar 3D para conocerme mejor ✨</span>
+
+                <!-- Columna del Avatar 3D -->
+                <div class="hero-avatar-container animate-fade-in reveal" style="flex-shrink: 0; text-align: center;">
+                    <div class="interactive-avatar-3d" id="avatar3dContainer" title="Avatar 3D interactivo">
+                        <div class="interactive-avatar" id="openInfoModal" style="cursor: pointer;">SR</div>
+                    </div>
+                    <span class="avatar-hint" data-i18n="avatarHint" style="display: block; margin-top: 10px; font-size: 0.85rem;">Interactúa con el avatar 3D para conocerme mejor ✨</span>
+                </div>
+
             </div>
 
             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
-            <div class="github-contrib-container">
+            <div class="github-contrib-container" style="margin-top: 30px;">
                 <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones">
             </div>
             <!-- CONTADOR DE VISITAS DE GITHUB -->
