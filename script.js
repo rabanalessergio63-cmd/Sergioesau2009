@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 7. EFECTO DE APARICIÓN AL HACER SCROLL (SCROLL REVEAL) ---
+    // --- 7. EFECTO DE APARICIÓN AL HACER SCROLL (BIDIRECCIONAL) ---
     const revealElements = document.querySelectorAll('.reveal');
 
     function checkReveal() {
@@ -333,6 +333,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (elTop < triggerBottom) {
                 el.classList.add('active');
+            } else {
+                el.classList.remove('active'); // Permite que se vuelva a animar tanto al bajar como al subir
             }
         });
     }
