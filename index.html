@@ -81,9 +81,9 @@
                                 <span class="flag">🇫🇷</span>
                             </button>
                             <button class="lang-card" data-lang="de">
-                <span>Deutsch</span>
-                <span class="flag">DE</span>
-            </button>
+                                <span>Deutsch</span>
+                                <span class="flag">DE</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -125,10 +125,14 @@
                 Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes. 
             </p>
 
-            <!-- AVATAR INTERACTIVO -->
+            <!-- AVATAR 3D INTERACTIVO -->
             <div class="hero-avatar-container animate-fade-in reveal">
-                <div class="interactive-avatar" id="openInfoModal" title="Haz clic para ver más info">SR</div>
-                <span class="avatar-hint" data-i18n="avatarHint">Haz clic en el avatar para conocerme mejor ✨</span>
+                <!-- Contenedor o elemento canvas para el renderizado 3D (ej. Three.js o Spline) -->
+                <div class="interactive-avatar-3d" id="avatar3dContainer" title="Avatar 3D interactivo">
+                    <!-- Puedes integrar aquí tu canvas o visor 3D -->
+                    <div class="interactive-avatar" id="openInfoModal">SR</div>
+                </div>
+                <span class="avatar-hint" data-i18n="avatarHint">Interactúa con el avatar 3D para conocerme mejor ✨</span>
             </div>
 
             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
@@ -226,7 +230,7 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <span class="footer-copy">&copy; 2026 Sergio Esaú Rabanales</span>
+                <span class="footer-copy">&copy; 2026 Sergio Esaú Rabanales Marroquín. Todos los derechos reservados.</span>
             </div>
             
             <div class="footer-col footer-contacts">
@@ -257,7 +261,7 @@
                 <iframe src="cv-sergio-rabanales.pdf" title="CV Sergio Rabanales"></iframe>
             </div>
 
-            <!-- Vista para Celulares (Diseño limpio idéntico a tu referencia) -->
+            <!-- Vista para Celulares -->
             <div class="mobile-pdf-fallback">
                 <div class="pdf-icon-box">
                     <i class="fa-solid fa-file-pdf"></i>
@@ -277,7 +281,7 @@
             <div class="info-modal-header">
                 <div class="info-avatar-big">SR</div>
                 <div>
-                    <h3 data-i18n="infoName">Sergio Esaú Rabanales</h3>
+                    <h3 data-i18n="infoName">Sergio Esaú Rabanales Marroquín</h3>
                     <p data-i18n="infoRole">Desarrollador Web Junior</p>
                 </div>
             </div>
@@ -304,6 +308,6 @@
     </div> <!-- Cierre del div container principal -->
 
     <!-- ÚNICO ARCHIVO JS EXTERNO -->
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>
