@@ -414,3 +414,30 @@ document.addEventListener('DOMContentLoaded', () => {
     checkReveal(); // Verificación inicial al cargar la página
 
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const splineViewer = document.querySelector("spline-viewer");
+    const infoCard = document.getElementById("avatarInfoCard");
+    const closeBtn = document.getElementById("closeInfoBtn");
+
+    if (splineViewer && infoCard) {
+        // Escucha el evento de clic en el modelo 3D de Spline
+        splineViewer.addEventListener("mousedown", (e) => {
+            // Muestra la tarjeta con animación
+            infoCard.style.display = "flex";
+        });
+    }
+
+    // Botón para cerrar la tarjeta
+    if (closeBtn && infoCard) {
+        closeBtn.addEventListener("click", () => {
+            infoCard.style.display = "none";
+        });
+
+        // También se cierra si hacen clic fuera del contenido de la tarjeta
+        infoCard.addEventListener("click", (e) => {
+            if (e.target === infoCard) {
+                infoCard.style.display = "none";
+            }
+        });
+    }
+});
