@@ -8,7 +8,7 @@
     <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=5">
-</head>   
+</head>    
 <body class="theme-purple">
     <!-- CURSOR PERSONALIZADO -->
     <div class="custom-cursor" id="customCursor"></div>
@@ -23,14 +23,12 @@
                 <span>SR</span>
             </a>
             
-            <!-- MENÚ DE NAVEGACIÓN -->
+            <!-- MENÚ DE NAVEGACIÓN (CV ELIMINADO) -->
             <ul class="nav-links">
                 <li><a href="#sobre-mi"><span class="num">01</span> <span data-i18n="nav1">Sobre mí</span></a></li>
                 <li><a href="#habilidades"><span class="num">02</span> <span data-i18n="nav2">Habilidades</span></a></li>
                 <li><a href="#proyectos"><span class="num">03</span> <span data-i18n="nav3">Proyectos</span></a></li>
                 <li><a href="#experiencia"><span class="num">04</span> <span data-i18n="nav4">Experiencia</span></a></li>
-                <!-- APARTADO CV PARA VISUALIZAR EL PDF -->
-                <li><a href="#" id="openCvModal" class="cv-link"><span class="num">05</span> <span data-i18n="nav5">CV</span> <i class="fa-solid fa-eye"></i></a></li>
             </ul>
 
             <!-- SELECTOR DE CONTACTOS, IDIOMAS Y TEMAS -->
@@ -130,31 +128,33 @@
                     </p>
                 </div>
 
-<!-- Columna del Avatar 3D -->
-<div class="hero-avatar-container animate-fade-in reveal" style="flex-shrink: 0; text-align: center;">
-    <div class="interactive-avatar-3d" id="avatar3dContainer" style="width: 300px; height: 350px; position: relative;">
-        <!-- Script oficial de Spline Viewer actualizado -->
-        <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js"></script>
-        
-        <!-- Tu modelo 3D con el archivo .splinecode -->
-        <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
-    </div>
- <span class="avatar-hint" data-i18n="avatarHint" style="display: block; margin-top: 10px; font-size: 0.85rem;">Interactúa con el avatar 3D para conocerme mejor ✨</span>
-<!-- Tarjeta flotante de información del Avatar (inicialmente oculta) -->
-<div id="avatarInfoCard" class="avatar-info-card" style="display: none;">
-    <div class="card-content">
-        <button id="closeInfoBtn" class="close-btn">&times;</button>
-        <h3>Sergio Esaú Rabanales Marroquín</h3>
-        <p class="subtitle">Desarrollador Web Junior / Bachiller en Computación</p>
-        <ul class="qualities-list">
-            <li>⚡ Apasionado por la tecnología y la lógica</li>
-            <li>💻 Enfoque en código limpio y optimizado</li>
-            <li>🚀 Facilidad para aprender nuevas herramientas</li>
-            <li>🎯 Proactivo y orientado a resolver problemas</li>
-        </ul>
-    </div>
-</div>
-</div>
+                <!-- Columna del Avatar 3D -->
+                <div class="hero-avatar-container animate-fade-in reveal" style="flex-shrink: 0; text-align: center;">
+                    <div class="interactive-avatar-3d" id="avatar3dContainer" style="width: 300px; height: 350px; position: relative;">
+                        <!-- Script oficial de Spline Viewer actualizado -->
+                        <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js"></script>
+                        
+                        <!-- Tu modelo 3D con el archivo .splinecode -->
+                        <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
+                    </div>
+                    <span class="avatar-hint" data-i18n="avatarHint" style="display: block; margin-top: 10px; font-size: 0.85rem;">Interactúa con el avatar 3D para conocerme mejor ✨</span>
+                    
+                    <!-- Tarjeta flotante de información del Avatar (inicialmente oculta) -->
+                    <div id="avatarInfoCard" class="avatar-info-card" style="display: none;">
+                        <div class="card-content">
+                            <button id="closeInfoBtn" class="close-btn">&times;</button>
+                            <h3>Sergio Esaú Rabanales Marroquín</h3>
+                            <p class="subtitle">Desarrollador Web Junior / Bachiller en Computación</p>
+                            <ul class="qualities-list">
+                                <li>⚡ Apasionado por la tecnología y la lógica</li>
+                                <li>💻 Enfoque en código limpio y optimizado</li>
+                                <li>🚀 Facilidad para aprender nuevas herramientas</li>
+                                <li>🎯 Proactivo y orientado a resolver problemas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
             <div class="github-contrib-container" style="margin-top: 30px;">
@@ -269,29 +269,6 @@
             </div>
         </div>
     </footer>
-
-  <!-- MODAL CV -->
-    <div class="cv-modal-overlay" id="cvModal">
-        <div class="cv-modal-content">
-            <button class="cv-close-btn" id="closeCvModal" aria-label="Cerrar visor">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-            <!-- Vista para Escritorio (Iframe normal) -->
-            <div class="pdf-container desktop-pdf">
-                <iframe src="cv-sergio-rabanales.pdf" title="CV Sergio Rabanales"></iframe>
-            </div>
-
-            <!-- Vista para Celulares -->
-            <div class="mobile-pdf-fallback">
-                <div class="pdf-icon-box">
-                    <i class="fa-solid fa-file-pdf"></i>
-                </div>
-                <span class="pdf-file-name">cv-sergio-rabanales.pdf</span>
-                <a href="cv-sergio-rabanales.pdf" target="_blank" class="pdf-open-btn" data-i18n="openPdfBtn">Abrir</a>
-            </div>
-        </div>
-    </div>
 
     <!-- MODAL DE INFORMACIÓN PERSONAL (AVATAR) -->
     <div class="info-modal-overlay" id="infoModal">
