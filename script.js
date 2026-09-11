@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. DICCIONARIO DE IDIOMAS ---
+    // --- 1. DICCIONARIO DE IDIOMAS ---  
     const translations = {
         es: {
             nav1: "Sobre mí", 
