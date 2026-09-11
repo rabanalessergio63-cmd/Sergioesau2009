@@ -125,6 +125,12 @@
                 Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes. 
             </p>
 
+            <!-- AVATAR INTERACTIVO -->
+            <div class="hero-avatar-container animate-fade-in reveal">
+                <div class="interactive-avatar" id="openInfoModal" title="Haz clic para ver más info">SR</div>
+                <span class="avatar-hint" data-i18n="avatarHint">Haz clic en el avatar para conocerme mejor ✨</span>
+            </div>
+
             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
             <div class="github-contrib-container">
                 <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones">
@@ -259,6 +265,28 @@
                 <span class="pdf-file-name">cv-sergio-rabanales.pdf</span>
                 <a href="cv-sergio-rabanales.pdf" target="_blank" class="pdf-open-btn" data-i18n="openPdfBtn">Abrir</a>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE INFORMACIÓN PERSONAL (AVATAR) -->
+    <div class="info-modal-overlay" id="infoModal">
+        <div class="info-modal-content">
+            <button class="info-close-btn" id="closeInfoModal" aria-label="Cerrar modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="info-modal-header">
+                <div class="info-avatar-big">SR</div>
+                <div>
+                    <h3 data-i18n="infoName">Sergio Esaú Rabanales</h3>
+                    <p data-i18n="infoRole">Desarrollador Web Junior</p>
+                </div>
+            </div>
+            <ul class="info-details-list">
+                <li><i class="fa-solid fa-calendar-days"></i> <strong data-i18n="infoAgeLabel">Edad:</strong> <span data-i18n="infoAgeValue">18 años</span></li>
+                <li><i class="fa-solid fa-location-dot"></i> <strong data-i18n="infoLocationLabel">País:</strong> <span data-i18n="infoLocationValue">Guatemala</span></li>
+                <li><i class="fa-solid fa-graduation-cap"></i> <strong data-i18n="infoEduLabel">Estudio:</strong> <span data-i18n="infoEduValue">5to Bachillerato en Computación</span></li>
+                <li><i class="fa-solid fa-star"></i> <strong data-i18n="infoQualitiesLabel">Cualidades:</strong> <span data-i18n="infoQualitiesValue">Responsable, autodidacta, analítico y dedicado</span></li>
+            </ul>
         </div>
     </div>
 
