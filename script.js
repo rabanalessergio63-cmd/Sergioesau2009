@@ -322,4 +322,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- 7. EFECTO DE APARICIÓN AL HACER SCROLL (SCROLL REVEAL) ---
+    const revealElements = document.querySelectorAll('.reveal');
+
+    function checkReveal() {
+        const triggerBottom = window.innerHeight * 0.88;
+
+        revealElements.forEach(el => {
+            const elTop = el.getBoundingClientRect().top;
+
+            if (elTop < triggerBottom) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkReveal);
+    checkReveal(); // Verificación inicial al cargar la página
+
 });
