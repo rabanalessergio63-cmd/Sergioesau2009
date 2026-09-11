@@ -130,15 +130,17 @@
                     </p>
                 </div>
 
-                <!-- Columna del Avatar 3D -->
-                <div class="hero-avatar-container animate-fade-in reveal" style="flex-shrink: 0; text-align: center;">
-                    <div class="interactive-avatar-3d" id="avatar3dContainer" title="Avatar 3D interactivo">
-                        <div class="interactive-avatar" id="openInfoModal" style="cursor: pointer;">SR</div>
-                    </div>
-                    <span class="avatar-hint" data-i18n="avatarHint" style="display: block; margin-top: 10px; font-size: 0.85rem;">Interactúa con el avatar 3D para conocerme mejor ✨</span>
-                </div>
-
-            </div>
+<!-- Columna del Avatar 3D -->
+<div class="hero-avatar-container animate-fade-in reveal" style="flex-shrink: 0; text-align: center;">
+    <div class="interactive-avatar-3d" id="avatar3dContainer" style="width: 300px; height: 350px; position: relative;">
+        <!-- Script oficial de Spline Viewer -->
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.54/build/spline-viewer.js"></script>
+        
+        <!-- Tu modelo 3D interactivo -->
+        <spline-viewer url="https://my.spline.design/genkubgreetingrobot-7f5DL8ZnM0G1KMCJ7ukjAj7/"></spline-viewer>
+    </div>
+    <span class="avatar-hint" data-i18n="avatarHint" style="display: block; margin-top: 10px; font-size: 0.85rem;">Interactúa con el avatar 3D para conocerme mejor ✨</span>
+</div> 
 
             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
             <div class="github-contrib-container" style="margin-top: 30px;">
