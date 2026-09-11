@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. DICCIONARIO DE IDIOMAS ---  
     const translations = {
         es: {
-            nav1: "Sobre mí", 
+            nav1: "Sobre mí",   
             nav2: "Habilidades",
             nav3: "Proyectos",
             nav4: "Experiencia",
