@@ -1208,3 +1208,46 @@ body.theme-blue main > section:nth-child(4) { animation-delay: 0.4s; }
         font-size: 14px !important;
     }
 }
+
+/* ==========================================================================
+   NUEVOS ESTILOS: SCROLL REVEAL Y TARJETA GITHUB
+   ========================================================================== */
+
+/* Estado inicial de los elementos antes de aparecer (Scroll Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado cuando el elemento ya es visible en pantalla */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para la tarjeta / insignia de GitHub */
+.github-badge-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.github-badge-card:hover {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.github-badge-card i {
+    font-size: 24px;
+    color: var(--text-heading);
+}
