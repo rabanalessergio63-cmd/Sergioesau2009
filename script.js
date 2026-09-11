@@ -100,6 +100,39 @@ document.addEventListener('DOMContentLoaded', () => {
             themePurple: "Violet Sombre",
             themeBlue: "Bleu Pro",
             openPdfBtn: "Ouvrir"
+        },
+        de: {
+            nav1: "Über mich",
+            nav2: "Fähigkeiten",
+            nav3: "Projekte",
+            nav4: "Erfahrung",
+            nav5: "CV",
+            heroGreeting: "HALLO, ICH HEISSE",
+            heroTitleMain: "Sergio Esaú Rabanales",
+            heroSubtitle: "Junior Web-Entwickler / Abiturient in Informatik",
+            heroDesc: "Leidenschaftlich für Technologie, Programmierlogik und Softwareentwicklung. Ich konzentriere mich darauf, saubere, funktionale und optimierte Webanwendungen zu entwickeln, mit einer starken Bereitschaft, neue Technologien zu erlernen und an herausfordernden Projekten mitzuwirken.",
+            skillsTitle: "Technische Fähigkeiten",
+            skillFrontendTitle: "Frontend",
+            skillBackendTitle: "Backend & Logik",
+            skillResponsive: "Responsives Webdesign",
+            skillLogic: "Programmierlogik",
+            skillToolsTitle: "Werkzeuge & Büro",
+            projectsTitle: "Projekte",
+            proj1Title: "Praktikanten-Registrierungs- und Anwesenheitssystem",
+            proj1Desc: "Webplattform entwickelt zur Verwaltung, Kontrolle und Zeiterfassung von studentischen Praktikanten.",
+            expTitle: "Erfahrung & Bildung",
+            exp1Title: "Abitur in Naturwissenschaften und Literatur mit Schwerpunkt Informatik",
+            exp1Desc: "Akademische Ausbildung mit Schwerpunkt Systementwicklung, Datenstrukturen, IT-Support und Webprogrammierung.",
+            exp2Title: "Betreutes Praktikum",
+            exp2Desc: "Entwicklung und Implementierung einer Webanwendung zur Anwesenheitsverfolgung für Praktikanten.",
+            contactTitle: "Direkter Kontakt:",
+            emailText: "E-Mail",
+            langTitle: "SPRACHE / LANGUAGE",
+            themeTitle: "THEMA AUSWÄHLEN",
+            themeLight: "Hell",
+            themePurple: "Dunkles Lila",
+            themeBlue: "Pro Blau",
+            openPdfBtn: "Öffnen"
         }
     };
 
@@ -194,12 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         localStorage.setItem('preferred-theme', themeName);
 
-        // Forzar el reinicio de la animación de cascada si se selecciona el tema azul
         if (themeName === 'blue') {
             const elements = document.querySelectorAll('.section-block, .skill-card, .project-card, .timeline-item');
             elements.forEach(el => {
                 el.style.animation = 'none';
-                void el.offsetWidth; // Reflow forzado del DOM
+                void el.offsetWidth;
                 el.style.animation = '';
             });
         }
