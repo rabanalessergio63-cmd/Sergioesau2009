@@ -12,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Esaú Rabanales",
             heroSubtitle: "Desarrollador Web Junior / Bachiller en Computación",
             heroDesc: "Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.",
+            avatarHint: "Haz clic en el avatar para conocerme mejor ✨",
+            infoName: "Sergio Esaú Rabanales",
+            infoRole: "Desarrollador Web Junior",
+            infoAgeLabel: "Edad:",
+            infoAgeValue: "18 años",
+            infoLocationLabel: "País:",
+            infoLocationValue: "Guatemala",
+            infoEduLabel: "Estudio:",
+            infoEduValue: "5to Bachillerato en Computación",
+            infoQualitiesLabel: "Cualidades:",
+            infoQualitiesValue: "Responsable, autodidacta, analítico y dedicado",
             skillsTitle: "Habilidades Técnicas",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Lógica",
@@ -45,6 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Esaú Rabanales",
             heroSubtitle: "Junior Web Developer / High School Diploma in Computer Science",
             heroDesc: "Passionate about technology, programming logic, and software development. Focused on building clean, functional, and optimized web applications, with a strong willingness to learn new technologies and collaborate on challenging projects.",
+            avatarHint: "Click the avatar to get to know me better ✨",
+            infoName: "Sergio Esaú Rabanales",
+            infoRole: "Junior Web Developer",
+            infoAgeLabel: "Age:",
+            infoAgeValue: "18 years old",
+            infoLocationLabel: "Country:",
+            infoLocationValue: "Guatemala",
+            infoEduLabel: "Education:",
+            infoEduValue: "High School Computer Science Student",
+            infoQualitiesLabel: "Qualities:",
+            infoQualitiesValue: "Responsible, self-taught, analytical and dedicated",
             skillsTitle: "Technical Skills",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logic",
@@ -78,6 +100,17 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Esaú Rabanales",
             heroSubtitle: "Développeur Web Junior / Diplômé en Informatique",
             heroDesc: "Passionné par la technologie, la logique de programmation et le développement logiciel. Je me concentre sur la création d'applications web propres, fonctionnelles et optimisées, avec une forte volonté d'apprendre de nouvelles technologies et de collaborer sur des projets stimulants.",
+            avatarHint: "Cliquez sur l'avatar pour mieux me connaître ✨",
+            infoName: "Sergio Esaú Rabanales",
+            infoRole: "Développeur Web Junior",
+            infoAgeLabel: "Âge:",
+            infoAgeValue: "18 ans",
+            infoLocationLabel: "Pays:",
+            infoLocationValue: "Guatemala",
+            infoEduLabel: "Éducation:",
+            infoEduValue: "Étudiant en Informatique",
+            infoQualitiesLabel: "Qualités:",
+            infoQualitiesValue: "Responsable, autodidacte, analytique et dévoué",
             skillsTitle: "Compétences Techniques",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logique",
@@ -111,6 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Esaú Rabanales",
             heroSubtitle: "Junior Web-Entwickler / Abiturient in Informatik",
             heroDesc: "Leidenschaftlich für Technologie, Programmierlogik und Softwareentwicklung. Ich konzentriere mich darauf, saubere, funktionale und optimierte Webanwendungen zu entwickeln, mit einer starken Bereitschaft, neue Technologien zu erlernen und an herausfordernden Projekten mitzuwirken.",
+            avatarHint: "Klicke auf den Avatar, um mich besser kennenzulernen ✨",
+            infoName: "Sergio Esaú Rabanales",
+            infoRole: "Junior Web-Entwickler",
+            infoAgeLabel: "Alter:",
+            infoAgeValue: "18 Jahre",
+            infoLocationLabel: "Land:",
+            infoLocationValue: "Guatemala",
+            infoEduLabel: "Ausbildung:",
+            infoEduValue: "Informatik-Schüler",
+            infoQualitiesLabel: "Eigenschaften:",
+            infoQualitiesValue: "Verantwortungsbewusst, autodidaktisch, analytisch und engagiert",
             skillsTitle: "Technische Fähigkeiten",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logik",
@@ -294,10 +338,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- CONTROLADOR DEL MODAL DE INFORMACIÓN (AVATAR) ---
+    const openInfoBtn = document.getElementById('openInfoModal');
+    const infoModal = document.getElementById('infoModal');
+    const closeInfoBtn = document.getElementById('closeInfoModal');
+
+    if (openInfoBtn && infoModal) {
+        openInfoBtn.addEventListener('click', () => {
+            infoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    function closeInfoViewer() {
+        if (infoModal) {
+            infoModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    if (closeInfoBtn) closeInfoBtn.addEventListener('click', closeInfoViewer);
+    if (infoModal) {
+        infoModal.addEventListener('click', (e) => {
+            if (e.target === infoModal) closeInfoViewer();
+        });
+    }
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeCvViewer();
             closeContribViewer();
+            closeInfoViewer();
         }
     });
 
