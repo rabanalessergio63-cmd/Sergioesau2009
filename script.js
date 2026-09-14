@@ -13,16 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
             heroSubtitle: "Desarrollador Web Junior / Bachiller en Computación",
             heroDesc: "Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.",
             avatarHint: "Haz clic en el avatar para conocerme mejor ✨",
-            infoName: "Sergio Rabanales",
-            infoRole: "Desarrollador Web Junior",
-            infoAgeLabel: "Edad:",
-            infoAgeValue: "18 años",
-            infoLocationLabel: "País:",
-            infoLocationValue: "Guatemala",
-            infoEduLabel: "Estudio:",
-            infoEduValue: "5to Bachillerato en Computación",
-            infoQualitiesLabel: "Cualidades:",
-            infoQualitiesValue: "Responsable, autodidacta, analítico y dedicado",
             skillsTitle: "Habilidades Técnicas",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Lógica",
@@ -43,8 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             themeTitle: "SELECCIONAR TEMA",
             themeLight: "Claro",
             themePurple: "Oscuro Morado",
-            themeBlue: "Azul Pro",
-            openPdfBtn: "Abrir"
+            themeBlue: "Azul Pro"
         },
         en: {
             nav1: "About me",
@@ -57,16 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             heroSubtitle: "Junior Web Developer / High School Diploma in Computer Science",
             heroDesc: "Passionate about technology, programming logic, and software development. Focused on building clean, functional, and optimized web applications, with a strong willingness to learn new technologies and collaborate on challenging projects.",
             avatarHint: "Click the avatar to get to know me better ✨",
-            infoName: "Sergio Rabanales",
-            infoRole: "Junior Web Developer",
-            infoAgeLabel: "Age:",
-            infoAgeValue: "18 years old",
-            infoLocationLabel: "Country:",
-            infoLocationValue: "Guatemala",
-            infoEduLabel: "Education:",
-            infoEduValue: "High School Computer Science Student",
-            infoQualitiesLabel: "Qualities:",
-            infoQualitiesValue: "Responsible, self-taught, analytical and dedicated",
             skillsTitle: "Technical Skills",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logic",
@@ -87,8 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             themeTitle: "SELECT THEME",
             themeLight: "Light",
             themePurple: "Dark Purple",
-            themeBlue: "Pro Blue",
-            openPdfBtn: "Open"
+            themeBlue: "Pro Blue"
         },
         fr: {
             nav1: "À propos",
@@ -101,16 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
             heroSubtitle: "Développeur Web Junior / Diplômé en Informatique",
             heroDesc: "Passionné par la technologie, la logique de programmation et le développement logiciel. Je me concentre sur la création d'applications web propres, fonctionnelles et optimisées, avec une forte volonté d'apprendre de nouvelles technologies et de collaborer sur des projets stimulants.",
             avatarHint: "Cliquez sur l'avatar pour mieux me connaître ✨",
-            infoName: "Sergio Rabanales",
-            infoRole: "Développeur Web Junior",
-            infoAgeLabel: "Âge:",
-            infoAgeValue: "18 ans",
-            infoLocationLabel: "Pays:",
-            infoLocationValue: "Guatemala",
-            infoEduLabel: "Éducation:",
-            infoEduValue: "Étudiant en Informatique",
-            infoQualitiesLabel: "Qualités:",
-            infoQualitiesValue: "Responsable, autodidacte, analytique et dévoué",
             skillsTitle: "Compétences Techniques",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logique",
@@ -131,8 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             themeTitle: "CHOISIR LE THÈME",
             themeLight: "Clair",
             themePurple: "Violet Sombre",
-            themeBlue: "Bleu Pro",
-            openPdfBtn: "Ouvrir"
+            themeBlue: "Bleu Pro"
         },
         de: {
             nav1: "Über mich",
@@ -145,16 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
             heroSubtitle: "Junior Web-Entwickler / Abiturient in Informatik",
             heroDesc: "Leidenschaftlich für Technologie, Programmierlogik und Softwareentwicklung. Ich konzentriere mich darauf, saubere, funktionale und optimierte Webanwendungen zu entwickeln, mit einer starken Bereitschaft, neue Technologien zu erlernen und an herausfordernden Projekten mitzuwirken.",
             avatarHint: "Klicke auf den Avatar, um mich besser kennenzulernen ✨",
-            infoName: "Sergio Rabanales",
-            infoRole: "Junior Web-Entwickler",
-            infoAgeLabel: "Alter:",
-            infoAgeValue: "18 Jahre",
-            infoLocationLabel: "Land:",
-            infoLocationValue: "Guatemala",
-            infoEduLabel: "Ausbildung:",
-            infoEduValue: "Informatik-Schüler",
-            infoQualitiesLabel: "Eigenschaften:",
-            infoQualitiesValue: "Verantwortungsbewusst, autodidaktisch, analytisch und engagiert",
             skillsTitle: "Technische Fähigkeiten",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logik",
@@ -175,8 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             themeTitle: "THEMA AUSWÄHLEN",
             themeLight: "Hell",
             themePurple: "Dunkles Lila",
-            themeBlue: "Pro Blau",
-            openPdfBtn: "Öffnen"
+            themeBlue: "Pro Blau"
         }
     };
 
@@ -205,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('preferred-lang', selectedLang);
     }
 
-    // --- 3. EVENTOS DE CLIC EN LAS TARJETAS DE IDIOMA ---
     cardsLang.forEach(card => {
         card.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -215,11 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 4. CARGAR IDIOMA GUARDADO AL INICIAR ---
     const currentLang = localStorage.getItem('preferred-lang') || 'es';
     setLanguage(currentLang);
 
-    // --- 5. GESTIÓN DE TEMAS Y ANIMACIÓN DE CASCADA (AZUL) ---
+    // --- 3. GESTIÓN DE MENÚS DESPLEGABLES (TEMAS, CONTACTO, IDIOMA) ---
     const themeBtn = document.getElementById('themeBtn');
     const themeDropdown = document.getElementById('themeDropdown');
     const contactToggleBtn = document.getElementById('contactToggleBtn');
@@ -270,15 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activePreview) activePreview.classList.add('active');
         
         localStorage.setItem('preferred-theme', themeName);
-
-        if (themeName === 'blue') {
-            const elements = document.querySelectorAll('.section-block, .skill-card, .project-card, .timeline-item');
-            elements.forEach(el => {
-                el.style.animation = 'none';
-                void el.offsetWidth;
-                el.style.animation = '';
-            });
-        }
     };
 
     const savedTheme = localStorage.getItem('preferred-theme');
@@ -286,33 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.setTheme(savedTheme);
     }
 
-    // --- 6. CONTROLADORES DE MODALES Y CURSOR ---
-    const openCvBtn = document.getElementById('openCvModal');
-    const cvModal = document.getElementById('cvModal');
-    const closeCvBtn = document.getElementById('closeCvModal');
-
-    if (openCvBtn && cvModal) {
-        openCvBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            cvModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    function closeCvViewer() {
-        if (cvModal) {
-            cvModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    if (closeCvBtn) closeCvBtn.addEventListener('click', closeCvViewer);
-    if (cvModal) {
-        cvModal.addEventListener('click', (e) => {
-            if (e.target === cvModal) closeCvViewer();
-        });
-    }
-
+    // --- 4. MODALES (GITHUB Y OTROS) ---
     const openContribBtn = document.getElementById('openContribModal');
     const contribModal = document.getElementById('contribModal');
     const closeContribBtn = document.getElementById('closeContribModal');
@@ -340,11 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            closeCvViewer();
             closeContribViewer();
         }
     });
 
+    // --- 5. CURSOR PERSONALIZADO ---
     const customCursor = document.getElementById('customCursor');
     const cursorFollower = document.getElementById('cursorFollower');
 
@@ -355,26 +274,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cursorFollower) cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
     });
 
-    document.querySelectorAll('a, button, .theme-card, .lang-card, .contact-card').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            if (customCursor) customCursor.classList.add('cursor-hover');
-            if (cursorFollower) cursorFollower.classList.add('cursor-hover');
-        });
-        item.addEventListener('mouseleave', () => {
-            if (customCursor) customCursor.classList.remove('cursor-hover');
-            if (cursorFollower) cursorFollower.classList.remove('cursor-hover');
-        });
-    });
-
-    // --- 7. EFECTO DE APARICIÓN AL HACER SCROLL (BIDIRECCIONAL) ---
+    // --- 6. EFECTO REVEAL (SCROLL) ---
     const revealElements = document.querySelectorAll('.reveal');
 
     function checkReveal() {
         const triggerBottom = window.innerHeight * 0.88;
-
         revealElements.forEach(el => {
             const elTop = el.getBoundingClientRect().top;
-
             if (elTop < triggerBottom) {
                 el.classList.add('active');
             } else {
@@ -386,71 +292,34 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', checkReveal);
     checkReveal(); 
 
-});
-
-// --- CONTROLADOR DE LA TARJETA DEL AVATAR (CORREGIDO Y ROBUSTO) ---
-document.addEventListener("DOMContentLoaded", () => {
-    // Buscamos tanto el visor como el contenedor que lo envuelve
-    const splineViewer = document.querySelector("spline-viewer");
-    const avatarContainer = splineViewer ? splineViewer.closest('.interactive-avatar-3d, div') : null;
-    const infoCard = document.getElementById("avatarInfoCard");
-    const closeBtn = document.getElementById("closeInfoBtn");
+    // --- 7. CONTROLADOR DE LA TARJETA DEL AVATAR (SEGURO Y FUNCIONAL) ---
+    const avatarContainer = document.getElementById('avatar3dContainer');
+    const infoCard = document.getElementById('avatarInfoCard');
+    const closeInfoBtn = document.getElementById('closeInfoBtn');
 
     if (infoCard) {
-        // Aseguramos un estado inicial oculto mediante clases en lugar de display directo para mejor control CSS
-        infoCard.style.display = "none";
+        infoCard.style.display = 'none';
     }
 
-    // Función para mostrar la tarjeta de información
-    const showAvatarInfo = (e) => {
-        e.preventDefault();
-        if (infoCard) {
-            infoCard.style.display = "flex";
-            infoCard.classList.add("active");
-        }
-    };
-
-    if (splineViewer) {
-        // Escuchamos clics y toques tanto en el visor como en su contenedor padre
-        splineViewer.addEventListener("click", showAvatarInfo);
-        splineViewer.addEventListener("touchend", showAvatarInfo);
+    if (avatarContainer && infoCard) {
+        avatarContainer.addEventListener('click', () => {
+            infoCard.style.display = 'flex';
+            infoCard.classList.add('active');
+        });
     }
 
-    if (avatarContainer) {
-        avatarContainer.addEventListener("click", showAvatarInfo);
-    }
-
-    if (closeBtn && infoCard) {
-        closeBtn.addEventListener("click", (e) => {
+    if (closeInfoBtn && infoCard) {
+        closeInfoBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            infoCard.style.display = "none";
-            infoCard.classList.remove("active");
+            infoCard.style.display = 'none';
+            infoCard.classList.remove('active');
         });
 
-        infoCard.addEventListener("click", (e) => {
+        infoCard.addEventListener('click', (e) => {
             if (e.target === infoCard) {
-                infoCard.style.display = "none";
-                infoCard.classList.remove("active");
+                infoCard.style.display = 'none';
+                infoCard.classList.remove('active');
             }
         });
     }
 });
-/* CORRECCIÓN DE CONTENEDOR PARA SPLINE 3D */
-.interactive-avatar-3d, 
-#avatar3dContainer {
-    width: 100% !important;
-    min-height: 420px !important;
-    height: 420px !important;
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    border-radius: 20px !important;
-    overflow: hidden !important;
-}
-
-spline-viewer {
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-}
