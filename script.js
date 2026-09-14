@@ -389,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// --- CONTROLADOR DE LA TARJETA DEL AVATAR (COMPATIBLE CON MÓVILES Y PC) ---
 document.addEventListener("DOMContentLoaded", () => {
     const splineViewer = document.querySelector("spline-viewer");
     const infoCard = document.getElementById("avatarInfoCard");
@@ -399,9 +400,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (splineViewer && infoCard) {
-        splineViewer.addEventListener("mousedown", (e) => {
+        // Evento para PC (clic de mouse)
+        splineViewer.addEventListener("mousedown", () => {
             infoCard.style.display = "flex";
         });
+
+        // Evento para Celulares y Tablets (toque en pantalla)
+        splineViewer.addEventListener("touchstart", () => {
+            infoCard.style.display = "flex";
+        }, { passive: true });
     }
 
     if (closeBtn && infoCard) {
