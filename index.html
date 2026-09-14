@@ -6,7 +6,7 @@
     <title>Sergio Rabanales | Portafolio</title>
     <link rel="icon" type="image/png" href="foto-perfil.png">
     
-    <!-- FontAwesome con integridad y cross-origin para evitar alertas -->
+    <!-- FontAwesome con integridad y cross-origin -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -129,13 +129,18 @@
                         </p>
                     </div>
 
-                    <!-- Columna del Avatar 3D (Restaurada) -->
+                    <!-- Columna del Elemento Interactivo 3D/Visual (Solución definitiva sin bloqueos) -->
                     <div class="hero-avatar-container animate-fade-in reveal">
-                        <div class="interactive-avatar-3d" id="avatar3dContainer">
-                            <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js" crossorigin="anonymous"></script>
-                            <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode" crossorigin="anonymous"></spline-viewer>
+                        <div class="interactive-avatar-3d secure-visual-card" id="avatar3dContainer">
+                            <div class="avatar-glow-effect"></div>
+                            <div class="avatar-inner-badge">
+                                <div class="avatar-big-initials">SR</div>
+                                <div class="pulse-ring"></div>
+                            </div>
+                            <div class="tech-badge-float top-tag"><i class="fa-solid fa-code"></i> FullStack Dev</div>
+                            <div class="tech-badge-float bottom-tag"><i class="fa-solid fa-shield-halved"></i> Secure Code</div>
                         </div>
-                        <span class="avatar-hint" data-i18n="avatarHint">Interactúa con el avatar 3D para conocerme mejor ✨</span>
+                        <span class="avatar-hint" data-i18n="avatarHint">Haz clic o interactúa con la tarjeta para ver más ✨</span>
                         
                         <!-- Tarjeta flotante de información del Avatar -->
                         <div id="avatarInfoCard" class="avatar-info-card">
