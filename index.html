@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Rabanales | Portafolio</title>
     <link rel="icon" type="image/png" href="foto-perfil.png">
-    <!-- FontAwesome para Íconos -->
+    
+    <!-- FontAwesome para Íconos (Con atributo crossorigin añadido para seguridad) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -42,11 +43,11 @@
                         <div class="contact-dropdown" id="contactDropdown">
                             <span class="contact-title" data-i18n="contactTitle">Contacto Directo:</span>
                             <div class="contact-options">
-                                <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-card linkedin">
+                                <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" rel="noopener noreferrer" class="contact-card linkedin">
                                     <span><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                                <a href="https://github.com/rabanalessergio63-cmd" target="_blank" class="contact-card github">
+                                <a href="https://github.com/rabanalessergio63-cmd" target="_blank" rel="noopener noreferrer" class="contact-card github">
                                     <span><i class="fa-brands fa-github"></i> GitHub</span>
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
@@ -131,8 +132,8 @@
                     <!-- Columna del Avatar 3D (A la derecha) -->
                     <div class="hero-avatar-container animate-fade-in reveal">
                         <div class="interactive-avatar-3d" id="avatar3dContainer">
-                            <!-- Script de Spline Viewer -->
-                            <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js"></script>
+                            <!-- Script de Spline Viewer con crossorigin añadido -->
+                            <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js" crossorigin="anonymous"></script>
                             <!-- Tu modelo 3D original -->
                             <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
                         </div>
@@ -158,7 +159,7 @@
 
                 <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
                 <div class="github-contrib-container">
-                    <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones">
+                    <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones" crossorigin="anonymous">
                 </div>
             </section> 
             
@@ -197,7 +198,7 @@
             <section id="proyectos" class="section-block reveal">
                 <h2 class="section-title" data-i18n="projectsTitle">Proyectos</h2>
                 <div class="projects-grid single-project">
-                    <a href="https://andre303q.github.io/rgpracticas/" target="_blank" class="project-card-link animate-fade-in reveal">
+                    <a href="https://andre303q.github.io/rgpracticas/" target="_blank" rel="noopener noreferrer" class="project-card-link animate-fade-in reveal">
                         <div class="project-card hover-animate">
                             <div class="project-header">
                                 <h3 data-i18n="proj1Title">Sistema de Registro y Marcaje de Practicantes</h3>
@@ -251,10 +252,10 @@
                 <div class="footer-col footer-contacts">
                     <span class="footer-heading" data-i18n="contactTitle">Contacto Directo:</span>
                     
-                    <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-link linkedin">
+                    <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" rel="noopener noreferrer" class="contact-link linkedin">
                         <i class="fa-brands fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/rabanalessergio63-cmd" target="_blank" class="contact-link github">
+                    <a href="https://github.com/rabanalessergio63-cmd" target="_blank" rel="noopener noreferrer" class="contact-link github">
                         <i class="fa-brands fa-github"></i> GitHub
                     </a>
                     <a href="mailto:rabanalessergio63@gmail.com" class="contact-link email">
@@ -292,7 +293,7 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 <div class="contrib-expanded-container">
-                    <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions Expanded">
+                    <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions Expanded" crossorigin="anonymous">
                 </div>
             </div>
         </div>
