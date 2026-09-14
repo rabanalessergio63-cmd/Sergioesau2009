@@ -724,11 +724,10 @@ footer {
     }
 }
 
-/* ==========================================================================
-   CURSOR PERSONALIZADO DINÁMICO (Dependiente del Tema)
-   ========================================================================== */
 .custom-cursor {
     position: fixed;
+    top: 0;     /* <--- Agrégalo aquí */
+    left: 0;    /* <--- Agrégalo aquí */
     width: 20px;
     height: 20px;
     border: 2px solid var(--accent); /* Toma el color de acento del tema activo */
