@@ -142,6 +142,14 @@
                         </div>
                         <span class="avatar-hint" data-i18n="avatarHint">Interactúa con la tarjeta 3D ✨</span>
                         
+                       <!-- Columna del Avatar 3D Original de Spline -->
+                    <div class="hero-avatar-container animate-fade-in reveal">
+                        <div class="interactive-avatar-3d" id="avatar3dContainer">
+                            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
+                            <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
+                        </div>
+                        <span class="avatar-hint" data-i18n="avatarHint">Interactúa con el avatar 3D para conocerme mejor ✨</span>
+                        
                         <!-- Tarjeta flotante de información del Avatar -->
                         <div id="avatarInfoCard" class="avatar-info-card">
                             <div class="card-content">
@@ -158,8 +166,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
                 <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
                 <div class="github-contrib-container">
                     <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones" crossorigin="anonymous">
