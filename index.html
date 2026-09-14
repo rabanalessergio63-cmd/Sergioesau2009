@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Política de Seguridad de Contenido (CSP) adaptada para permitir Spline, FontAwesome y GitHub Charts sin romper funciones -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https:; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval';">
+
     <title>Sergio Rabanales | Portafolio</title>
     <link rel="icon" type="image/png" href="foto-perfil.png">
     
-    <!-- FontAwesome para Íconos (Con atributo crossorigin e integridad) -->
+    <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -132,7 +136,7 @@
                     <!-- Columna del Avatar 3D (A la derecha) -->
                     <div class="hero-avatar-container animate-fade-in reveal">
                         <div class="interactive-avatar-3d" id="avatar3dContainer">
-                            <!-- Script de Spline Viewer con crossorigin -->
+                            <!-- Script de Spline Viewer con crossorigin y política de seguridad -->
                             <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js" crossorigin="anonymous"></script>
                             <!-- Tu modelo 3D original -->
                             <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
