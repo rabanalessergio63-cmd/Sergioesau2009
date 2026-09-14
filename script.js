@@ -226,6 +226,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('preferred-theme', themeName);
     };
 
+    // Listener para los botones de tema (antes usaban onclick="setTheme(...)",
+    // ahora usan data-theme="..." para poder quitar 'unsafe-inline' de la CSP)
+    document.querySelectorAll('.theme-card[data-theme]').forEach(card => {
+        card.addEventListener('click', () => window.setTheme(card.dataset.theme));
+    });
+
     const savedTheme = localStorage.getItem('preferred-theme');
     if (savedTheme) {
         window.setTheme(savedTheme);
