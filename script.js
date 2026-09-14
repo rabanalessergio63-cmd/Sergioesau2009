@@ -388,38 +388,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
-// --- CONTROLADOR DE LA TARJETA DEL AVATAR (COMPATIBLE CON MÓVILES Y PC) ---
+// --- CONTROLADOR DE LA TARJETA DEL AVATAR (CORREGIDO Y ROBUSTO) ---
 document.addEventListener("DOMContentLoaded", () => {
+    // Buscamos tanto el visor como el contenedor que lo envuelve
     const splineViewer = document.querySelector("spline-viewer");
+    const avatarContainer = splineViewer ? splineViewer.closest('.interactive-avatar-3d, div') : null;
     const infoCard = document.getElementById("avatarInfoCard");
     const closeBtn = document.getElementById("closeInfoBtn");
 
     if (infoCard) {
+        // Aseguramos un estado inicial oculto mediante clases en lugar de display directo para mejor control CSS
         infoCard.style.display = "none";
     }
 
-    if (splineViewer && infoCard) {
-        // Evento para PC (clic de mouse)
-        splineViewer.addEventListener("mousedown", () => {
+    // Función para mostrar la tarjeta de información
+    const showAvatarInfo = (e) => {
+        e.preventDefault();
+        if (infoCard) {
             infoCard.style.display = "flex";
-        });
+            infoCard.classList.add("active");
+        }
+    };
 
-        // Evento para Celulares y Tablets (toque en pantalla)
-        splineViewer.addEventListener("touchstart", () => {
-            infoCard.style.display = "flex";
-        }, { passive: true });
+    if (splineViewer) {
+        // Escuchamos clics y toques tanto en el visor como en su contenedor padre
+        splineViewer.addEventListener("click", showAvatarInfo);
+        splineViewer.addEventListener("touchend", showAvatarInfo);
+    }
+
+    if (avatarContainer) {
+        avatarContainer.addEventListener("click", showAvatarInfo);
     }
 
     if (closeBtn && infoCard) {
-        closeBtn.addEventListener("click", () => {
+        closeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
             infoCard.style.display = "none";
+            infoCard.classList.remove("active");
         });
 
         infoCard.addEventListener("click", (e) => {
             if (e.target === infoCard) {
                 infoCard.style.display = "none";
+                infoCard.classList.remove("active");
             }
         });
     }
 });
+/* CORRECCIÓN DE CONTENEDOR PARA SPLINE 3D */
+.interactive-avatar-3d, 
+#avatar3dContainer {
+    width: 100% !important;
+    min-height: 420px !important;
+    height: 420px !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+}
+
+spline-viewer {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+}
