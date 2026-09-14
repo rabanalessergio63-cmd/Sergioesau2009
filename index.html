@@ -6,7 +6,7 @@
     <title>Sergio Rabanales | Portafolio</title>
     <link rel="icon" type="image/png" href="foto-perfil.png">
     
-    <!-- FontAwesome para Íconos -->
+    <!-- FontAwesome con integridad y cross-origin para evitar alertas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -129,13 +129,11 @@
                         </p>
                     </div>
 
-                    <!-- Columna del Avatar 3D (A la derecha) -->
+                    <!-- Columna del Avatar 3D (Restaurada) -->
                     <div class="hero-avatar-container animate-fade-in reveal">
                         <div class="interactive-avatar-3d" id="avatar3dContainer">
-                            <!-- Script de Spline Viewer con crossorigin -->
                             <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js" crossorigin="anonymous"></script>
-                            <!-- Tu modelo 3D original -->
-                            <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
+                            <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode" crossorigin="anonymous"></spline-viewer>
                         </div>
                         <span class="avatar-hint" data-i18n="avatarHint">Interactúa con el avatar 3D para conocerme mejor ✨</span>
                         
@@ -283,6 +281,9 @@
                     <li><i class="fa-solid fa-location-dot"></i> <strong data-i18n="infoLocationLabel">País:</strong> <span data-i18n="infoLocationValue">Guatemala</span></li>
                     <li><i class="fa-solid fa-graduation-cap"></i> <strong data-i18n="infoEduLabel">Estudio:</strong> <span data-i18n="infoEduValue">5to Bachillerato en Computación</span></li>
                     <li><i class="fa-solid fa-star"></i> <strong data-i18n="infoQualitiesLabel">Cualidades:</strong> <span data-i18n="infoQualitiesValue">Responsable, autodidacta, analítico y dedicado</span></li>
+                    <div style="margin-top: 15px; font-size: 0.9rem; color: var(--text-color);">
+                        <i class="fa-solid fa-school"></i> <strong>Institución:</strong> Liceo Mixto Pinulteco
+                    </div>
                 </ul>
             </div>
         </div>
