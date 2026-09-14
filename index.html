@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Rabanales | Portafolio</title> 
     <link rel="icon" type="image/png" href="foto-perfil.png">
-    <!-- FontAwesome para Íconos con SRI (Subresource Integrity) -->
+    <!-- FontAwesome con integridad y crossOrigin -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css?v=5">
 </head>    
@@ -23,7 +23,7 @@
                 <span>SR</span>
             </a>
             
-            <!-- MENÚ DE NAVEGACIÓN (CV ELIMINADO) -->
+            <!-- MENÚ DE NAVEGACIÓN -->
             <ul class="nav-links">
                 <li><a href="#sobre-mi"><span class="num">01</span> <span data-i18n="nav1">Sobre mí</span></a></li>
                 <li><a href="#habilidades"><span class="num">02</span> <span data-i18n="nav2">Habilidades</span></a></li>
@@ -32,7 +32,7 @@
             </ul>
 
             <!-- SELECTOR DE CONTACTOS, IDIOMAS Y TEMAS -->
-            <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="nav-controls-group">
                 
                 <!-- SELECTOR DESPLEGABLE DE CONTACTOS -->
                 <div class="contact-picker-wrapper">
@@ -42,11 +42,11 @@
                     <div class="contact-dropdown" id="contactDropdown">
                         <span class="contact-title" data-i18n="contactTitle">Contacto Directo:</span>
                         <div class="contact-options">
-                            <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-card linkedin">
+                            <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" rel="noopener noreferrer" class="contact-card linkedin">
                                 <span><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
-                            <a href="https://github.com/rabanalessergio63-cmd" target="_blank" class="contact-card github">
+                            <a href="https://github.com/rabanalessergio63-cmd" target="_blank" rel="noopener noreferrer" class="contact-card github">
                                 <span><i class="fa-brands fa-github"></i> GitHub</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
@@ -116,10 +116,10 @@
     <main class="container">
       <!-- SECCIÓN SOBRE MÍ -->
         <section id="sobre-mi" class="hero-section reveal">
-            <div class="hero-content-wrapper" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+            <div class="hero-content-wrapper">
                 
                 <!-- Columna de Texto -->
-                <div class="hero-text-content" style="flex: 1; min-width: 280px;">
+                <div class="hero-text-content">
                     <span class="subtitle-tag animate-fade-in" data-i18n="heroGreeting">HOLA, MI NOMBRE ES</span>
                     <h1 class="hero-title animate-fade-in" data-i18n="heroTitleMain">Sergio Rabanales </h1>
                     <h2 class="hero-subtitle animate-fade-in" data-i18n="heroSubtitle">Desarrollador Web Junior / Bachiller en Computación</h2>
@@ -129,17 +129,17 @@
                 </div>
 
                 <!-- Columna del Avatar 3D -->
-                <div class="hero-avatar-container animate-fade-in reveal" style="flex-shrink: 0; text-align: center;">
-                    <div class="interactive-avatar-3d" id="avatar3dContainer" style="width: 300px; height: 350px; position: relative;">
-                        <!-- Script oficial de Spline Viewer actualizado -->
-                        <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js"></script>
+                <div class="hero-avatar-container animate-fade-in reveal">
+                    <div class="interactive-avatar-3d" id="avatar3dContainer">
+                        <!-- Script oficial de Spline Viewer con integridad -->
+                        <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.46/build/spline-viewer.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z07O7+97O7O7O7O7O7O7O7O7O7O7O7O7O7O7O7" crossorigin="anonymous"></script>
                         
                         <!-- Tu modelo 3D con el archivo .splinecode -->
                         <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
                     </div>
-                    <span class="avatar-hint" data-i18n="avatarHint" style="display: block; margin-top: 10px; font-size: 0.85rem;">Interactúa con el avatar 3D para conocerme mejor ✨</span>
+                    <span class="avatar-hint" data-i18n="avatarHint">Interactúa con el avatar 3D para conocerme mejor ✨</span>
                     
-                    <!-- Tarjeta flotante de información del Avatar (inicialmente oculta) -->
+                    <!-- Tarjeta flotante de información del Avatar -->
                     <div id="avatarInfoCard" class="avatar-info-card" style="display: none;">
                         <div class="card-content">
                             <button id="closeInfoBtn" class="close-btn">&times;</button>
@@ -158,7 +158,7 @@
             </div>
 
             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
-            <div class="github-contrib-container" style="margin-top: 30px;">
+            <div class="github-contrib-container">
                 <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones">
             </div>
         </section> 
@@ -198,7 +198,7 @@
         <section id="proyectos" class="section-block reveal">
             <h2 class="section-title" data-i18n="projectsTitle">Proyectos</h2>
             <div class="projects-grid single-project">
-                <a href="https://andre303q.github.io/rgpracticas/" target="_blank" class="project-card-link animate-fade-in reveal">
+                <a href="https://andre303q.github.io/rgpracticas/" target="_blank" rel="noopener noreferrer" class="project-card-link animate-fade-in reveal">
                     <div class="project-card hover-animate">
                         <div class="project-header">
                             <h3 data-i18n="proj1Title">Sistema de Registro y Marcaje de Practicantes</h3>
@@ -252,10 +252,10 @@
             <div class="footer-col footer-contacts">
                 <span class="footer-heading" data-i18n="contactTitle">Contacto Directo:</span>
                 
-                <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" class="contact-link linkedin">
+                <a href="https://www.linkedin.com/in/sergio-rabanales-a43459435/" target="_blank" rel="noopener noreferrer" class="contact-link linkedin">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/rabanalessergio63-cmd" target="_blank" class="contact-link github">
+                <a href="https://github.com/rabanalessergio63-cmd" target="_blank" rel="noopener noreferrer" class="contact-link github">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
                 <a href="mailto:rabanalessergio63@gmail.com" class="contact-link email">
@@ -265,7 +265,7 @@
         </div>
     </footer>
 
-    <!-- MODAL DE INFORMACIÓN PERSONAL (AVATAR) -->
+    <!-- MODALES -->
     <div class="info-modal-overlay" id="infoModal">
         <div class="info-modal-content">
             <button class="info-close-btn" id="closeInfoModal" aria-label="Cerrar modal">
@@ -298,9 +298,8 @@
         </div>
     </div>
 
-    </div> <!-- Cierre del div container principal -->
+    </div>
 
-    <!-- ÚNICO ARCHIVO JS EXTERNO -->
     <script src="script.js?v=5"></script>
 </body>
 </html>
