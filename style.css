@@ -1615,3 +1615,20 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
 }
+/* CORRECCIÓN PARA EL VISOR 3D DE SPLINE */
+.interactive-avatar-3d {
+    width: 100%;
+    min-height: 420px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+spline-viewer {
+    width: 100%;
+    height: 420px;
+    display: block;
+}
