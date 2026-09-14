@@ -1509,3 +1509,32 @@ spline-viewer {
 .close-btn:hover {
     color: var(--primary-color, #7c3aed);
 }
+/* Ajuste de espaciado superior para evitar solapamiento con la barra de navegación */
+body {
+    padding-top: 90px;
+}
+
+.hero-section {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+/* Distribución correcta de la sección principal (Texto izq / Robot der) */
+.hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-text-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-avatar-container {
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+}
