@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. DICCIONARIO DE IDIOMAS ---  
     const translations = {
         es: {
-            nav1: "Sobre mí",   
+            nav1: "Sobre mí",    
             nav2: "Habilidades",
             nav3: "Proyectos",
             nav4: "Experiencia",
@@ -338,37 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CONTROLADOR DEL MODAL DE INFORMACIÓN (AVATAR) ---
-    const openInfoBtn = document.getElementById('openInfoModal');
-    const infoModal = document.getElementById('infoModal');
-    const closeInfoBtn = document.getElementById('closeInfoModal');
-
-    if (openInfoBtn && infoModal) {
-        openInfoBtn.addEventListener('click', () => {
-            infoModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    function closeInfoViewer() {
-        if (infoModal) {
-            infoModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    if (closeInfoBtn) closeInfoBtn.addEventListener('click', closeInfoViewer);
-    if (infoModal) {
-        infoModal.addEventListener('click', (e) => {
-            if (e.target === infoModal) closeInfoViewer();
-        });
-    }
-
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeCvViewer();
             closeContribViewer();
-            closeInfoViewer();
         }
     });
 
@@ -378,8 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         const x = e.clientX;
         const y = e.clientY;
-        if (customCursor) customCursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-        if (cursorFollower) cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        if (customCursor) customCursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+        if (cursorFollower) cursorFollower.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
     });
 
     document.querySelectorAll('a, button, .theme-card, .lang-card, .contact-card').forEach(item => {
@@ -405,35 +378,37 @@ document.addEventListener('DOMContentLoaded', () => {
             if (elTop < triggerBottom) {
                 el.classList.add('active');
             } else {
-                el.classList.remove('active'); // Permite que se vuelva a animar tanto al bajar como al subir
+                el.classList.remove('active');
             }
         });
     }
 
     window.addEventListener('scroll', checkReveal);
-    checkReveal(); // Verificación inicial al cargar la página
+    checkReveal(); 
 
 });
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const splineViewer = document.querySelector("spline-viewer");
     const infoCard = document.getElementById("avatarInfoCard");
     const closeBtn = document.getElementById("closeInfoBtn");
 
+    if (infoCard) {
+        infoCard.style.display = "none";
+    }
+
     if (splineViewer && infoCard) {
-        // Escucha el evento de clic en el modelo 3D de Spline
         splineViewer.addEventListener("mousedown", (e) => {
-            // Muestra la tarjeta con animación
             infoCard.style.display = "flex";
         });
     }
 
-    // Botón para cerrar la tarjeta
     if (closeBtn && infoCard) {
         closeBtn.addEventListener("click", () => {
             infoCard.style.display = "none";
         });
 
-        // También se cierra si hacen clic fuera del contenido de la tarjeta
         infoCard.addEventListener("click", (e) => {
             if (e.target === infoCard) {
                 infoCard.style.display = "none";
