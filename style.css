@@ -1678,3 +1678,18 @@ body {
     align-items: center;
     justify-content: center;
 }
+/* Contenedor general del Calendario de GitHub para que no se encime */
+.github-calendar-section, 
+.github-calendar-container, 
+#githubCalendar {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(20, 10, 35, 0.6);
+    border-radius: 16px;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+}
