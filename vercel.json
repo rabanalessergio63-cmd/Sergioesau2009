@@ -28,12 +28,8 @@
           "value": "geolocation=(), microphone=(), camera=(), payment=()"
         },
         {
-          "key": "Cross-Origin-Resource-Policy",
-          "value": "same-origin"
-        },
-        {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob: https://ghchart.rshah.org; connect-src 'self' blob: https://prod.spline.design; worker-src 'self' blob:; media-src 'self' blob:; frame-src 'self' https://app.spline.design; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval' blob: https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob: https://ghchart.rshah.org; connect-src 'self' blob: data: https://prod.spline.design https://www.gstatic.com; worker-src 'self' blob:; media-src 'self' blob:; frame-src 'self' https://app.spline.design; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         }
       ]
     },
