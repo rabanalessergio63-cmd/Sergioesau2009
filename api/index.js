@@ -11,17 +11,17 @@ export default function handler(req, res) {
     html = html.replace(/<script\b(?![^>]*\bsrc=)([^>]*)>/gi, `<script nonce="${nonce}" $1>`);
     html = html.replace(/<style\b([^>]*)>/gi, `<style nonce="${nonce}" $1>`);
 
-    // CSP optimizado para ocultar la advertencia genérica de unsafe-eval usando restricciones estrictas de origen
+    // CSP 100% estricto sin unsafe-eval
     const csp = [
       "default-src 'self'",
-      `script-src 'self' 'nonce-${nonce}' 'unsafe-eval' 'wasm-unsafe-eval' blob: https://www.gstatic.com https://unpkg.com`,
+      `script-src 'self' 'nonce-${nonce}'`,
       `style-src 'self' 'nonce-${nonce}' https://cdnjs.cloudflare.com https://fonts.googleapis.com`,
       "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com",
       "img-src 'self' data: blob: https://ghchart.rshah.org",
-      "connect-src 'self' blob: data: https://prod.spline.design https://www.gstatic.com",
+      "connect-src 'self' blob: data:",
       "worker-src 'self' blob:",
       "media-src 'self' blob:",
-      "frame-src 'self' https://app.spline.design",
+      "frame-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
