@@ -1670,3 +1670,32 @@ body {
         text-align: center;
     }
 }
+/* Ajustar el contenedor principal para que no choque con el menú superior */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px 20px !important; /* Añade espacio arriba para la barra */
+    min-height: 90vh;
+}
+
+/* Forzar tamaño visible para el contenedor del avatar 3D */
+.interactive-avatar-3d {
+    width: 100% !important;
+    height: 400px !important;
+    min-height: 400px !important;
+    position: relative;
+    display: block !important;
+}
+
+.hero-avatar-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
