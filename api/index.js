@@ -4,6 +4,25 @@ const crypto = require('crypto');
 
 export default function handler(req, res) {
   try {
+    // 1. Configuración de CORS estricta para eliminar la alerta Cross-Domain
+    const allowedOrigins = ['https://andre303q.github.io'];
+    const origin = req.headers.origin;
+
+    if (allowedOrigins.includes(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    } else {
+      // Valor por defecto seguro si se accede desde el mismo dominio o herramienta de prueba autorizada
+      res.setHeader('Access-Control-Allow-Origin', 'https://andre303q.github.io');
+    }
+
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Manejo de peticiones preflight (OPTIONS)
+    if (req.method === 'OPTIONS') {
+      return res.status(200).end();
+    }
+
     const nonce = crypto.randomBytes(16).toString('base64');
     const filePath = path.join(process.cwd(), 'template.html');
     let html = fs.readFileSync(filePath, 'utf8');
