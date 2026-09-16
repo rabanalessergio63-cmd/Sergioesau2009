@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Rabanales",
             heroSubtitle: "Desarrollador Web Junior / Bachiller en Computación",
             heroDesc: "Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas, con fuerte disposición para aprender nuevas tecnologías y colaborar en proyectos desafiantes.",
-            avatarHint: "Haz clic en el avatar para conocerme mejor ✨",
+            avatarHint: "Haz clic en el robot para ver mi tarjeta! ✨",
             skillsTitle: "Habilidades Técnicas",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Lógica",
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Rabanales",
             heroSubtitle: "Junior Web Developer / High School Diploma in Computer Science",
             heroDesc: "Passionate about technology, programming logic, and software development. Focused on building clean, functional, and optimized web applications, with a strong willingness to learn new technologies and collaborate on challenging projects.",
-            avatarHint: "Click the avatar to get to know me better ✨",
+            avatarHint: "Click the robot to view my card! ✨",
             skillsTitle: "Technical Skills",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logic",
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Rabanales",
             heroSubtitle: "Développeur Web Junior / Diplômé en Informatique",
             heroDesc: "Passionné par la technologie, la logique de programmation et le développement logiciel. Je me concentre sur la création d'applications web propres, fonctionnelles et optimisées, avec une forte volonté d'apprendre de nouvelles technologies et de collaborer sur des projets stimulants.",
-            avatarHint: "Cliquez sur l'avatar pour mieux me connaître ✨",
+            avatarHint: "Cliquez sur le robot pour voir ma carte ! ✨",
             skillsTitle: "Compétences Techniques",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logique",
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitleMain: "Sergio Rabanales",
             heroSubtitle: "Junior Web-Entwickler / Abiturient in Informatik",
             heroDesc: "Leidenschaftlich für Technologie, Programmierlogik und Softwareentwicklung. Ich konzentriere mich darauf, saubere, funktionale und optimierte Webanwendungen zu entwickeln, mit einer starken Bereitschaft, neue Technologien zu erlernen und an herausfordernden Projekten mitzuwirken.",
-            avatarHint: "Klicke auf den Avatar, um mich besser kennenzulernen ✨",
+            avatarHint: "Klicke auf den Roboter, um meine Karte zu sehen! ✨",
             skillsTitle: "Technische Fähigkeiten",
             skillFrontendTitle: "Frontend",
             skillBackendTitle: "Backend & Logik",
@@ -226,8 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('preferred-theme', themeName);
     };
 
-    // Listener para los botones de tema (antes usaban onclick="setTheme(...)",
-    // ahora usan data-theme="..." para poder quitar 'unsafe-inline' de la CSP)
     document.querySelectorAll('.theme-card[data-theme]').forEach(card => {
         card.addEventListener('click', () => window.setTheme(card.dataset.theme));
     });
@@ -263,12 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeContribViewer();
-        }
-    });
-
     // --- 5. CURSOR PERSONALIZADO ---
     const customCursor = document.getElementById('customCursor');
     const cursorFollower = document.getElementById('cursorFollower');
@@ -298,34 +290,42 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', checkReveal);
     checkReveal(); 
 
-    // --- 7. CONTROLADOR DE LA TARJETA DEL AVATAR (SEGURO Y FUNCIONAL) ---
-    const avatarContainer = document.getElementById('avatar3dContainer');
-    const infoCard = document.getElementById('avatarInfoCard');
-    const closeInfoBtn = document.getElementById('closeInfoBtn');
+    // --- 7. CONTROLADOR DE LA TARJETA DEL ROBOT ---
+    const robotImg = document.getElementById("robotClickable");
+    const infoModal = document.getElementById("infoCardModal");
+    const closeInfoBtn = document.getElementById("closeInfoCard");
 
-    if (infoCard) {
-        infoCard.style.display = 'none';
-    }
-
-    if (avatarContainer && infoCard) {
-        avatarContainer.addEventListener('click', () => {
-            infoCard.style.display = 'flex';
-            infoCard.classList.add('active');
+    if (robotImg && infoModal) {
+        robotImg.addEventListener("click", () => {
+            infoModal.classList.add("active");
+            document.body.style.overflow = "hidden";
         });
     }
 
-    if (closeInfoBtn && infoCard) {
-        closeInfoBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            infoCard.style.display = 'none';
-            infoCard.classList.remove('active');
-        });
+    function closeInfoCard() {
+        if (infoModal) {
+            infoModal.classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+    }
 
-        infoCard.addEventListener('click', (e) => {
-            if (e.target === infoCard) {
-                infoCard.style.display = 'none';
-                infoCard.classList.remove('active');
+    if (closeInfoBtn) {
+        closeInfoBtn.addEventListener("click", closeInfoCard);
+    }
+
+    if (infoModal) {
+        infoModal.addEventListener("click", (e) => {
+            if (e.target === infoModal) {
+                closeInfoCard();
             }
         });
     }
+
+    // Evento unificado para cerrar ambos modales con la tecla 'Escape'
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeContribViewer();
+            closeInfoCard();
+        }
+    });
 });
