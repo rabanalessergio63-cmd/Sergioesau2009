@@ -28,14 +28,13 @@ export default function handler(req, res) {
       "upgrade-insecure-requests"
     ].join('; ');
 
-    // Cabeceras de seguridad globales obligatorias para mitigar ZAP
+    // Cabeceras de seguridad estrictas (sin CORS abierto innecesario)
     res.setHeader('Content-Security-Policy', csp);
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('X-Frame-Options', 'SAMEORIGIN');
     res.setHeader('X-XSS-Protection', '1; mode=block');
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
     res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
-    res.setHeader('Access-Control-Allow-Origin', 'https://sergioesau2009.vercel.app');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
     return res.status(200).send(html);
