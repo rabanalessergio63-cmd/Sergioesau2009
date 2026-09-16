@@ -6,11 +6,12 @@
     <title>Sergio Rabanales | Portafolio</title>
     <link rel="icon" type="image/png" href="foto-perfil.png">
     
-    <!-- FontAwesome con integridad y cross-origin -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <!-- Librerías del Avatar 3D -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Librería Three.js Local (Evita bloqueos de seguridad) -->
+    <script src="three.min.js"></script>
     <script src="avatar.js"></script>
 </head>
 <body class="theme-purple">
@@ -117,46 +118,46 @@
             </div>
         </nav>
 
-      <section class="hero-section">
-    <!-- Columna de Texto -->
-    <div class="hero-content">
-        <span class="hero-greeting" data-i18n="heroGreeting">HOLA, MI NOMBRE ES</span>
-        <h1 class="hero-title-main" data-i18n="heroTitleMain">Sergio Rabanales</h1>
-        <h2 class="hero-subtitle" data-i18n="heroSubtitle">Desarrollador Web Junior / Bachiller en Computación</h2>
-        <p class="hero-description" data-i18n="heroDesc">
-            Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas.
-        </p>
-    </div>
-
-    <!-- Columna del Avatar 3D -->
-    <div class="hero-avatar-container animate-fade-in reveal">
-        <div class="interactive-avatar-3d" id="avatar3dContainer"></div>
-        <span class="avatar-hint" data-i18n="avatarHint">Haz clic en el avatar para conocerme mejor ✨</span>
-    </div>
-</section>
-                        <!-- Tarjeta flotante de información del Avatar -->
-                        <div id="avatarInfoCard" class="avatar-info-card">
-                            <div class="card-content">
-                                <button id="closeInfoBtn" class="close-btn">&times;</button>
-                                <h3>Sergio Rabanales</h3>
-                                <p class="subtitle">Desarrollador Web Junior / Bachiller en Computación</p>
-                                <ul class="qualities-list">
-                                    <li>⚡ Apasionado por la tecnología y la lógica</li>
-                                    <li>💻 Enfoque en código limpio y optimizado</li>
-                                    <li>🚀 Facilidad para aprender nuevas herramientas</li>
-                                    <li>🎯 Proactivo y orientado a resolver problemas</li>
-                                    <li>💻 Especializado en diseño (front)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <main>
+            <!-- SECCIÓN HERO (TEXTO + AVATAR 3D) -->
+            <section class="hero-section" id="sobre-mi">
+                <!-- Columna de Texto -->
+                <div class="hero-content">
+                    <span class="hero-greeting" data-i18n="heroGreeting">HOLA, MI NOMBRE ES</span>
+                    <h1 class="hero-title-main" data-i18n="heroTitleMain">Sergio Rabanales</h1>
+                    <h2 class="hero-subtitle" data-i18n="heroSubtitle">Desarrollador Web Junior / Bachiller en Computación</h2>
+                    <p class="hero-description" data-i18n="heroDesc">
+                        Apasionado por la tecnología, la lógica de programación y el desarrollo de software. Me enfoco en construir aplicaciones web limpias, funcionales y optimizadas.
+                    </p>
                 </div>
 
-                <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
-                <div class="github-contrib-container">
-                    <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones">
+                <!-- Columna del Avatar 3D -->
+                <div class="hero-avatar-container animate-fade-in reveal">
+                    <div class="interactive-avatar-3d" id="avatar3dContainer"></div>
+                    <span class="avatar-hint" data-i18n="avatarHint">Haz clic en el avatar para conocerme mejor ✨</span>
                 </div>
-            </section> 
+            </section>
+
+            <!-- Tarjeta flotante de información del Avatar -->
+            <div id="avatarInfoCard" class="avatar-info-card">
+                <div class="card-content">
+                    <button id="closeInfoBtn" class="close-btn">&times;</button>
+                    <h3>Sergio Rabanales</h3>
+                    <p class="subtitle">Desarrollador Web Junior / Bachiller en Computación</p>
+                    <ul class="qualities-list">
+                        <li>⚡ Apasionado por la tecnología y la lógica</li>
+                        <li>💻 Enfoque en código limpio y optimizado</li>
+                        <li>🚀 Facilidad para aprender nuevas herramientas</li>
+                        <li>🎯 Proactivo y orientado a resolver problemas</li>
+                        <li>💻 Especializado en diseño (front)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
+            <div class="github-contrib-container" style="text-align: center; margin: 30px 0;">
+                <img src="https://ghchart.rshah.org/a855f7/rabanalessergio63-cmd" alt="GitHub Contributions" class="contrib-thumb" id="openContribModal" title="Haz clic para ampliar contribuciones" style="max-width: 100%; cursor: pointer;">
+            </div>
             
             <!-- SECCIÓN HABILIDADES -->
             <section id="habilidades" class="section-block reveal">
