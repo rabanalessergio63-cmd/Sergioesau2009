@@ -9,10 +9,6 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-
-    <!-- Librería Three.js Local (Evita bloqueos de seguridad) -->
-    <script src="three.min.js"></script>
-    <script src="avatar.js"></script>
 </head>
 <body class="theme-purple">
 
@@ -119,7 +115,7 @@
         </nav>
 
         <main>
-            <!-- SECCIÓN HERO (TEXTO + AVATAR 3D) -->
+            <!-- SECCIÓN HERO (TEXTO + ROBOT FLOTANTE) -->
             <section class="hero-section" id="sobre-mi">
                 <!-- Columna de Texto -->
                 <div class="hero-content">
@@ -131,28 +127,12 @@
                     </p>
                 </div>
 
-                <!-- Columna del Avatar 3D -->
-                <div class="hero-avatar-container animate-fade-in reveal">
-                    <div class="interactive-avatar-3d" id="avatar3dContainer"></div>
-                    <span class="avatar-hint" data-i18n="avatarHint">Haz clic en el avatar para conocerme mejor ✨</span>
+                <!-- Columna del Robot Flotante -->
+                <div class="hero-avatar-container animate-fade-in reveal" style="text-align: center;">
+                    <img src="robot.png" alt="Robot Asistente" class="robot-flotante" style="max-width: 280px; height: auto;">
+                    <span class="avatar-hint" style="display: block; margin-top: 10px;" data-i18n="avatarHint">¡Bienvenido a mi portafolio digital! ✨</span>
                 </div>
             </section>
-
-            <!-- Tarjeta flotante de información del Avatar -->
-            <div id="avatarInfoCard" class="avatar-info-card">
-                <div class="card-content">
-                    <button id="closeInfoBtn" class="close-btn">&times;</button>
-                    <h3>Sergio Rabanales</h3>
-                    <p class="subtitle">Desarrollador Web Junior / Bachiller en Computación</p>
-                    <ul class="qualities-list">
-                        <li>⚡ Apasionado por la tecnología y la lógica</li>
-                        <li>💻 Enfoque en código limpio y optimizado</li>
-                        <li>🚀 Facilidad para aprender nuevas herramientas</li>
-                        <li>🎯 Proactivo y orientado a resolver problemas</li>
-                        <li>💻 Especializado en diseño (front)</li>
-                    </ul>
-                </div>
-            </div>
 
             <!-- MINIATURA DE CONTRIBUCIONES DE GITHUB -->
             <div class="github-contrib-container" style="text-align: center; margin: 30px 0;">
