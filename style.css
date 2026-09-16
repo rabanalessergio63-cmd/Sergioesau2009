@@ -1693,3 +1693,21 @@ body {
     border-radius: 16px;
     border: 1px solid rgba(157, 78, 221, 0.3);
 }
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px); /* Sube 15 píxeles */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.robot-flotante {
+  animation: floatAnimation 3s ease-in-out infinite;
+  max-width: 300px; /* Ajusta el tamaño según prefieras */
+  height: auto;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
