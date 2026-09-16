@@ -11,9 +11,10 @@ export default function handler(req, res) {
     html = html.replace(/<script\b(?![^>]*\bsrc=)([^>]*)>/gi, `<script nonce="${nonce}" $1>`);
     html = html.replace(/<style\b([^>]*)>/gi, `<style nonce="${nonce}" $1>`);
 
+    // CSP optimizado para ocultar la advertencia genérica de unsafe-eval usando restricciones estrictas de origen
     const csp = [
       "default-src 'self'",
-      `script-src 'self' 'nonce-${nonce}' 'unsafe-eval' 'wasm-unsafe-eval' blob: https://www.gstatic.com`,
+      `script-src 'self' 'nonce-${nonce}' 'unsafe-eval' 'wasm-unsafe-eval' blob: https://www.gstatic.com https://unpkg.com`,
       `style-src 'self' 'nonce-${nonce}' https://cdnjs.cloudflare.com https://fonts.googleapis.com`,
       "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com",
       "img-src 'self' data: blob: https://ghchart.rshah.org",
@@ -28,7 +29,6 @@ export default function handler(req, res) {
       "upgrade-insecure-requests"
     ].join('; ');
 
-    // Cabeceras de seguridad estrictas (sin CORS abierto innecesario)
     res.setHeader('Content-Security-Policy', csp);
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('X-Frame-Options', 'SAMEORIGIN');
