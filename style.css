@@ -1709,5 +1709,5 @@ body {
   animation: floatAnimation 3s ease-in-out infinite;
   max-width: 300px; /* Ajusta el tamaño según prefieras */
   height: auto;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
 }
