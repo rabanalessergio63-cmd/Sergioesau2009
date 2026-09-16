@@ -33,7 +33,7 @@
                 </ul>
 
                 <!-- SELECTOR DE CONTACTOS, IDIOMAS Y TEMAS -->
-                <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="nav-controls">
                     
                     <!-- SELECTOR DESPLEGABLE DE CONTACTOS -->
                     <div class="contact-picker-wrapper">
@@ -95,15 +95,15 @@
                         <div class="theme-dropdown" id="themeDropdown">
                             <span class="theme-title" data-i18n="themeTitle">SELECCIONAR TEMA</span>
                             <div class="theme-options">
-                                <button onclick="setTheme('light')" class="theme-card light-preview">
+                                <button type="button" data-theme="light" class="theme-card light-preview">
                                     <span class="theme-label" data-i18n="themeLight">Claro</span>
                                     <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
                                 </button>
-                                <button onclick="setTheme('purple')" class="theme-card purple-preview active">
+                                <button type="button" data-theme="purple" class="theme-card purple-preview active">
                                     <span class="theme-label" data-i18n="themePurple">Oscuro Morado</span>
                                     <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
                                 </button>
-                                <button onclick="setTheme('blue')" class="theme-card blue-preview">
+                                <button type="button" data-theme="blue" class="theme-card blue-preview">
                                     <span class="theme-label" data-i18n="themeBlue">Azul Pro</span>
                                     <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
                                 </button>
@@ -132,8 +132,8 @@
                     <!-- Columna del Avatar 3D Original de Spline -->
                     <div class="hero-avatar-container animate-fade-in reveal">
                         <div class="interactive-avatar-3d" id="avatar3dContainer">
-                            <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
+                            <script type="module" src="spline-viewer.js"></script>
+                            <spline-viewer url="https://prod.spline.design/PPrDzvbu9taKmWg1/scene.splinecode"></spline-viewer>
                         </div>
                         <span class="avatar-hint" data-i18n="avatarHint">Interactúa con el avatar 3D para conocerme mejor ✨</span>
                         
@@ -174,7 +174,7 @@
                         </ul>
                     </div>
                     <div class="skill-card hover-animate animate-fade-in reveal">
-                        <h3><span data-i18n="skillBackendTitle">Backend & Lógica</span></h3> 
+                        <h3><span data-i18n="skillBackendTitle">Backend &amp; Lógica</span></h3> 
                         <ul>
                             <li class="interactive-paragraph"><i class="fa-brands fa-node-js"></i> Node.js / Express</li>
                             <li class="interactive-paragraph"><i class="fa-brands fa-python"></i> Python</li>
@@ -182,7 +182,7 @@
                         </ul>
                     </div>
                     <div class="skill-card hover-animate animate-fade-in reveal">
-                        <h3><span data-i18n="skillToolsTitle">Herramientas & Oficina</span></h3>
+                        <h3><span data-i18n="skillToolsTitle">Herramientas &amp; Oficina</span></h3>
                         <ul>
                             <li class="interactive-paragraph"><i class="fa-brands fa-git-alt"></i> Git / <i class="fa-brands fa-github"></i> GitHub</li>
                             <li class="interactive-paragraph"><i class="fa-solid fa-code-merge"></i> VS Code</li>
@@ -217,7 +217,7 @@
 
             <!-- SECCIÓN EXPERIENCIA Y EDUCACIÓN -->
             <section id="experiencia" class="section-block reveal">
-                <h2 class="section-title" data-i18n="expTitle">Experiencia & Educación</h2>
+                <h2 class="section-title" data-i18n="expTitle">Experiencia &amp; Educación</h2>
                 <div class="timeline">
                     <div class="timeline-item hover-animate animate-fade-in reveal">
                         <span class="date">2025-2026</span>
