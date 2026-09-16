@@ -1711,3 +1711,132 @@ body {
   height: auto;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
 }
+/* =========================================
+   1. DEFINICIÓN DE VARIABLES POR TEMA
+   ========================================= */
+
+/* Tema Por Defecto / Oscuro Morado (.theme-purple) */
+body.theme-purple {
+    --bg-color: #0f0c1b;
+    --card-bg: #1a152e;
+    --card-border: #2e244d;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --accent-color: #a855f7; /* Morado principal */
+    --accent-hover: #c084fc;
+    --accent-glow: rgba(168, 85, 247, 0.25);
+    --dropdown-bg: #161225;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Tema Azul Pro (.theme-blue) */
+body.theme-blue {
+    --bg-color: #0b1329;
+    --card-bg: #131e3a;
+    --card-border: #1e3a6e;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --accent-color: #3b82f6; /* Azul principal */
+    --accent-hover: #60a5fa;
+    --accent-glow: rgba(59, 130, 246, 0.25);
+    --dropdown-bg: #0f172a;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Tema Claro (.theme-light) */
+body.theme-light {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --accent-color: #8b5cf6; /* Morado claro / Violeta */
+    --accent-hover: #7c3aed;
+    --accent-glow: rgba(139, 92, 246, 0.15);
+    --dropdown-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   2. APLICACIÓN DE VARIABLES A LOS ELEMENTOS
+   ========================================= */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tarjetas de Habilidades, Experiencia y Proyectos */
+.skill-card, 
+.timeline-item, 
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card:hover, 
+.timeline-item:hover, 
+.project-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px var(--accent-glow);
+}
+
+/* Títulos y textos descriptivos */
+.section-title, 
+.hero-title-main, 
+.skill-card h3, 
+.timeline-item h3, 
+.project-header h3 {
+    color: var(--text-primary);
+}
+
+.hero-description, 
+.timeline-item p, 
+.project-card p,
+.skill-card ul li {
+    color: var(--text-secondary);
+}
+
+/* Enlaces y acentos dinámicos */
+.hero-greeting, 
+.logo span, 
+.date {
+    color: var(--accent-color);
+}
+
+/* Menús Desplegables (Temas, Idiomas, Contactos) */
+.contact-dropdown, 
+.lang-dropdown, 
+.theme-dropdown {
+    background-color: var(--dropdown-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* Botones de control flotantes (Navbar) */
+.contact-toggle-btn, 
+.lang-toggle-btn, 
+.theme-toggle-btn {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+}
+
+.contact-toggle-btn:hover, 
+.lang-toggle-btn:hover, 
+.theme-toggle-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Tarjetas de selección de tema activas */
+.theme-card.active, 
+.lang-card.active {
+    border-color: var(--accent-color);
+    background-color: var(--accent-glow);
+}
